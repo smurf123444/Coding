@@ -17,13 +17,13 @@ int main()
 
     //  heap allocates memory manually
 
-    char* buffer = new char[8];
+    char* buffer = new char[8]; // the new keyword is used to create on heap
     memset(buffer, 0, 8);
 
-    char** ptr1 = &buffer;  // pointer to a pointer ;D
-    LOG(ptr1);              // logging address to ptr1
-    delete[] buffer;        // deleting data after used
+    char** ptr1 = &buffer;      // pointer to a pointer ;D
+    LOG(ptr1);                  // logging address to ptr1
+    delete[] buffer;            // deleting data after used
 
-    std::cin.get();         // type key to exit
+    std::cin.get();             // type key to exit
 
 }
