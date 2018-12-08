@@ -4,18 +4,19 @@
 
 int main()
 {
-    /*  stack allocates memory automatically
-
+    
+    /*
       void* ptr = 0;        assigning invalid memory address
       void* ptr = nullptr;  assigning correct memory address 
-    
     */
+
+   /*  stack allocates memory automatically */
     int var = 8;            //setting var to 8
     int* ptr = &var;        //pointing to var address
     *ptr = 10;              //manipulating ptr
     LOG(var);               //LOG output
 
-    //  heap allocates memory manually
+    /*  heap allocates memory manually */
 
     char* buffer = new char[8]; // the new keyword is used to create on heap
     memset(buffer, 0, 8);
