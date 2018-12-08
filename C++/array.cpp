@@ -1,11 +1,24 @@
 #include <iostream>
-#include <time.h>
-using namespace std;
+#include <array>
+
+class Entity{
+public:
+    static const int exampleSize = 5;
+    int example[exampleSize];
+
+    std::array<int, 5> another;
+
+    Entity()
+    {
+        for (int i = 0; i < another.size(); i++)
+            example[i] = 2;
+    }
+};
+
 void passValue(int value);
 void passArray(int prime[5]);
 int main()
 {
-    time_t result = time(NULL);
     
         int value = 1;
     std::cout << "before passValue: " << value << "\n";
