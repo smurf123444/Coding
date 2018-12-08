@@ -8,4 +8,6 @@ unions structures typedefs nodes linked lists rand
 
 C++:
 
-arrays
+arrays enum
+
+https://www.learncpp.com/
