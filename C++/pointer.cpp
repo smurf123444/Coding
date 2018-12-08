@@ -11,6 +11,7 @@ int main()
     */
 
    /*  stack allocates memory automatically */
+   
     int var = 8;            //setting var to 8
     int* ptr = &var;        //pointing to var address
     *ptr = 10;              //manipulating ptr
