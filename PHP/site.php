@@ -7,9 +7,9 @@ echo "My first PHP script!";
 ?>
 
 <?php
-$servername = "192.168.1.160";
-$username = "test";
-$password = "test";
+$servername = "localhost";
+$username = "poo";
+$password = "poo";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
