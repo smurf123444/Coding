@@ -70,7 +70,11 @@ echo "</table>";
 ?>
 <?php
 
-$con = mysqli_connect('localhost', 'root', '');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "zero_auth";
+
 
 if(!con)
 {
