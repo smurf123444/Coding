@@ -102,6 +102,7 @@ else
 }
 
 header("refresh:2; url=index.html");
+?>
 <!-- Button to open the modal login form -->
 <button onclick="document.getElementById('id01').style.display='block'">Login</button>
 
