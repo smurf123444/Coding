@@ -68,6 +68,36 @@ catch(PDOException $e) {
 $conn = null;
 echo "</table>";
 ?>
+<?php
+
+$con = mysqli_connect('localhost', 'root', '');
+
+if(!con)
+{
+    echo 'Not Connected to Database';
+}
+
+if(!mysqli_select_db($con, 'tutorial'))
+{
+    echo 'Database Not Selected';
+}
+$User_Name = $_POST['username'];
+$Email = $_POST['email'];
+$Expansion = $_POST['expansion'];
+$Password = $_POST['sha_pass_hash'];
+
+$sql = "INSERT INTO account (username, email, expansion, sha_pass_hash) VALUES ('$User_Name', '$Email', '$Expansion', '$sha_pass_hash')";
+
+if(!mysqli_query($con,$sql))
+{
+    echo 'Not Registered';
+}
+else
+{
+    echo 'Registered';
+}
+
+header("refresh:2; url=index.html");
 <!-- Button to open the modal login form -->
 <button onclick="document.getElementById('id01').style.display='block'">Login</button>
 
@@ -101,5 +131,7 @@ class="close" title="Close Modal">&times;</span>
     </div>
   </form>
 </div>
+
+
 </body>
 </html>
