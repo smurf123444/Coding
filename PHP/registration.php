@@ -18,7 +18,7 @@ if(!$con)
     echo "Not connected to DB";
 }
 
-if (!mysqli_select_db($con,'zero_auth'))
+if (!mysqli_select_db($con, $db))
 {
     echo 'Database not selected';
 }
