@@ -60,72 +60,67 @@ void playersTurns()
 {
 
 
-for (k = 1; k <= 9 && !win; k++)    //before max amount of turns & not win 
-    
-    {
-                                    /* Player selection */
-
-                                    //player x
-                    
+for (k = 1; k <= 9 && !win; k++) {   //before max amount of turns & not win  
+                                    /* Player selection */      //player x                   
 if (isX == true) {
 			std::cout << "Player number 1 (X): " << std::endl;
 			std::cout << "Please enter cell input (for example A2): ";
 			std::cin >> ch >> n;
 			std::cout << std::endl;
 
-            switch(ch){
-                    case 'A':
-                    {
-                        switch(n)
-                            {
-                            case 1:
-                                matrix[1][1] = 'X';
-                                break;
-                            case 2:
-                                matrix[2][1] = 'X';
-                                break;
-                            case 3:
-                                matrix[3][1] = 'X';
-                                break;
-                            }
-                    } break;
-                   case 'B':
-                    {
-                        switch(n)
-                            {
-                            case 1:
-                                matrix[1][2] = 'X';
-                                break;
-                            case 2:
-                                matrix[2][2] = 'X';
-                                break;
-                            case 3:
-                                matrix[3][2] = 'X';
-                                break;
-                            }
-                    } break;
-                    case 'C':
-                    {
-                        switch(n)
-                            {
-                            case 1:
-                                matrix[1][3] = 'X';
-                                break;
-                            case 2:
-                                matrix[2][3] = 'X';
-                                break;
-                            case 3:
-                                matrix[3][3] = 'X';
-                                break;
-                            }
-                    } break;
-                
-                    default:
-                        std::cout <<"no input detected"<< std::endl;
-                        break;
-                }; 
-                printMatrix(matrix);
-		}
+switch(ch){
+case 'A':
+    {
+    switch(n)
+    {
+        case 1:
+            matrix[1][1] = 'X';
+        break;
+        case 2:
+            matrix[2][1] = 'X';
+        break;
+        case 3:
+            matrix[3][1] = 'X';
+        break;
+    }
+    }   break;
+case 'B':
+    {
+    switch(n)
+    {
+        case 1:
+            matrix[1][2] = 'X';
+        break;
+        case 2:
+            matrix[2][2] = 'X';
+        break;
+        case 3:
+            matrix[3][2] = 'X';
+        break;
+    }
+    }   break;
+case 'C':
+    {
+    switch(n)
+   {
+        case 1:
+            matrix[1][3] = 'X';
+            break;
+        case 2:
+            matrix[2][3] = 'X';
+            break;
+        case 3:
+            matrix[3][3] = 'X';
+        break;
+    }
+    }   break;
+             
+   default:
+   std::cout <<"no input detected"<< std::endl;
+    break;
+    }; 
+printMatrix(matrix);
+}
 
                                             //playyer y
 if (isX == false) {
@@ -135,64 +130,63 @@ if (isX == false) {
 			std::cin >> ch >> n;
 			std::cout << std::endl;
 
-                    switch(ch){
-                    case 'A':
-                    {
-                        switch(n)
-                            {
-                            case 1:
-                                matrix[1][1] = 'O';
-                                break;
-                            case 2:
-                                matrix[2][1] = 'O';
-                                break;
-                            case 3:
-                                matrix[3][1] = 'O';
-                                break;
-                            }
-                    } break;
-                   case 'B':
-                    {
-                        switch(n)
-                            {
-                            case 1:
-                                matrix[1][2] = 'O';
-                                break;
-                            case 2:
-                                matrix[2][2] = 'O';
-                                break;
-                            case 3:
-                                matrix[3][2] = 'O';
-                                break;
-                            }
-                    } break;
-                    case 'C':
-                    {
-                        switch(n)
-                            {
-                            case 1:
-                                matrix[1][3] = 'O';
-                                break;
-                            case 2:
-                                matrix[2][3] = 'O';
-                                break;
-                            case 3:
-                                matrix[3][3] = 'O';
-                                break;
-                            }
-                    } break;
-                
-                    default:
-                        std::cout <<"no input detected"<< std::endl;
-                        break;
-                }; 
-            	printMatrix(matrix);
-		}
-		isX = !isX;
-        win = checkWinMatrix(matrix);
-	}
+switch(ch){
+    case 'A':
+    {
+    switch(n)
+        {
+        case 1:
+            matrix[1][1] = 'O';
+        break;
+        case 2:
+            matrix[2][1] = 'O';
+        break;
+        case 3:
+            matrix[3][1] = 'O';
+        break;
 }
-#
+} break;
+    case 'B':
+    {
+        switch(n)
+        {
+    case 1:
+        matrix[1][2] = 'O';
+    break;
+    case 2:
+        matrix[2][2] = 'O';
+    break;
+    case 3:
+        matrix[3][2] = 'O';
+    break;
+}
+} break;
+    case 'C':
+    {
+        switch(n)
+        {
+    case 1:
+        matrix[1][3] = 'O';
+    break;
+    case 2:
+        matrix[2][3] = 'O';
+    break;
+    case 3:
+        matrix[3][3] = 'O';
+    break;
+    }
+} break;
+                
+    default:
+        std::cout <<"no input detected"<< std::endl;
+break;
+}; 
+        printMatrix(matrix);
+    }
+        isX = !isX;
+        win = checkWinMatrix(matrix);
+}
+}
 #else
 /* code to include if the token is defined */
 #endif
