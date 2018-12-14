@@ -20,37 +20,35 @@
 
     int checkWinMatrix(char matrix[SIZE][SIZE]) {
 
-        bool win = false;
+    bool win = false;
 
-	for (int i = 1; i <= SIZE; i++) {
-		for (int j = 1; j <= 1; j++) {
-			 //checks here
-            if ((matrix[3][1] == 'X' && matrix[3][2] == 'X' && matrix[3][3] == 'X') ||
-                (matrix[2][1] == 'X' && matrix[2][2] == 'X' && matrix[2][3] == 'X') ||
-                (matrix[1][3] == 'X' && matrix[2][2] == 'X' && matrix[3][1] == 'X') ||
-                (matrix[1][1] == 'X' && matrix[1][2] == 'X' && matrix[1][3] == 'X') ||
-                (matrix[1][1] == 'X' && matrix[2][2] == 'X' && matrix[3][3] == 'X') ||
-                (matrix[1][1] == 'X' && matrix[2][1] == 'X' && matrix[3][1] == 'X') ||
-                (matrix[1][2] == 'X' && matrix[2][2] == 'X' && matrix[3][2] == 'X') ||
-                (matrix[1][3] == 'X' && matrix[2][3] == 'X' && matrix[3][3] == 'X'))
-             {
-                std::cout << "X wins" << std::endl;
-                win = true;
-             }
-
-             if ((matrix[1][3] == 'O' && matrix[2][2] == 'O' && matrix[3][1] == 'O') ||
-                 (matrix[1][1] == 'O' && matrix[2][2] == 'O' && matrix[3][3] == 'O') ||
-                 (matrix[1][1] == 'O' && matrix[1][2] == 'O' && matrix[1][3] == 'O') ||
-                 (matrix[2][1] == 'O' && matrix[2][2] == 'O' && matrix[2][3] == 'O') ||
-                 (matrix[3][1] == 'O' && matrix[3][2] == 'O' && matrix[3][3] == 'O') ||
-                 (matrix[1][1] == 'O' && matrix[2][1] == 'O' && matrix[3][1] == 'O') ||
-                 (matrix[1][2] == 'O' && matrix[2][2] == 'O' && matrix[3][2] == 'O') ||
-                 (matrix[1][3] == 'O' && matrix[2][3] == 'O' && matrix[3][3] == 'O'))
-		        {
-                    std::cout << "O wins" << std::endl;
-                    win = true;
-                }
-        
+for (int i = 1; i <= SIZE; i++) {
+	for (int j = 1; j <= 1; j++) {
+	 //checks here
+    if ((matrix[3][1] == 'X' && matrix[3][2] == 'X' && matrix[3][3] == 'X') ||
+        (matrix[2][1] == 'X' && matrix[2][2] == 'X' && matrix[2][3] == 'X') ||
+        (matrix[1][3] == 'X' && matrix[2][2] == 'X' && matrix[3][1] == 'X') ||
+        (matrix[1][1] == 'X' && matrix[1][2] == 'X' && matrix[1][3] == 'X') ||
+        (matrix[1][1] == 'X' && matrix[2][2] == 'X' && matrix[3][3] == 'X') ||
+        (matrix[1][1] == 'X' && matrix[2][1] == 'X' && matrix[3][1] == 'X') ||
+        (matrix[1][2] == 'X' && matrix[2][2] == 'X' && matrix[3][2] == 'X') ||
+        (matrix[1][3] == 'X' && matrix[2][3] == 'X' && matrix[3][3] == 'X'))
+    {
+    std::cout << "X wins" << std::endl;
+    win = true;
+    }
+    if ((matrix[1][3] == 'O' && matrix[2][2] == 'O' && matrix[3][1] == 'O') ||
+        (matrix[1][1] == 'O' && matrix[2][2] == 'O' && matrix[3][3] == 'O') ||
+        (matrix[1][1] == 'O' && matrix[1][2] == 'O' && matrix[1][3] == 'O') ||
+        (matrix[2][1] == 'O' && matrix[2][2] == 'O' && matrix[2][3] == 'O') ||
+        (matrix[3][1] == 'O' && matrix[3][2] == 'O' && matrix[3][3] == 'O') ||
+        (matrix[1][1] == 'O' && matrix[2][1] == 'O' && matrix[3][1] == 'O') ||
+        (matrix[1][2] == 'O' && matrix[2][2] == 'O' && matrix[3][2] == 'O') ||
+        (matrix[1][3] == 'O' && matrix[2][3] == 'O' && matrix[3][3] == 'O'))
+	{
+    std::cout << "O wins" << std::endl;
+    win = true;
+    }        
 	}
     return (win);
 }
@@ -58,92 +56,89 @@
 
 void playersTurns()
 {
-
-
 for (k = 1; k <= 9 && !win; k++) {   //before max amount of turns & not win  
-                                    /* Player selection */      //player x                   
+    /* Player selection */      //player x                   
 if (isX == true) {
-			std::cout << "Player number 1 (X): " << std::endl;
-			std::cout << "Please enter cell input (for example A2): ";
-			std::cin >> ch >> n;
-			std::cout << std::endl;
+	std::cout << "Player number 1 (X): " << std::endl;
+	std::cout << "Please enter cell input (for example A2): ";
+	std::cin >> ch >> n;
+	std::cout << std::endl;
 
 switch(ch){
 case 'A':
     {
     switch(n)
     {
-        case 1:
-            matrix[1][1] = 'X';
-        break;
-        case 2:
-            matrix[2][1] = 'X';
-        break;
-        case 3:
-            matrix[3][1] = 'X';
-        break;
-    }
-    }   break;
+    case 1:
+        matrix[1][1] = 'X';
+    break;
+    case 2:
+        matrix[2][1] = 'X';
+    break;
+    case 3:
+        matrix[3][1] = 'X';
+    break;
+}
+}   break;
 case 'B':
     {
     switch(n)
     {
-        case 1:
-            matrix[1][2] = 'X';
-        break;
-        case 2:
-            matrix[2][2] = 'X';
-        break;
-        case 3:
-            matrix[3][2] = 'X';
-        break;
-    }
-    }   break;
+    case 1:
+        matrix[1][2] = 'X';
+    break;
+    case 2:
+        matrix[2][2] = 'X';
+    break;
+    case 3:
+        matrix[3][2] = 'X';
+    break;
+}
+}   break;
 case 'C':
     {
     switch(n)
    {
-        case 1:
-            matrix[1][3] = 'X';
-            break;
-        case 2:
-            matrix[2][3] = 'X';
-            break;
-        case 3:
-            matrix[3][3] = 'X';
-        break;
-    }
-    }   break;
+    case 1:
+        matrix[1][3] = 'X';
+    break;
+    case 2:
+        matrix[2][3] = 'X';
+    break;
+    case 3:
+        matrix[3][3] = 'X';
+    break;
+}
+}   break;
              
    default:
    std::cout <<"no input detected"<< std::endl;
-    break;
-    }; 
+break;
+};
 printMatrix(matrix);
 }
-
-                                            //playyer y
+    //playyer y
 if (isX == false) {
-            win = checkWinMatrix(matrix);
-			std::cout << "Player number 2 (O): " << std::endl;
-			std::cout << "Please enter cell input (for example A2): ";
-			std::cin >> ch >> n;
-			std::cout << std::endl;
+    win = checkWinMatrix(matrix);
+	std::cout << "Player number 2 (O): " << std::endl;
+	std::cout << "Please enter cell input (for example A2): ";
+	std::cin >> ch >> n;
+	std::cout << std::endl;
 
 switch(ch){
     case 'A':
     {
-    switch(n)
+        switch(n)
         {
-        case 1:
-            matrix[1][1] = 'O';
-        break;
-        case 2:
-            matrix[2][1] = 'O';
-        break;
-        case 3:
-            matrix[3][1] = 'O';
-        break;
+    case 1:
+        matrix[1][1] = 'O';
+    break;
+    case 2:
+        matrix[2][1] = 'O';
+    break;
+    case 3:
+        matrix[3][1] = 'O';
+    break;
 }
 } break;
     case 'B':
@@ -179,12 +174,12 @@ switch(ch){
                 
     default:
         std::cout <<"no input detected"<< std::endl;
-break;
+    break;
 }; 
-        printMatrix(matrix);
-    }
-        isX = !isX;
-        win = checkWinMatrix(matrix);
+    printMatrix(matrix);
+}
+    isX = !isX;
+    win = checkWinMatrix(matrix);
 }
 }
 #else
