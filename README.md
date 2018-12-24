@@ -10,6 +10,10 @@ C++:
 
 arrays enum class pointers
 
+Haskell
+
+switch case where data math
+
 PHP
 
 registration page for WOW
