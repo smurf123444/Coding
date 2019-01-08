@@ -15,6 +15,9 @@ haskell-tut.hs : switch case where data math
 PHP
 registration page for WOW
 
+Python
+ch02 scf
+
 https://www.learnphp.com/
 https://www.w3schools.com/php/default.asp
 http://learnyouahaskell.com/
