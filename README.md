@@ -16,7 +16,7 @@ PHP
 registration page for WOW
 
 Python
-ch02 scf
+ch02 ch03 ch04 ch05 ch06 ch07 ch08 scf.edu COP2510
 
 https://www.learnphp.com/
 https://www.w3schools.com/php/default.asp
