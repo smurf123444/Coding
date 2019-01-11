@@ -6,5 +6,5 @@ cost = float(input())
 insured_cost = cost * .8
 
 # print total cost to insure Building/Structure
-print("Total cost to insure Stucture:")
+print("Total cost to insure Structure:")
 print(insured_cost)
