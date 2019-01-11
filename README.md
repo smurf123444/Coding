@@ -10,6 +10,7 @@ arrays enum class pointers
 
 Haskell
 RealWorldHaskell examples : ch03
+
 haskell-tut.hs examples : switch case where data math
 
 PHP
