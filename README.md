@@ -10,13 +10,14 @@ arrays enum class pointers
 
 Haskell
 RealWorldHaskell examples : ch03
-haskell-tut.hs : switch case where data math
+
+haskell-tut.hs examples : switch case where data math
 
 PHP
 registration page for WOW
 
 Python
-ch02 scf
+ch02 ch03 ch04 ch05 ch06 ch07 ch08 scf.edu COP2510
 
 https://www.learnphp.com/
 https://www.w3schools.com/php/default.asp
