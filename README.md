@@ -9,15 +9,22 @@ C++:
 arrays enum class pointers
 
 Haskell
-RealWorldHaskell examples : ch03
+Plutus:
+vestingExample.hs
 
-haskell-tut.hs examples : switch case where data math
+tutorials:
+haskell-tut.hs examples ; switch case where data math
+RealWorldHaskell examples : ch03
 
 PHP
 registration page for WOW
 
 Python
+SCF:
 ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 scf.edu COP2510
+
+tutorials:
+python-for-finance.py
 
 https://www.learnphp.com/
 https://www.w3schools.com/php/default.asp
