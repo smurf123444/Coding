@@ -11,6 +11,8 @@ arrays enum class pointers
 Haskell
 Plutus:
 vestingExample.hs
+gamingExample.hs
+examplePlutus.hs (commentated) 
 
 tutorials:
 haskell-tut.hs examples ; switch case where data math
@@ -29,3 +31,5 @@ python-for-finance.py
 https://www.learnphp.com/
 https://www.w3schools.com/php/default.asp
 http://learnyouahaskell.com/
+https://prod.playground.plutus.iohkdev.io/
+https://edu.clio.one/lessons/writing-your-first-plutus-smart-contract/lessons/overview/
