@@ -24,8 +24,7 @@
         Fat = Val(fatGramsInFood.Text)
         'Calculates Fat into fatToCalories
         fatToCalories = Fat * 9
-        'Calculates TotalCalories involved for Error Handling
-        TotalCalories = fatToCalories + Calories
+
         'ErrorHandle For Fat ratio less than 30%
         ErrorCatch = 0.3
         'Calculating into Single for later use. 
@@ -35,25 +34,42 @@
 
 
 
-        End Try
-        If Val(fatToCalories) > Val(TotalCalories) Then
-            MessageBox.Show("Calculation Error", "Calculation Error")
-        End If
-        If Val(caloriesInFood.Text) < 1 Then
-            MessageBox.Show("Value not greater than 1", "Input Error")
-        End If
-        If FatPercent < ErrorCatch Then
-                MessageBox.Show("Food is low in Fat", "Low Fat")
+
+            If Val(Fat) > Val(Calories) Then
+                MessageBox.Show("Calculation Error", "Calculation Error")
+                result.Clear()
+            Else
+                'copy result into new area for mutation
+                ResultCopy = FatPercent
+                'Print copied result as Percentage using ToString("p") Function
+                result.Text = ResultCopy.ToString("p")
             End If
-            'Is the Value of calories less than 0 and 1?
+            'Calculates TotalCalories involved for Error Handling
+            TotalCalories = fatToCalories + Calories
             If Val(caloriesInFood.Text) < 1 Then
                 MessageBox.Show("Value not greater than 1", "Input Error")
+            Else
+                'copy result into new area for mutation
+                ResultCopy = FatPercent
+                'Print copied result as Percentage using ToString("p") Function
+                result.Text = ResultCopy.ToString("p")
             End If
-        'is fat less then 30% of total calories?
-        'copy result into new area for mutation
-        Catch ex As Exception
-        ResultCopy = FatPercent
-        'Print copied result as Percentage using ToString("p") Function
-        result.Text = ResultCopy.ToString("p")
+
+            If FatPercent < ErrorCatch Then
+                MessageBox.Show("Food is low in Fat", "Low Fat")
+            Else
+                'copy result into new area for mutation
+                ResultCopy = FatPercent
+                'Print copied result as Percentage using ToString("p") Function
+                result.Text = ResultCopy.ToString("p")
+            End If
+
+
+            'is fat less then 30% of total calories?
+
+        Catch
+            MessageBox.Show("Only Numbers Aloud!")
+
+        End Try
     End Sub
 End Class
