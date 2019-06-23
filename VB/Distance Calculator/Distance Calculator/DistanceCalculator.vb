@@ -13,15 +13,17 @@
 
             DataDisplay.Items.Add("Vehicle Speed: " & mile.ToString())
             DataDisplay.Items.Add("Time Traveled: " & time.ToString())
-            DataDisplay.Items.Add(">Hours<" & " >Distance Traveled<")
+            DataDisplay.Items.Add("Hours" & "       Distance Traveled")
             DataDisplay.Items.Add("---------------------------------------------")
 
             For i = 1 To CByte(time)
                 distance = mile * i
                 DataDisplay.Text = i.ToString()
                 DataDisplay.Text = distance.ToString()
-                DataDisplay.Items.Add(i.ToString() + ": " + distance.ToString())
+                DataDisplay.Items.Add(i.ToString() + ":              " + distance.ToString())
             Next
+            DataDisplay.Items.Add("")
+            DataDisplay.Items.Add("Total Distance:" & distance.ToString())
         Catch
             MessageBox.Show("Only Numbers Aloud!")
 
@@ -31,4 +33,5 @@
     Private Sub Quit_Click(sender As Object, e As EventArgs) Handles Quit.Click
         Close()
     End Sub
+
 End Class
