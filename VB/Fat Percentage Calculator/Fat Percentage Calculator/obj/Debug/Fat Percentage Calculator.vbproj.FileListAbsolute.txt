@@ -10,3 +10,15 @@ C:\Users\N5g\source\repos\Fat Percentage Calculator\Fat Percentage Calculator\bi
 C:\Users\N5g\source\repos\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.exe
 C:\Users\N5g\source\repos\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.xml
 C:\Users\N5g\source\repos\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.pdb
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\bin\Debug\Fat Percentage Calculator.exe.config
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\bin\Debug\Fat Percentage Calculator.exe
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\bin\Debug\Fat Percentage Calculator.pdb
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\bin\Debug\Fat Percentage Calculator.xml
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.vbprojAssemblyReference.cache
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat_Percentage_Calculator.FatPercentageForm.resources
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat_Percentage_Calculator.Resources.resources
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.vbproj.GenerateResource.cache
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.vbproj.CoreCompileInputs.cache
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.exe
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.xml
+C:\Users\N5g\Coding\VB\Fat Percentage Calculator\Fat Percentage Calculator\obj\Debug\Fat Percentage Calculator.pdb

@@ -1,0 +1,13 @@
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm and Meal Calculator.vbprojAssemblyReference.cache
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm_and_Meal_Calculator.Form1.resources
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm_and_Meal_Calculator.Resources.resources
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm and Meal Calculator.vbproj.GenerateResource.cache
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm and Meal Calculator.vbproj.CoreCompileInputs.cache
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\bin\Debug\Dorm and Meal Calculator.exe.config
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\bin\Debug\Dorm and Meal Calculator.exe
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\bin\Debug\Dorm and Meal Calculator.pdb
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\bin\Debug\Dorm and Meal Calculator.xml
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm_and_Meal_Calculator.frmMealPlans.resources
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm and Meal Calculator.exe
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm and Meal Calculator.xml
+C:\Users\N5g\source\repos\Dorm and Meal Calculator\Dorm and Meal Calculator\obj\Debug\Dorm and Meal Calculator.pdb

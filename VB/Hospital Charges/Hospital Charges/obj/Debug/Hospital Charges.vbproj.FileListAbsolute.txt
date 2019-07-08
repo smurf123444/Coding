@@ -1,0 +1,12 @@
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\bin\Debug\Hospital Charges.exe.config
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\bin\Debug\Hospital Charges.exe
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\bin\Debug\Hospital Charges.pdb
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\bin\Debug\Hospital Charges.xml
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital Charges.vbprojAssemblyReference.cache
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital_Charges.Resources.resources
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital Charges.vbproj.GenerateResource.cache
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital Charges.vbproj.CoreCompileInputs.cache
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital Charges.exe
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital Charges.xml
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital Charges.pdb
+C:\Users\N5g\source\repos\Hospital Charges\Hospital Charges\obj\Debug\Hospital_Charges.HospitalCharges.resources
