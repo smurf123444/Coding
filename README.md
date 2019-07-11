@@ -4,9 +4,6 @@ The repo for teaching and learning code with me, myself and i!
 C:
 unions structures typedefs nodes linked lists rand
 
-C#
-Card Identifier - SCF
-
 C++:
 arrays enum class pointers
 
