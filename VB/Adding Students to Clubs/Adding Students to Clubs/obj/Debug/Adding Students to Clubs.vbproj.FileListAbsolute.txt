@@ -1,0 +1,12 @@
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\bin\Debug\Adding Students to Clubs.exe.config
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\bin\Debug\Adding Students to Clubs.exe
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\bin\Debug\Adding Students to Clubs.pdb
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\bin\Debug\Adding Students to Clubs.xml
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding Students to Clubs.vbprojAssemblyReference.cache
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding_Students_to_Clubs.Form1.resources
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding_Students_to_Clubs.Resources.resources
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding Students to Clubs.vbproj.GenerateResource.cache
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding Students to Clubs.vbproj.CoreCompileInputs.cache
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding Students to Clubs.exe
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding Students to Clubs.xml
+c:\users\chris\source\repos\Adding Students to Clubs\Adding Students to Clubs\obj\Debug\Adding Students to Clubs.pdb
