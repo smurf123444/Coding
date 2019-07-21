@@ -26,7 +26,7 @@ ch02 ch03 ch04 ch05 ch06 ch07 ch08 ch09 ch10 ch11 ch13 scf.edu COP2510
 
 VB:
 SCF:
-Card Identifier; Dorm and Meal Calculator; Hospital Charges; Fat Percentage Calculator; Distance Calculator; Adding Students to Clubs
+Card Identifier; Dorm and Meal Calculator; Hospital Charges; Fat Percentage Calculator; Distance Calculator; Adding Students to Clubs; Creating Employee Data;
 
 tutorials:
 python-for-finance.py
