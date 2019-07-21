@@ -10,3 +10,15 @@ C:\Users\N5g\source\repos\Creating Employee Data\Creating Employee Data\obj\Debu
 C:\Users\N5g\source\repos\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.exe
 C:\Users\N5g\source\repos\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.xml
 C:\Users\N5g\source\repos\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.pdb
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\bin\Debug\Creating Employee Data.exe.config
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\bin\Debug\Creating Employee Data.exe
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\bin\Debug\Creating Employee Data.pdb
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\bin\Debug\Creating Employee Data.xml
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.vbprojAssemblyReference.cache
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating_Employee_Data.CreatingEmployeeData.resources
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating_Employee_Data.Resources.resources
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.vbproj.GenerateResource.cache
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.vbproj.CoreCompileInputs.cache
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.exe
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.xml
+C:\Users\N5g\Desktop\Creating Employee Data\Creating Employee Data\obj\Debug\Creating Employee Data.pdb

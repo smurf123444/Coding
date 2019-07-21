@@ -13,15 +13,20 @@ Public Class CreatingEmployeeData
     Dim valid As Boolean = True
 
     Private Sub EmployeeData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'add items to combobox department
         cboDepartment.Items.Add("Accounting")
         cboDepartment.Items.Add("Administration")
         cboDepartment.Items.Add("Marketing and MIS")
         cboDepartment.Items.Add("Sales")
         Do
-            fileName = InputBox("Input Needed", "Enter the name of the file.")
+            'get file name from inputbox and add extension.
+            fileName = InputBox("Input Needed", "Enter the name of the file.") + ".txt"
+            'check if file exists
             If System.IO.File.Exists(fileName) Then
+                'deletes old file
                 System.IO.File.Delete(fileName)
             End If
+            'Checks if file name entered
             If fileName = Nothing Or fileName = "" Then
                 MessageBox.Show("No file name entered.")
             Else
@@ -32,13 +37,19 @@ Public Class CreatingEmployeeData
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         valid = True ' reset value to account for prior invalid input
+        'check if file exists
         If System.IO.File.Exists(fileName) Then
+            'deletes old file
             System.IO.File.Delete(fileName)
         End If
+        'runs InputData assigning correct input to its variable for correct input
         InputData()
+        'checks if all input is valid before writing to file
         If valid = True Then
+            'writefile
             WriteDataToFile()
         Else
+            'run InputData again for error messages
             InputData()
         End If
     End Sub
@@ -60,7 +71,7 @@ Public Class CreatingEmployeeData
     End Sub
 
     Sub InputData()
-        ' populate the variables
+        ' populate the variables while checking if their input is correct, else run error associated
         firstName = txtFirstName.Text
         If (firstName.ToUpper >= "A") And (firstName.ToUpper <= "Z") Then
             firstName = firstName
@@ -116,6 +127,7 @@ Public Class CreatingEmployeeData
         sw.WriteLine(extension)
         sw.WriteLine(emailAddress)
         sw.Close()
+        'Display Success Message.
         MessageBox.Show("Record Saved.  Please clear the form and enter additional records or exit.")
     End Sub
 End Class
