@@ -12,6 +12,7 @@ Public Class MotorInput
 
         Catch ex As Exception
             MessageBox.Show("Enter proper values for all entries")
+
         End Try
     End Sub
 
@@ -33,6 +34,10 @@ Public Class MotorInput
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         ' Create an instance of the motor class.
+        If String.IsNullOrEmpty(txtId.Text) Then
+            MessageBox.Show("Add an ID before proceeding...")
+            Application.Restart()
+        End If
         Dim objmotor As New Motor
         ' Get data from the form.
         getData(objmotor)
@@ -67,11 +72,16 @@ Public Class Motor
 
 
     ' Motor ID Property.
-    Public Property id() As Double
+
+    Public Property Passid() As String
         Get
+            If Motorid = Nothing Then
+                MessageBox.Show("To Field Entered... Try Again")
+                Application.Restart()
+            End If
             Return Motorid
         End Get
-        Set(ByVal id As Double)
+        Set(ByVal id As String)
             id = MotorInput.txtId.Text
         End Set
     End Property
@@ -112,9 +122,12 @@ Public Class Motor
         End Set
     End Property
     ' Overrides ToString Method
+
+
     Public Overrides Function ToString() As String
         Dim str As String
-        str = "Motor ID: " & id & ", " & "Description: " & Description & ", " & "RPM: " & RPM & ", " & "Voltage: " & Voltage & ", " & "Status: " & Status
+        str = "Motor ID: " & Passid & ", " & "Description: " & Description & ", " & "RPM: " & RPM & ", " & "Voltage: " & Voltage & ", " & "Status: " & Status
         Return str
     End Function
+
 End Class
