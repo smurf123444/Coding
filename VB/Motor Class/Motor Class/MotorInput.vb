@@ -15,6 +15,20 @@ Public Class MotorInput
 
         End Try
     End Sub
+    Private Sub resetData()
+        Try
+            ' Get all Information
+            txtId.Text = ""
+            txtDesc.Text = ""
+            txtRPM.Text = ""
+            txtVoltage.Text = ""
+            cboStatus.Text = ""
+
+        Catch ex As Exception
+            MessageBox.Show("Error?")
+
+        End Try
+    End Sub
 
     ' ClearForm procedure
     Private Sub clearForm()
@@ -36,15 +50,17 @@ Public Class MotorInput
         ' Create an instance of the motor class.
         If String.IsNullOrEmpty(txtId.Text) Then
             MessageBox.Show("Add an ID before proceeding...")
-            Application.Restart()
+            resetData()
+
+        Else
+            Dim objmotor As New Motor
+            ' Get data from the form.
+            getData(objmotor)
+            ' Add the motor object to the collection
+            addMotor(objmotor)
+            ' Display a confirmation message.
+            MessageBox.Show("Motor record added successfully")
         End If
-        Dim objmotor As New Motor
-        ' Get data from the form.
-        getData(objmotor)
-        ' Add the motor object to the collection
-        addMotor(objmotor)
-        ' Display a confirmation message.
-        MessageBox.Show("Motor record added successfully")
     End Sub
 
     Private Sub btnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
@@ -76,8 +92,7 @@ Public Class Motor
     Public Property Passid() As String
         Get
             If Motorid = Nothing Then
-                MessageBox.Show("To Field Entered... Try Again")
-                Application.Restart()
+                MessageBox.Show("Nothing in MotorID Field Entered... Try Again")
             End If
             Return Motorid
         End Get
