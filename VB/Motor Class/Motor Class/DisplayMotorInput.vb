@@ -84,16 +84,16 @@ Public Class DisplayMotorInput
             MessageBox.Show("ERROR1: Add an ID before proceeding...")
         ElseIf String.IsNullOrEmpty(txtDesc.Text) Then
             'error check for real yo
-            MessageBox.Show("Add an Description before proceeding...")
+            MessageBox.Show("ERROR1: Add an Description before proceeding...")
         ElseIf String.IsNullOrEmpty(txtRPM.Text) Then
             'error check for real yo
-            MessageBox.Show("Add an RPM before proceeding...")
+            MessageBox.Show("ERROR1: Add an RPM before proceeding...")
         ElseIf String.IsNullOrEmpty(txtVoltage.Text) Then
             'error check for real yo
-            MessageBox.Show("Add an Voltage before proceeding...")
+            MessageBox.Show("ERROR1: Add an Voltage before proceeding...")
         ElseIf String.IsNullOrEmpty(cboStatus.Text) Then
             'error check for real yo
-            MessageBox.Show("Add an Status before proceeding...")
+            MessageBox.Show("ERROR1: Add an Status before proceeding...")
         Else
             Dim objmotor As New Motor
             ' Get data from the form.
