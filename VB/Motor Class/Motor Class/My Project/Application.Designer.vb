@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Motor_Class.MotorInput
+            Me.MainForm = Global.Motor_Class.DisplayMotorInput
         End Sub
     End Class
 End Namespace

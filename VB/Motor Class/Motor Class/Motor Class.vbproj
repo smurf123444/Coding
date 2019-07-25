@@ -73,18 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DisplayValues.Designer.vb">
-      <DependentUpon>DisplayValues.vb</DependentUpon>
+    <Compile Include="DisplayMotorCollection.Designer.vb">
+      <DependentUpon>DisplayMotorCollection.vb</DependentUpon>
     </Compile>
-    <Compile Include="DisplayValues.vb">
+    <Compile Include="DisplayMotorCollection.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Motor Module.vb" />
-    <Compile Include="MotorInput.vb">
+    <Compile Include="MotorCollectionModule.vb" />
+    <Compile Include="DisplayMotorInput.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MotorInput.Designer.vb">
-      <DependentUpon>MotorInput.vb</DependentUpon>
+    <Compile Include="DisplayMotorInput.Designer.vb">
+      <DependentUpon>DisplayMotorInput.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -104,11 +104,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DisplayValues.resx">
-      <DependentUpon>DisplayValues.vb</DependentUpon>
+    <EmbeddedResource Include="DisplayMotorCollection.resx">
+      <DependentUpon>DisplayMotorCollection.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MotorInput.resx">
-      <DependentUpon>MotorInput.vb</DependentUpon>
+    <EmbeddedResource Include="DisplayMotorInput.resx">
+      <DependentUpon>DisplayMotorInput.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

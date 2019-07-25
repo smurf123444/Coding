@@ -11,3 +11,16 @@ C:\Users\N5g\source\repos\Motor Class\Motor Class\obj\Debug\Motor Class.exe
 C:\Users\N5g\source\repos\Motor Class\Motor Class\obj\Debug\Motor Class.xml
 C:\Users\N5g\source\repos\Motor Class\Motor Class\obj\Debug\Motor Class.pdb
 C:\Users\N5g\source\repos\Motor Class\Motor Class\obj\Debug\Motor_Class.DisplayValues.resources
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\bin\Debug\Motor Class.exe.config
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\bin\Debug\Motor Class.exe
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\bin\Debug\Motor Class.pdb
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\bin\Debug\Motor Class.xml
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor Class.vbprojAssemblyReference.cache
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor_Class.Resources.resources
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor Class.vbproj.GenerateResource.cache
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor Class.vbproj.CoreCompileInputs.cache
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor Class.exe
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor Class.xml
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor Class.pdb
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor_Class.DisplayMotorCollection.resources
+C:\Users\N5g\Coding2\VB\Motor Class\Motor Class\obj\Debug\Motor_Class.DisplayMotorInput.resources
