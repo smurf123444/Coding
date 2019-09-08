@@ -6,22 +6,29 @@
 using namespace std;
 int main(void)
 {
+	// runners in string format
 	string runner1;
 	string runner2;
 	string runner3;
+	//time variables, both for input and manipulation
 	struct std::tm time1, time2, time3;
 	struct std::tm when1, when2, when3;
+	//Start asking questions of who came when
 	cout << "First runners name?" << endl;
 	cin >> runner1;
 	cout << "Time?" << endl;
 	cout << "Please, enter the time: (Minute, Sec)" << endl;
 	cout << "Minute (By it self)" << endl;
+	//use get_time from <ctime> and store information based on format.
+	//minutes = %M
 	cin >> get_time(&when1, "%M");
 	cout << "Seconds (By it self)" << endl;
+	//seconds = %S
 	cin >> get_time(&when1, "%S");
-
+	//Assign input to manipulation variables, to combat garbage values.
 	time1.tm_min = when1.tm_min;
 	time1.tm_sec = when1.tm_sec;
+	//continue to next players with same method (function)
 	cout << "Second runners name?" << endl;
 	cin >> runner2;
 	cout << "Time? (min & sec)" << endl;
@@ -44,6 +51,7 @@ int main(void)
 
 	time3.tm_min = when3.tm_min;
 	time3.tm_sec = when3.tm_sec;
+	//comparing the min to other players, if player 1 is greater in minutes then automatic win (same for player 2 and 3)
 	if (time1.tm_min > time2.tm_min && time1.tm_min > time3.tm_min)
 	{
 
@@ -65,12 +73,16 @@ int main(void)
 		system("pause");
 		return(0);
 	}
+	//if minutes equal on all players
 	if (time3.tm_min == time2.tm_min && time3.tm_min == time1.tm_min)
 	{
+		// if minutes of player 1 is specifically equal to player 2 
 		if (time1.tm_min == time2.tm_min)
 		{
+			//then compare the seconds of player 1 with both player 2 and 3
 			if (time1.tm_sec > time2.tm_sec && time1.tm_sec > time3.tm_sec)
 			{
+				// if player one sec are greater then player one wins (supposed to find the least one not most shitt..)
 				cout << "Player : " << runner1 << " Wins! " << time1.tm_min << ":" << time1.tm_sec << endl;
 				system("pause");
 				return(0);
