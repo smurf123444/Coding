@@ -48,7 +48,7 @@ int main(void)
 
 	time3.tm_min = when3.tm_min;
 	time3.tm_sec = when3.tm_sec;
-	//comparing the min to other players, if player 1 is greater in minutes then automatic win (same for player 2 and 3)
+	//comparing the min to other players, if player 1 is less in minutes then automatic win (same for player 2 and 3)
 	if (time1.tm_min < time2.tm_min && time1.tm_min < time3.tm_min)
 	{
 
@@ -79,7 +79,7 @@ int main(void)
 			//then compare the seconds of player 1 with both player 2 and 3
 			if (time1.tm_sec < time2.tm_sec && time1.tm_sec < time3.tm_sec)
 			{
-				// if player one sec are greater then player one wins (supposed to find the least one not most shitt..)
+				// if player one sec are less then player one wins 
 				cout << "Player : " << runner1 << " Wins! " << time1.tm_min << ":" << time1.tm_sec << endl;
 				system("pause");
 				return(0);
