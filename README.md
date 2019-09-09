@@ -5,6 +5,12 @@ C:
 unions structures typedefs nodes linked lists rand
 
 C++:
+SCF: 
+CMAssignment1Drink.cpp
+CMAssignment1Tax.cpp
+CMtest.cpp
+
+Tutorials:
 arrays enum class pointers
 
 Haskell
@@ -13,7 +19,7 @@ vestingExample.hs
 gamingExample.hs
 examplePlutus.hs (commentated) 
 
-tutorials:
+Tutorials:
 haskell-tut.hs examples ; switch case where data math
 RealWorldHaskell examples : ch03
 
