@@ -16,7 +16,6 @@ int main(void)
 	//Start asking questions of who came when
 	cout << "First runners name?" << endl;
 	cin >> runner1;
-	cout << "Time?" << endl;
 	cout << "Please, enter the time: (Minute, Sec)" << endl;
 	cout << "Minute (By it self)" << endl;
 	//use get_time from <ctime> and store information based on format.
@@ -31,7 +30,6 @@ int main(void)
 	//continue to next players with same method (function)
 	cout << "Second runners name?" << endl;
 	cin >> runner2;
-	cout << "Time? (min & sec)" << endl;
 	cout << "Please, enter the time: (Minute, Sec) " << endl;
 	cout << "Minute (By it self)" << endl;
 	cin >> get_time(&when2, "%M");
@@ -42,7 +40,6 @@ int main(void)
 	time2.tm_sec = when2.tm_sec;
 	cout << "Third runners name?" << endl;
 	cin >> runner3;
-	cout << "Time? (min & sec)" << endl;
 	cout << "Please, enter the time: (Minute, Sec) " << endl;
 	cout << "Minute (By it self)" << endl;
 	cin >> get_time(&when3, "%M");
@@ -52,21 +49,21 @@ int main(void)
 	time3.tm_min = when3.tm_min;
 	time3.tm_sec = when3.tm_sec;
 	//comparing the min to other players, if player 1 is greater in minutes then automatic win (same for player 2 and 3)
-	if (time1.tm_min > time2.tm_min && time1.tm_min > time3.tm_min)
+	if (time1.tm_min < time2.tm_min && time1.tm_min < time3.tm_min)
 	{
 
 		cout << "Player : " << runner1 << " Wins! " << time1.tm_min << ":" << time1.tm_sec << endl;
 		system("pause");
 		return(0);
 	}
-	if (time2.tm_min > time1.tm_min && time2.tm_min > time3.tm_min)
+	if (time2.tm_min < time1.tm_min && time2.tm_min < time3.tm_min)
 	{
 
 		cout << "Player : " << runner2 << " Wins! " << time2.tm_min << ":" << time2.tm_sec << endl;
 		system("pause");
 		return(0);
 	}
-	if (time3.tm_min > time2.tm_min && time3.tm_min > time1.tm_min)
+	if (time3.tm_min < time2.tm_min && time3.tm_min < time1.tm_min)
 	{
 	
 		cout << "Player : " << runner3 << " Wins! " << time3.tm_min << ":" << time3.tm_sec << endl;
@@ -80,7 +77,7 @@ int main(void)
 		if (time1.tm_min == time2.tm_min)
 		{
 			//then compare the seconds of player 1 with both player 2 and 3
-			if (time1.tm_sec > time2.tm_sec && time1.tm_sec > time3.tm_sec)
+			if (time1.tm_sec < time2.tm_sec && time1.tm_sec < time3.tm_sec)
 			{
 				// if player one sec are greater then player one wins (supposed to find the least one not most shitt..)
 				cout << "Player : " << runner1 << " Wins! " << time1.tm_min << ":" << time1.tm_sec << endl;
@@ -90,7 +87,7 @@ int main(void)
 		}
 		if (time1.tm_min == time3.tm_min)
 		{
-			if (time1.tm_sec > time3.tm_sec && time1.tm_sec > time2.tm_sec)
+			if (time1.tm_sec < time3.tm_sec && time1.tm_sec < time2.tm_sec)
 			{
 				cout << "Player : " << runner1 << " Wins! " << time1.tm_min << ":" << time1.tm_sec << endl;
 				system("pause");
@@ -99,7 +96,7 @@ int main(void)
 		}
 		if (time2.tm_min == time1.tm_min)
 		{
-			if (time2.tm_sec > time1.tm_sec && time2.tm_sec > time3.tm_sec)
+			if (time2.tm_sec < time1.tm_sec && time2.tm_sec < time3.tm_sec)
 			{
 				cout << "Player : " << runner2 << " Wins! " << time2.tm_min << ":" << time2.tm_sec << endl;
 				system("pause");
@@ -108,7 +105,7 @@ int main(void)
 		}
 		if (time2.tm_min == time3.tm_min)
 		{
-			if (time2.tm_sec > time3.tm_sec && time2.tm_sec > time1.tm_sec)
+			if (time2.tm_sec < time3.tm_sec && time2.tm_sec < time1.tm_sec)
 			{
 				cout << "Player : " << runner2 << " Wins! " << time2.tm_min << ":" << time2.tm_sec << endl;
 				system("pause");
@@ -117,7 +114,7 @@ int main(void)
 		}
 		if (time3.tm_min == time2.tm_min)
 		{
-			if (time3.tm_sec > time2.tm_sec && time3.tm_sec > time1.tm_sec)
+			if (time3.tm_sec < time2.tm_sec && time3.tm_sec < time1.tm_sec)
 			{
 				cout << "Player : " << runner3 << " Wins! " << time3.tm_min << ":" << time3.tm_sec << endl;
 				system("pause");
@@ -126,7 +123,7 @@ int main(void)
 		}
 		if (time3.tm_min == time1.tm_min)
 		{
-			if (time3.tm_sec > time1.tm_sec && time3.tm_sec > time2.tm_sec)
+			if (time3.tm_sec < time1.tm_sec && time3.tm_sec < time2.tm_sec)
 			{
 				cout << "Player : " << runner3 << " Wins! " << time3.tm_min << ": " << time3.tm_sec << endl;
 				system("pause");
