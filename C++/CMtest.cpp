@@ -73,19 +73,19 @@ int main(void)
 	//if minutes equal on all players
 	if (time3.tm_min == time2.tm_min && time3.tm_min == time1.tm_min)
 	{
-		if (time1.tm_sec == time2.tm_sec)
+		if (time1.tm_sec == time2.tm_sec && time1.tm_sec != time3.tm_sec)
 		{
 			cout << "First Runner : " << runner1 << " tied with the Second Runner: " << runner2 << endl;
 			system("pause");
 			return (0);
 		}
-		if (time1.tm_sec == time3.tm_sec)
+		if (time1.tm_sec == time3.tm_sec && time1.tm_sec != time2.tm_sec)
 		{
 			cout << "First Runner : " << runner1 << " tied with the Third Runner: " << runner3 << endl;
 			system("pause");
 			return (0);
 		}
-		if (time3.tm_sec == time2.tm_sec)
+		if (time3.tm_sec == time2.tm_sec && time3.tm_sec != time1.tm_sec)
 		{
 			cout << "Second Runner : " << runner2 << " tied with the Third Runner: " << runner3 << endl;
 			system("pause");
@@ -93,7 +93,7 @@ int main(void)
 		}
 		if (time3.tm_sec == time2.tm_sec && time3.tm_sec == time1.tm_sec)
 		{
-			cout << runner1 << runner2 << runner3 << " all tied!" << time3.tm_min << ":" << time3.tm_sec << endl;
+			cout << runner1<< ", " << runner2<< ", & " << runner3 << " all tied! " << time3.tm_min << ":" << time3.tm_sec << endl;
 			system("pause");
 			return (0);
 		}
