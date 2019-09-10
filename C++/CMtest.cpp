@@ -10,6 +10,7 @@ int main(void)
 	string runner1;
 	string runner2;
 	string runner3;
+	int quit = 0;
 	//time variables, both for input and manipulation
 	struct std::tm time1, time2, time3;
 	struct std::tm when1, when2, when3;
@@ -17,37 +18,103 @@ int main(void)
 	cout << "First runners name?" << endl;
 	cin >> runner1;
 	cout << "Please, enter the time: (Minute, Sec)" << endl;
-	cout << "Minute (By it self)" << endl;
+	cout << "Minute (1-59)" << endl;
 	//use get_time from <ctime> and store information based on format.
 	//minutes = %M
-	cin >> get_time(&when1, "%M");
-	cout << "Seconds (By it self)" << endl;
+	cin >> when1.tm_min;
+
+	cout << "Seconds (1-59)" << endl;
 	//seconds = %S
-	cin >> get_time(&when1, "%S");
+	cin >> when1.tm_sec;
+
 	//Assign input to manipulation variables, to combat garbage values.
 	time1.tm_min = when1.tm_min;
 	time1.tm_sec = when1.tm_sec;
+	if (time1.tm_min < 0 && time1.tm_sec > 0)
+	{
+		cout << "Enter a non-negative number for Minute." << endl;
+		system("pause");
+		return (0);
+	}
+	if (time1.tm_sec < 0 && time1.tm_min > 0)
+	{
+		cout << "Enter a non-negative number for Second." << endl;
+		system("pause");
+		return (0);
+	}
+	if (time1.tm_sec < 0 && time1.tm_min < 0)
+	{
+		cout << "Enter a non-negative number for Second & Minute." << endl;
+		system("pause");
+		return (0);
+	}
 	//continue to next players with same method (function)
 	cout << "Second runners name?" << endl;
 	cin >> runner2;
 	cout << "Please, enter the time: (Minute, Sec) " << endl;
-	cout << "Minute (By it self)" << endl;
-	cin >> get_time(&when2, "%M");
-	cout << "Seconds (By it self)" << endl;
-	cin >> get_time(&when2, "%S");
+	cout << "Minute (1-59)" << endl;
+	//use get_time from <ctime> and store information based on format.
+	//minutes = %M
+	cin >> when2.tm_min;
 
+	cout << "Seconds (1-59)" << endl;
+	//seconds = %S
+	cin >> when2.tm_sec;
+
+	//Assign input to manipulation variables, to combat garbage values.
 	time2.tm_min = when2.tm_min;
 	time2.tm_sec = when2.tm_sec;
+	if (time2.tm_min < 0 && time2.tm_sec > 0)
+	{
+		cout << "Enter a non-negative number for Minute." << endl;
+		system("pause");
+		return (0);
+	}
+	if (time2.tm_sec < 0 && time2.tm_min > 0)
+	{
+		cout << "Enter a non-negative number for Second." << endl;
+		system("pause");
+		return (0);
+	}
+	if (time2.tm_sec < 0 && time2.tm_min < 0)
+	{
+		cout << "Enter a non-negative number for Second & Minute." << endl;
+		system("pause");
+		return (0);
+	}
 	cout << "Third runners name?" << endl;
 	cin >> runner3;
 	cout << "Please, enter the time: (Minute, Sec) " << endl;
-	cout << "Minute (By it self)" << endl;
-	cin >> get_time(&when3, "%M");
-	cout << "Seconds (By it self)" << endl;
-	cin >> get_time(&when3, "%S");
+	cout << "Minute (1-59)" << endl;
+	//use get_time from <ctime> and store information based on format.
+	//minutes = %M
+	cin >> when3.tm_min;
 
+	cout << "Seconds (1-59)" << endl;
+	//seconds = %S
+	cin >> when3.tm_sec;
+
+	//Assign input to manipulation variables, to combat garbage values.
 	time3.tm_min = when3.tm_min;
 	time3.tm_sec = when3.tm_sec;
+	if (time3.tm_min < 0 && time3.tm_sec > 0)
+	{
+		cout << "Enter a non-negative number for Minute." << endl;
+		system("pause");
+		return (0);
+	}
+	if (time3.tm_sec < 0 && time3.tm_min > 0)
+	{
+		cout << "Enter a non-negative number for Second." << endl;
+		system("pause");
+		return (0);
+	}
+	if (time3.tm_sec < 0 && time3.tm_min < 0)
+	{
+		cout << "Enter a non-negative number for Second & Minute." << endl;
+		system("pause");
+		return (0);
+	}
 	//comparing the min to other players, if player 1 is less in minutes then automatic win (same for player 2 and 3)
 	if (time1.tm_min < time2.tm_min && time1.tm_min < time3.tm_min)
 	{
@@ -155,6 +222,8 @@ int main(void)
 			}
 		}
 	}
+
+
 	system("pause");
 	return (0);
 }
