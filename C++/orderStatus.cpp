@@ -5,14 +5,20 @@ using namespace std;
 void take(int &order, int &stock, int &special)
 {
 	int orderref, stockref, specialref;
-	orderref = order;
-	stockref = stock;
-	specialref = special;
+	cout << "Number of spools Ordered : " << endl;
+	cin >> orderref;
+	order = orderref;
+	cout << "Number of spools in stock : " << endl;
+	cin >> stockref;
+	stock = stockref;
+	cout << "Special Shipping charges (with the standard 10$ shipping): " << endl;
+	cin >> specialref;
+	special = specialref;
 }
 void give(int &order, int &stock, int &shipping)
 {
 	int currentStock = 0, backOrder = 0, totalPrice = 0, totalShipping = 0, totalAmount = 0;
-	currentStock = stock - order ;
+	currentStock = stock - order;
 	totalPrice = currentStock * 100;
 	if (totalPrice < 0)
 	{
@@ -27,13 +33,9 @@ void give(int &order, int &stock, int &shipping)
 int main()
 {
 	int order, stock, specialref;
-	cout << "Number of spools Ordered : " << endl;
-	cin >> order;
-	cout << "Number of spools in stock : " << endl;
-	cin >> stock;
-	cout << "Special Shipping charges (with the standard 10$ shipping): " << endl;
-	cin >> specialref;
+	
 	take(order, stock, specialref);
+
 	give(order, stock, specialref);
 	system("pause");
 }
