@@ -8,7 +8,8 @@ C++:
 SCF: 
 CMAssignment1Drink.cpp
 CMAssignment1Tax.cpp
-CMtest.cpp
+CMAssignment2.cpp
+CMAssignment3.cpp
 
 Tutorials:
 arrays enum class pointers
