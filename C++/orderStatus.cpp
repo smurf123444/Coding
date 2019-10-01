@@ -1,13 +1,15 @@
-/*Christopher Manning Assignment #15 */
+/*Christopher Manning Assignment #15  Order Status 
+Tues 6-8:50 p.m. COP2224
+This program calculates the stock after and order has been made, as well as the shipping and total price.*/
 #include <iostream>
 
 using namespace std;
 //this function is will change the values in the main program using reference.
 void take(int &order, int &stock, int &special)
 {
-	//initialize the ints to use
+	//declare the ints to use
 	int orderref, stockref, specialref;
-	cout << "Welcome to Order Status, This Program will\ngenerate a Total amount and the Stock\nthat is left over as well as a Back Order log." << endl;
+	cout << "Welcome to Order Status, \nThis Program will generate a Total amount and the Stock\nthat is left over as well as a Back Order log." << endl;
 	cout << "Please enter the following..." << endl;
 	cout << "Number of spools Ordered : " << endl;
 	//take in the orderref and assing to order.
@@ -54,9 +56,9 @@ void give(int order, int stock, int shipping)
 int main()
 {
 	int order, stock, specialref;
-
+	//initiate function
 	take(order, stock, specialref);
-
+	//calculate results
 	give(order, stock, specialref);
 	system("pause");
 }
