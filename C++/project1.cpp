@@ -5,15 +5,22 @@ using namespace std;
 
 int main()
 {
-    int employeeNumber, location;
+    int employeeNumber, location, i;
     string firstName, lastName, jobTitle;
     double payRate,hoursWorked;
-    bool eligibleOvertime,quit = false;
+    bool eligibleOvertime,quit = false, quit1;
     while(!quit)
-    {
-        
+    {   
         cout << "Employee number?" << endl;
-        cin >> employeeNumber;
+        cin >> i;
+    if (i > 999999)
+    {
+        employeeNumber = i;
+        cout << "Employee number too long." << endl;      
+    }
+    else
+    {
+        employeeNumber = i;
         cout << "First Name?" << endl;
         cin >> firstName;
         cout << "Last Name?" << endl;
@@ -31,12 +38,11 @@ int main()
         cout << employeeNumber << "," << firstName << "," << lastName <<"," << location << "," << payRate << "," <<hoursWorked << "," << jobTitle << "," << eligibleOvertime <<endl;
         cout << "Quit? 1 for yes 0 for no" << endl;
         cin >> quit;
-    }
     fstream fs;
     fs.open("cop2224_proj1.txt", fstream::in | fstream::out | fstream::app | fstream::ate);
-
     fs << employeeNumber << "," << firstName << "," << lastName <<"," << location << "," << payRate << "," <<hoursWorked << "," << jobTitle << "," << eligibleOvertime <<endl;
     fs.close();
-    
+    }
+    }
     return (0);
 }
