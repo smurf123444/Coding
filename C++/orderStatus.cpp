@@ -46,8 +46,10 @@ void give(int order, int stock, int shipping)
 		//to not confuse the process.
 		totalShipping = (10 * stock) + shipping;
 	}
+	else{
 	//if the total price is not negative, then we must calculate what we need for shipping based on currentstock (i believe)
 	totalShipping = (10 * currentStock) + shipping;
+	}
 	//total amount is given the proper value of shipping + price.
 	totalAmount = totalShipping + totalPrice;
 
