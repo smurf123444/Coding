@@ -1,13 +1,56 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+//#include <io.h>
+#include <unistd.h>
 using namespace std;
+void cm_write(char c)
+{
+    write(1, &c, 1);
+}
+int cm_stringCount(char *c)
+{
+    int i;
+    while(c[i] != '/0')
+    {
+        i++;
+    }
+    return (i);
+}
+bool cm_hasSpace(char *c)
+{
+    int i;
+    while(c[i] != '/0')
+    {
+        while (c[i] != ' ')
+        {
+            i++;
+            if(c[i] == ' ')
+            {
+                return (0);
+            }
+            else
+            {
+                cout << "Does not have space" << endl;
+                return (1);
+            }
+        }
+    }
+}
+void cm_print(char *c)
+{
+    int i;
+    while(c[i] != '/0')
+    {
+        cm_write(c[i++]);
+    }
+}
 
 int main()
 {
     int employeeNumber, location, i;
-    string firstName, lastName, jobTitle;
-    double payRate,hoursWorked;
+    string firstName, lastName;
+    char payRate[4], *ptr, hoursWorked[2], jobTitle[9];
     bool eligibleOvertime,quit = false, quit1;
     while(!quit)
     {   
@@ -57,22 +100,26 @@ int main()
             default: cout << "Wrong input" << endl; 
         }
         cout << "Pay Rate ($$.$$)" << endl;
-        cin >> payRate;
-        if(payRate < 0)
+        if(cm_stringCount(payRate) < 4)
         {
-            cout << "Enter positive number for Pay Rate" << endl;
+            cout << "Enter 5 digits for Pay Rate" << endl;
         }
         else{
         cout << "Hours Worked" << endl;
         cin >> hoursWorked;
-        if (hoursWorked < 0)
+        if (cm_stringCount(hoursWorked) > 1)
         {
-            cout << "Enter positive number for Hours Worked" << endl;
+            cout << "Too Many Hours entered." << endl;
         }
         else{
         cout << "Job Title" << endl;
         cin >> jobTitle;
         //place job title code here.
+        if(cm_hasSpace(jobTitle) == 1)
+        {
+            cout << "Job Title Error" << endl;
+        }
+        else {
         cout << "Eligible for Overtime 1 = yes 0 = no" << endl;
         cin >> eligibleOvertime;
         if(eligibleOvertime != 0 && eligibleOvertime != 1)
@@ -83,6 +130,7 @@ int main()
         cout << employeeNumber << "," << firstName << "," << lastName <<"," << location << "," << payRate << "," <<hoursWorked << "," << jobTitle << "," << eligibleOvertime <<endl;
         cout << "Quit? 1 for yes 0 for no" << endl;
         cin >> quit;
+        }
         }
         }
         }
