@@ -24,13 +24,15 @@ void cm_print(char *c)
 	{
 		cm_write(c[i++]);
 	}
+	c[i] = '/0';
 }
 
 int main()
 {
 	int employeeNumber, location, i;
-	string firstName, lastName, overTime, locationString;
-	char payRate[4],  hoursWorked[2], jobTitle[20];
+	string firstName, lastName, overTime, locationString, payRate ;
+	struct gun;
+	char  hoursWorked[3], jobTitle[20];
 	char eligibleOvertime = 'Y';
 	bool quit = false;
 	while (!quit)
@@ -90,18 +92,14 @@ else {
 			break;
 		default: cout << "Wrong input" << endl;
 		}
-	cout << "Pay Rate ($$.$$)" << endl;
-	cin >> payRate;
 }
-if (cm_stringCount(payRate) < 4)
-{
-	cout << "pay rate error";
-}
-else 
-	{
-		cout << "Hours Worked" << endl;
-		cin >> hoursWorked;
-	}
+cout << "Pay Rate ($$.$$)" << endl;
+cin >> payRate;
+payRate[3] = '/0';
+
+cout << "Hours Worked" << endl;
+cin >> hoursWorked;
+
 if (cm_stringCount(hoursWorked) > 2)
 	{
 		cout << "Too Many Hours entered." << endl;
