@@ -4,8 +4,7 @@
 #include <locale>
 #include <algorithm>
 #include <cctype>
-//#include <io.h>
-#include <unistd.h>
+
 using namespace std;
 
 struct non_alpha 
