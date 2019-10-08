@@ -7,7 +7,6 @@ using namespace std;
 
 int main()
 {
-	non_alpha functor;
 	int employeeNumber, location, hoursWorked;
 	string firstName, lastName, overTime, locationString, jobTitle;
 	double payRate;
