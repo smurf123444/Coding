@@ -1,18 +1,23 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <locale>
+#include <algorithm>
 #include <cctype>
-
+//#include <io.h>
+#include <unistd.h>
 using namespace std;
 
+struct non_alpha 
+{
+    bool operator()(char c) {
+        return !std::isalpha(c);
+    }
+};
 int main()
 {
-<<<<<<< HEAD
 	non_alpha functor;
 	int employeeNumber, location, hoursWorked, i = 0;
-=======
-	int employeeNumber, location, hoursWorked;
->>>>>>> 51e1b03831d11f6fd5c8212336cdab87a83a265d
 	string firstName, lastName, overTime, locationString, jobTitle;
 	double payRate;
 	char eligibleOvertime = 'Y';
@@ -31,49 +36,31 @@ int main()
 		}
 		cout << "First Name?" << endl;
 		cin >> firstName;
-<<<<<<< HEAD
  bool contains = firstName.find("123456789") != string::npos;
 		while(contains == false)
-=======
-
-		if(//needs error check for String if has alpha...)
->>>>>>> 51e1b03831d11f6fd5c8212336cdab87a83a265d
 		{
 			
 			if(firstName[i] > '1' || firstName[i] < '9')
 			{
 			cout << "First Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> firstName;
-<<<<<<< HEAD
 			contains = firstName.find("123456789") != string::npos;
 			i = 0;
 			}
 			i++;
-=======
-			
->>>>>>> 51e1b03831d11f6fd5c8212336cdab87a83a265d
 		}	
 		cout << "Last Name?" << endl;
 		cin >> lastName;
 
-<<<<<<< HEAD
 		while(lastName[i] != '\0')
-=======
-		if(//needs error check for String if has alpha...)
->>>>>>> 51e1b03831d11f6fd5c8212336cdab87a83a265d
 		{
 			if(lastName[i] > 1 || lastName[i] < 9)
 			{
 			cout << "First Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> lastName;
-<<<<<<< HEAD
 			i++;
 			}
 		}	
-=======
-			
-		}
->>>>>>> 51e1b03831d11f6fd5c8212336cdab87a83a265d
 		cout << "Office Location(0 = Tampa; 1 = Sarasota; 2 = Orlando; 3 = Miami)" << endl;
 		cin >> location;
 
