@@ -1,18 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <locale>
-#include <algorithm>
 #include <cctype>
 
 using namespace std;
 
-struct non_alpha 
-{
-    bool operator()(char c) {
-        return !std::isalpha(c);
-    }
-};
 int main()
 {
 	non_alpha functor;
@@ -40,7 +32,7 @@ int main()
 		{
 			cout << "First Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> firstName;
-			contains_non_alpha = find_if(firstName.begin(), firstName.end(), non_alpha()) != firstName.end();
+			
 		}	
 		cout << "Last Name?" << endl;
 		cin >> lastName;
@@ -49,7 +41,7 @@ int main()
 		{
 			cout << "Last Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> lastName;
-			contains_non_alpha2 = find_if(lastName.begin(), lastName.end(), non_alpha()) != lastName.end();
+			
 		}
 		cout << "Office Location(0 = Tampa; 1 = Sarasota; 2 = Orlando; 3 = Miami)" << endl;
 		cin >> location;
