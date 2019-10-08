@@ -28,7 +28,7 @@ int main()
 		cout << "First Name?" << endl;
 		cin >> firstName;
 
-		if(//needs error check for Sting if has alpha...)
+		if(//needs error check for String if has alpha...)
 		{
 			cout << "First Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> firstName;
@@ -37,7 +37,7 @@ int main()
 		cout << "Last Name?" << endl;
 		cin >> lastName;
 
-		if(//needs error check for Sting if has alpha...)
+		if(//needs error check for String if has alpha...)
 		{
 			cout << "Last Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> lastName;
