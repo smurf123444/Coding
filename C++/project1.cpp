@@ -17,7 +17,7 @@ struct non_alpha
 int main()
 {
 	non_alpha functor;
-	int employeeNumber, location, hoursWorked;
+	int employeeNumber, location, hoursWorked, i = 0;
 	string firstName, lastName, overTime, locationString, jobTitle;
 	double payRate;
 	char eligibleOvertime = 'Y';
@@ -36,22 +36,31 @@ int main()
 		}
 		cout << "First Name?" << endl;
 		cin >> firstName;
-
-		if(//needs error check for Sting if has alpha...)
+ bool contains = firstName.find("123456789") != string::npos;
+		while(contains == false)
 		{
+			
+			if(firstName[i] > '1' || firstName[i] < '9')
+			{
 			cout << "First Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> firstName;
-			contains_non_alpha = find_if(firstName.begin(), firstName.end(), non_alpha()) != firstName.end();
+			contains = firstName.find("123456789") != string::npos;
+			i = 0;
+			}
+			i++;
 		}	
 		cout << "Last Name?" << endl;
 		cin >> lastName;
 
-		if(//needs error check for Sting if has alpha...)
+		while(lastName[i] != '\0')
 		{
-			cout << "Last Name contains a non alpha character, Enter correct Name" <<endl;
+			if(lastName[i] > 1 || lastName[i] < 9)
+			{
+			cout << "First Name contains a non alpha character, Enter correct Name" <<endl;
 			cin >> lastName;
-			contains_non_alpha2 = find_if(lastName.begin(), lastName.end(), non_alpha()) != lastName.end();
-		}
+			i++;
+			}
+		}	
 		cout << "Office Location(0 = Tampa; 1 = Sarasota; 2 = Orlando; 3 = Miami)" << endl;
 		cin >> location;
 
