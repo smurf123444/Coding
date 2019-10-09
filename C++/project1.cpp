@@ -1,7 +1,18 @@
+/*
+Here is a program designed for taking inputs of different variables used 
+to store into a .txt file using the fstream library and functions.
+We had to tell if the strings were only letters, and include a space in the job title.
+
+
+
+*/
+
+
 #include <iostream>
 #include <iomanip>  
 #include <fstream>
 #include <string>
+#include <sstream>
 
 
 using namespace std;
@@ -16,7 +27,7 @@ int main()
 {
 
 	int employeeNumber, location, hoursWorked, i = 0;
-	string firstName, lastName, overTime, locationString,jobTitle;
+	string firstName, lastName, overTime, locationString,jobTitle, employeeNumberString;
 	double payRate;
 	char eligibleOvertime = 'Y';
 	bool quit = false;
@@ -24,32 +35,45 @@ int main()
 
 	while (!quit)
 	{
-		
+		cout << "Welcome to the Project1 program!\nQuit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "Employee number?" << endl;
-		cin >> employeeNumber;
-
+		cin.ignore();
+		getline(cin, employeeNumberString);
+		stringstream(employeeNumberString) >> employeeNumber;
+		
 		while (employeeNumber > 999999 || employeeNumber < 100000)
 		{
-			cout << "Employee number too long or too short, Enter Correct Value" << endl;
+			
+			cout << "Employee number need to be between 100000 and 999999, Enter Correct Value" << endl;
 			cin >> employeeNumber;
+			
 		}
+		cout << "Quit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "First Name?" << endl;
 		cin >> firstName;
+		i = 0;
 		while (is_alpha(firstName) != true)
 		{
+			if(firstName[i] == 0)
+			{
+				quit = 0;
+			}
 			cout << "First Name contains a non alpha character, Enter correct Name" << endl;
 			cin >> firstName;
 		}
-
+		cout << "Quit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "Last Name?" << endl;
 		cin >> lastName;
-
 		while (is_alpha(lastName) != true)
 		{
 			cout << "Last Name contains a non alpha character, Enter correct Name" << endl;
 			cin >> lastName;
 		}
-
+		cout << "Quit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "Office Location(0 = Tampa; 1 = Sarasota; 2 = Orlando; 3 = Miami)" << endl;
 		cin >> location;
 
@@ -78,6 +102,8 @@ int main()
 			break;
 		default: cout << "Wrong input" << endl;
 		}
+		cout << "Quit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "Pay Rate ($$.$$)" << endl;
 		cin >> payRate;
 		while (payRate < 0 || payRate > 1000)
@@ -85,6 +111,8 @@ int main()
 			cout << "Enter a Valid number for pay rate" << endl;
 			cin >> payRate;
 		}
+		cout << "Quit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "Hours Worked" << endl;
 		cin >> hoursWorked;
 		while (hoursWorked < 0 || hoursWorked > 99)
@@ -92,9 +120,13 @@ int main()
 			cout << "Enter Valid work hours." << endl;
 			cin >> hoursWorked;
 		}
+		cout << "Quit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "Job Title" << endl;
 		cin.ignore();
 		getline(cin, jobTitle);
+		cout << "Quit? 1 for yes 0 for no" << endl;
+		cin >> quit;
 		cout << "Eligible for Overtime Y = yes N = no" << endl;
 		cin >> eligibleOvertime;
 		while (eligibleOvertime != 'Y' && eligibleOvertime != 'N')
