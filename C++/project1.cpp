@@ -1,10 +1,7 @@
 /*
-Here is a program designed for taking inputs of different variables used 
+Here is a program designed for taking inputs of different variables used
 to store into a .txt file using the fstream library and functions.
 We had to tell if the strings were only letters, and include a space in the job title.
-
-
-
 */
 
 
@@ -27,36 +24,47 @@ int main()
 {
 
 	int employeeNumber, location, hoursWorked, i = 0;
-	string firstName, lastName, overTime, locationString,jobTitle, employeeNumberString;
+	string firstName, lastName, overTime, locationString, jobTitle, employeeNumberString;
 	double payRate;
 	char eligibleOvertime = 'Y';
 	bool quit = false;
 
-
-	while (!quit)
-	{
-		cout << "Welcome to the Project1 program!\nQuit? 1 for yes 0 for no" << endl;
-		cin >> quit;
+	while (!quit) {
+		if (!quit)
+		{
+			cout << "Welcome to the Project1 program!\nQuit? 1 for yes 0 for no" << endl;
+			cin >> quit;
+			if (quit)
+			{
+				system("pause");
+				return (0);
+			}
+		}
 		cout << "Employee number?" << endl;
 		cin.ignore();
 		getline(cin, employeeNumberString);
 		stringstream(employeeNumberString) >> employeeNumber;
-		
+
 		while (employeeNumber > 999999 || employeeNumber < 100000)
 		{
-			
+
 			cout << "Employee number need to be between 100000 and 999999, Enter Correct Value" << endl;
 			cin >> employeeNumber;
-			
+
 		}
 		cout << "Quit? 1 for yes 0 for no" << endl;
 		cin >> quit;
+		if (quit)
+		{
+			system("pause");
+			return (0);
+		}
 		cout << "First Name?" << endl;
 		cin >> firstName;
 		i = 0;
 		while (is_alpha(firstName) != true)
 		{
-			if(firstName[i] == 0)
+			if (firstName[i] == 0)
 			{
 				quit = 0;
 			}
@@ -65,6 +73,11 @@ int main()
 		}
 		cout << "Quit? 1 for yes 0 for no" << endl;
 		cin >> quit;
+		if (quit)
+		{
+			system("pause");
+			return (0);
+		}
 		cout << "Last Name?" << endl;
 		cin >> lastName;
 		while (is_alpha(lastName) != true)
@@ -74,6 +87,11 @@ int main()
 		}
 		cout << "Quit? 1 for yes 0 for no" << endl;
 		cin >> quit;
+		if (quit)
+		{
+			system("pause");
+			return (0);
+		}
 		cout << "Office Location(0 = Tampa; 1 = Sarasota; 2 = Orlando; 3 = Miami)" << endl;
 		cin >> location;
 
@@ -104,6 +122,11 @@ int main()
 		}
 		cout << "Quit? 1 for yes 0 for no" << endl;
 		cin >> quit;
+		if (quit)
+		{
+			system("pause");
+			return (0);
+		}
 		cout << "Pay Rate ($$.$$)" << endl;
 		cin >> payRate;
 		while (payRate < 0 || payRate > 1000)
@@ -113,6 +136,11 @@ int main()
 		}
 		cout << "Quit? 1 for yes 0 for no" << endl;
 		cin >> quit;
+		if (quit)
+		{
+			system("pause");
+			return (0);
+		}
 		cout << "Hours Worked" << endl;
 		cin >> hoursWorked;
 		while (hoursWorked < 0 || hoursWorked > 99)
@@ -122,11 +150,21 @@ int main()
 		}
 		cout << "Quit? 1 for yes 0 for no" << endl;
 		cin >> quit;
+		if (quit)
+		{
+			system("pause");
+			return (0);
+		}
 		cout << "Job Title" << endl;
 		cin.ignore();
 		getline(cin, jobTitle);
 		cout << "Quit? 1 for yes 0 for no" << endl;
 		cin >> quit;
+		if (quit)
+		{
+			system("pause");
+			return (0);
+		}
 		cout << "Eligible for Overtime Y = yes N = no" << endl;
 		cin >> eligibleOvertime;
 		while (eligibleOvertime != 'Y' && eligibleOvertime != 'N')
@@ -144,11 +182,14 @@ int main()
 			break;
 		default: overTime = "Error";
 		}
-		//cout << "All values entered correctly" << endl;
-		cout << "All values entered correctly" << endl;
-		cout << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << overTime << endl;
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
+		if (!quit)
+		{
+			//cout << "All values entered correctly" << endl;
+			cout << "All values entered correctly" << endl;
+			cout << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << overTime << endl;
+			cout << "Quit? 1 for yes 0 for no" << endl;
+			cin >> quit;
+		}
 	}
 	fstream fs;
 	fs.open("cop2224_proj1.txt", fstream::in | fstream::out | fstream::app | fstream::ate);
