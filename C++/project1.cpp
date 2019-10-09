@@ -52,13 +52,7 @@ int main()
 			cin >> employeeNumber;
 
 		}
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
-		if (quit)
-		{
-			system("pause");
-			return (0);
-		}
+
 		cout << "First Name?" << endl;
 		cin >> firstName;
 		i = 0;
@@ -71,13 +65,7 @@ int main()
 			cout << "First Name contains a non alpha character, Enter correct Name" << endl;
 			cin >> firstName;
 		}
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
-		if (quit)
-		{
-			system("pause");
-			return (0);
-		}
+
 		cout << "Last Name?" << endl;
 		cin >> lastName;
 		while (is_alpha(lastName) != true)
@@ -85,13 +73,7 @@ int main()
 			cout << "Last Name contains a non alpha character, Enter correct Name" << endl;
 			cin >> lastName;
 		}
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
-		if (quit)
-		{
-			system("pause");
-			return (0);
-		}
+
 		cout << "Office Location(0 = Tampa; 1 = Sarasota; 2 = Orlando; 3 = Miami)" << endl;
 		cin >> location;
 
@@ -120,26 +102,12 @@ int main()
 			break;
 		default: cout << "Wrong input" << endl;
 		}
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
-		if (quit)
-		{
-			system("pause");
-			return (0);
-		}
 		cout << "Pay Rate ($$.$$)" << endl;
 		cin >> payRate;
 		while (payRate < 0 || payRate > 1000)
 		{
 			cout << "Enter a Valid number for pay rate" << endl;
 			cin >> payRate;
-		}
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
-		if (quit)
-		{
-			system("pause");
-			return (0);
 		}
 		cout << "Hours Worked" << endl;
 		cin >> hoursWorked;
@@ -148,23 +116,11 @@ int main()
 			cout << "Enter Valid work hours." << endl;
 			cin >> hoursWorked;
 		}
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
-		if (quit)
-		{
-			system("pause");
-			return (0);
-		}
+
 		cout << "Job Title" << endl;
 		cin.ignore();
 		getline(cin, jobTitle);
-		cout << "Quit? 1 for yes 0 for no" << endl;
-		cin >> quit;
-		if (quit)
-		{
-			system("pause");
-			return (0);
-		}
+
 		cout << "Eligible for Overtime Y = yes N = no" << endl;
 		cin >> eligibleOvertime;
 		while (eligibleOvertime != 'Y' && eligibleOvertime != 'N')
@@ -187,7 +143,7 @@ int main()
 			//cout << "All values entered correctly" << endl;
 			cout << "All values entered correctly" << endl;
 			cout << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << overTime << endl;
-			cout << "Quit? 1 for yes 0 for no" << endl;
+			cout << "add another employee record? 1 for no 0 for yes" << endl;
 			cin >> quit;
 		}
 	}
