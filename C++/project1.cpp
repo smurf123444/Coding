@@ -1,23 +1,22 @@
 #include <iostream>
+#include <iomanip>  
 #include <fstream>
 #include <string>
-#include <locale>
-#include <algorithm>
-#include <cctype>
-//#include <io.h>
-//#include <unistd.h>
+
+
 using namespace std;
-bool is_alpha(const std::string& s)
+
+bool is_alpha(const string& s)
 {
-	std::string::const_iterator it = s.begin();
-	while (it != s.end() && std::isalpha(*it)) ++it;
+	string::const_iterator it = s.begin();
+	while (it != s.end() && isalpha(*it)) ++it;
 	return !s.empty() && it == s.end();
 }
 int main()
 {
 
 	int employeeNumber, location, hoursWorked, i = 0;
-	string firstName, lastName, overTime, locationString, jobTitle;
+	string firstName, lastName, overTime, locationString,jobTitle;
 	double payRate;
 	char eligibleOvertime = 'Y';
 	bool quit = false;
@@ -25,6 +24,7 @@ int main()
 
 	while (!quit)
 	{
+		
 		cout << "Employee number?" << endl;
 		cin >> employeeNumber;
 
@@ -93,20 +93,15 @@ int main()
 			cin >> hoursWorked;
 		}
 		cout << "Job Title" << endl;
-		cin >> jobTitle;
-		//place job title code here.
-		if (jobTitle.empty())
-		{
-			cout << "Does not Job Title" << endl;
-		}
-
-		while (is_alpha(jobTitle) != true)
-		{
-			cout << "Jon Title contains a non alpha character. Enter another job title" << endl;
-			cin >> jobTitle;
-		}
+		cin.ignore();
+		getline(cin, jobTitle);
 		cout << "Eligible for Overtime Y = yes N = no" << endl;
 		cin >> eligibleOvertime;
+		while (eligibleOvertime != 'Y' && eligibleOvertime != 'N')
+		{
+			cout << "The overtime is not an alpha character." << endl;
+			cin >> eligibleOvertime;
+		}
 		switch (eligibleOvertime)
 		{
 		case 'N': overTime = "No";
@@ -116,14 +111,6 @@ int main()
 			cout << "True" << endl;
 			break;
 		default: overTime = "Error";
-		}
-		if (eligibleOvertime != 'N' && eligibleOvertime != 'Y')
-		{
-			while (eligibleOvertime != 'N' && eligibleOvertime != 'Y')
-			{
-				cout << "Enter Correct Value (N or Y)" << endl;
-				cin >> eligibleOvertime;
-			}
 		}
 		//cout << "All values entered correctly" << endl;
 		cout << "All values entered correctly" << endl;
