@@ -7,14 +7,10 @@ Here is a program designed for taking inputs of different variables used
 to store into a .txt file using the fstream library and functions.
 We had to tell if the strings were only letters, and include a space in the job title.
 */
-
-
 #include <iostream> 
 #include <fstream>
 #include <string>
 #include <sstream>
-
-
 using namespace std;
 //function for reading string into new const variable to properly iterate through to the end using string functions.
 bool is_alpha(const string& s)
@@ -151,16 +147,15 @@ int main()
 		//if haven't quit. (unneccessary)
 		if (!quit)
 		{
-			//cout << "All values entered correctly" << endl;
+			fstream fs;
+			fs.open("cop2224_proj1.txt", fstream::in | fstream::out | fstream::ate);
+			fs << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << overTime << endl;
+			fs.close();
 			cout << "All values entered correctly" << endl;
 			cout << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << overTime << endl;
 			cout << "add another employee record? \n1 for No 0 for Yes" << endl;
 			cin >> quit;
 		}
 	}
-	fstream fs;
-	fs.open("cop2224_proj1.txt", fstream::in | fstream::out | fstream::ate);
-	fs << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << overTime << endl;
-	fs.close();
 	return (0);
 }
