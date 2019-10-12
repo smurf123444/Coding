@@ -1,8 +1,7 @@
 /*
-Christopher Manning 
+Christopher Manning
 project1.cpp
 COP2224 Tues 6P.M.-8:50P.M.
-
 Here is a program designed for taking inputs of different variables used
 to store into a .txt file using the fstream library and functions.
 We had to tell if the strings were only letters, and include a space in the job title.
@@ -21,13 +20,13 @@ bool is_alpha(const string& s)
 }
 int main()
 {
-//declare our variables
+	//declare our variables
 	int employeeNumber, location, hoursWorked, i = 0;
 	string firstName, lastName, overTime, locationString, jobTitle, employeeNumberString;
 	double payRate;
 	char eligibleOvertime = 'Y';
 	bool quit = false;
-//loop for program to not quit after each question.
+	//loop for program to not quit after each question.
 	while (!quit) {
 		//allow user to quit early.
 		if (!quit)
@@ -50,7 +49,9 @@ int main()
 		{
 
 			cout << "Employee number need to be between 100000 and 999999, Enter Correct Value" << endl;
-			cin >> employeeNumber;
+			
+			getline(cin, employeeNumberString);
+			stringstream(employeeNumberString) >> employeeNumber;
 
 		}
 		//ask for first name
@@ -63,7 +64,7 @@ int main()
 			cout << "First Name contains a non alpha character, Enter correct Name" << endl;
 			cin >> firstName;
 		}
-	//ask for last name
+		//ask for last name
 		cout << "Last Name?" << endl;
 		cin >> lastName;
 		//if last name has anything besides letters
