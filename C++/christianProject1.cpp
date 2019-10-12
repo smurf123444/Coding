@@ -166,13 +166,14 @@ double hoursWorked() {
 	string hoursWorked;// employee hours worked 
 	cout << fixed << setprecision(2) << endl;
 	cout << "please enter the number of hours worked by the employee:" << endl;
-	cin.ignore();
+
 	getline(cin, hoursWorked);
+	stringstream(hoursWorked) >> hw;
 	//stringstream(hoursWorked) >> hw;
-	while (is_number(hoursWorked) != true)
+	while (hw < 0 || hw > 99)
 	{
 		cout << "please re-enter the number of hours worked by the employee:" << endl;
-		cin.ignore();
+		
 		getline(cin, hoursWorked);
 	}
 	cout << "" << endl;
