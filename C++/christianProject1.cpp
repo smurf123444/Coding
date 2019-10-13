@@ -184,14 +184,25 @@ string jobTitle() {
 
 
 string eligibleForOT() {
-	string oT;
-	cout << "Please enter 'Y' or 'N' if the employee is eligible for overtime:" << endl;
-
-	getline(cin, oT);
-	while (oT[0] != 'Y' || oT[0] != 'N')
+	string inputOvertime, outputOvertime;
+	cout << "Eligible for Overtime Y = yes N = no" << endl;
+	//if not Y or N
+	getline(cin, inputOvertime);
+	while (inputOvertime[0] != 'Y' && inputOvertime[0] != 'N')
 	{
-		cout << "Please enter 'Y' or 'N' if the employee is eligible for overtime: " << endl;
-		getline(cin, oT);
+		cout << "Enter either Y or N, not " << inputOvertime[0] << endl;
+		cin >> inputOvertime;
 	}
-	return oT;
+	//switch case for eligible overtime after error checks.
+	switch (inputOvertime[0])
+	{
+	case 'N': outputOvertime = "No";
+		cout << "False" << endl;
+		break;
+	case 'Y': outputOvertime = "Yes";
+		cout << "True" << endl;
+		break;
+	default: outputOvertime = "Error";
+	}
+	return outputOvertime;
 }
