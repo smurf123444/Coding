@@ -186,7 +186,7 @@ string jobTitle() {
 string eligibleForOT() {
 	string oT;
 	cout << "Please enter 'Y' or 'N' if the employee is eligible for overtime:" << endl;
-	cin.ignore();
+
 	getline(cin, oT);
 	while (oT[0] != 'Y' || oT[0] != 'N')
 	{
