@@ -1,5 +1,4 @@
 
-
 #include<iostream>
 #include <sstream>
 #include<fstream>// needed to use files
@@ -15,36 +14,36 @@ string officeLocation();
 double payRate();
 double hoursWorked();
 string jobTitle();
-char eligibleForOT();
+string eligibleForOT();
 
 
 int main() {
 	bool i;
 	bool quit = false;
 	while (!quit) {
-		
+
 		cout << "Welcome to the program. 1 for Exit 0 for Continue.." << endl;
 		cin >> i;
 		if (i == true)
 		{
 			return 0;
 		}
-				// Open the output file
-				ofstream outputFile;
-				outputFile.open("cop2224_proj1.txt"); // Open outputFile
-				outputFile << employeeNum() << ",";
-				outputFile << Fname() << ",";
-				outputFile << Lname() << ",";
-				outputFile << officeLocation() << ",";
-				outputFile << payRate() << ",";
-				outputFile << hoursWorked() << ",";
-				outputFile << jobTitle() << ",";
-				outputFile << eligibleForOT() << "";
+		// Open the output file
+		ofstream outputFile;
+		outputFile.open("cop2224_proj1.txt"); // Open outputFile
+		outputFile << employeeNum() << ",";
+		outputFile << Fname() << ",";
+		outputFile << Lname() << ",";
+		outputFile << officeLocation() << ",";
+		outputFile << payRate() << ",";
+		outputFile << hoursWorked() << ",";
+		outputFile << jobTitle() << ",";
+		outputFile << eligibleForOT() << "";
 
-				outputFile.close();
-				cout << "Ready to quit? 1 for yes 0 for no." << endl;
-				cin >> quit;
-			}
+		outputFile.close();
+		cout << "Ready to quit? 1 for yes 0 for no." << endl;
+		cin >> quit;
+	}
 	return (0);
 }
 bool is_alpha(const string& s)
@@ -184,14 +183,15 @@ string jobTitle() {
 }
 
 
-char eligibleForOT() {
-	char oT;
+string eligibleForOT() {
+	string oT;
 	cout << "Please enter 'Y' or 'N' if the employee is eligible for overtime:" << endl;
-	cin >> oT;
-	while (oT != 'Y' || oT != 'N')
+	cin.ignore();
+	getline(cin, oT);
+	while (oT[0] != 'Y' || oT[0] != 'N')
 	{
 		cout << "Please enter 'Y' or 'N' if the employee is eligible for overtime: " << endl;
-		cin >> oT;
+		getline(cin, oT);
 	}
 	return oT;
 }
