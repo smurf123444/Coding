@@ -19,15 +19,45 @@ bool is_alpha(const string& s)
 	while (it != s.end() && isalpha(*it)) ++it;
 	return !s.empty() && it == s.end();
 }
+int employeeNumber()
+{
+	int employeeNumber;
+	string employeeNumberString;
+	bool ready = false;
+	cout << "Employee number?" << endl;
+	cin.ignore();
+	getline(cin, employeeNumberString);
+	// to check if it is a valid entry according to a 6 digit number.
+	while (!ready)
+	{
+		if (is_alpha(employeeNumberString) == true)
+		{
+			ready = false;
+			cout << "Enter number with out letters." << endl;
+			getline(cin, employeeNumberString);
+		}
+		stringstream(employeeNumberString) >> employeeNumber;
+		if ((employeeNumber < 100000 || employeeNumber > 999999) && is_alpha(employeeNumberString) != true)
+		{
+			ready = false;
+			cout << "Enter number between 10000 and 999999" << endl;
+			getline(cin, employeeNumberString);
+		}
+		if ((employeeNumber > 100000 || employeeNumber < 999999) && is_alpha(employeeNumberString) != true)
+		{
+			ready = true;
+		}
+	}
+	return (employeeNumber);
+}
 int main()
 {
 	//declare our variables
-	int employeeNumber, location, hoursWorked;
+	int location, hoursWorked, employeeInt;
 	string firstName, lastName, outputOvertime, inputOvertime, locationString, jobTitle, payRateString, hoursWorkedString, employeeNumberString;
-	char hoursWorkedChar[2];
-	locale loc ,loc2;
+	locale loc, loc2;
 	double payRate;
-	bool quit = false;
+	bool quit = false, ready = false;
 	//loop for program to not quit after each question.
 	while (!quit) {
 		//allow user to quit early.
@@ -42,20 +72,7 @@ int main()
 			}
 		}
 		//ask for employee number to be stored in a string then turned into a int
-		cout << "Employee number?" << endl;
-		cin.ignore();
-		getline(cin, employeeNumberString);
-		stringstream(employeeNumberString) >> employeeNumber;
-		// to check if it is a valid entry according to a 6 digit number.
-		while (employeeNumber > 999999 || employeeNumber < 100000)
-		{
-
-			cout << "Employee number need to be between 100000 and 999999, Enter Correct Value" << endl;
-
-			getline(cin, employeeNumberString);
-			stringstream(employeeNumberString) >> employeeNumber;
-
-		}
+		employeeInt = employeeNumber();
 		//ask for first name
 		cout << "First Name?" << endl;
 		cin >> firstName;
@@ -126,7 +143,7 @@ int main()
 		stringstream(hoursWorkedString) >> hoursWorked;
 
 		//check if hours worked is above 99 or below 0
-		while (is_alpha(hoursWorkedString) == true) 
+		while (is_alpha(hoursWorkedString) == true)
 		{
 			getline(cin, hoursWorkedString);
 			stringstream(hoursWorkedString) >> hoursWorked;
@@ -144,7 +161,7 @@ int main()
 		cout << "Eligible for Overtime Y = yes N = no" << endl;
 		//if not Y or N
 		getline(cin, inputOvertime);
-		while (inputOvertime[0] != 'Y' && inputOvertime[0] != 'N' )
+		while (inputOvertime[0] != 'Y' && inputOvertime[0] != 'N')
 		{
 			cout << "Enter either Y or N, not " << inputOvertime[0] << endl;
 			cin >> inputOvertime;
@@ -165,10 +182,10 @@ int main()
 		{
 			fstream fs;
 			fs.open("cop2224_proj1.txt", fstream::in | fstream::out | fstream::ate);
-			fs << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << outputOvertime << endl;
+			fs << employeeInt << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << outputOvertime << endl;
 			fs.close();
 			cout << "All values entered correctly" << endl;
-			cout << employeeNumber << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << outputOvertime << endl;
+			cout << employeeInt << "," << firstName << "," << lastName << "," << locationString << "," << payRate << "," << hoursWorked << "," << jobTitle << "," << outputOvertime << endl;
 			cout << "add another employee record? \n1 for No 0 for Yes" << endl;
 			cin >> quit;
 		}
