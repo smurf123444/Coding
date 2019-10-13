@@ -40,10 +40,10 @@ int employeeNumber()
 		if ((employeeNumber < 100000 || employeeNumber > 999999) && is_alpha(employeeNumberString) != true)
 		{
 			ready = false;
-			cout << "Enter number between 10000 and 999999" << endl;
+			cout << "Enter number between 10000 and 999999 not" << employeeNumberString << endl;
 			getline(cin, employeeNumberString);
 		}
-		if ((employeeNumber > 100000 || employeeNumber < 999999) && is_alpha(employeeNumberString) != true)
+		if ((employeeNumber > 100000 && employeeNumber < 999999) && is_alpha(employeeNumberString) != true)
 		{
 			ready = true;
 		}
