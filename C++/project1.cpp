@@ -130,8 +130,8 @@ int main()
 		getline(cin, payRateString);
 		stringstream(payRateString) >> payRate;
 		//if pay rate is negative or over 1000
-		while ((payRate < 0 || payRate > 99.99) || (is_alpha(payRateString) == true) ||
-			((payRateString.length() > 5 || payRateString.length() < 5) && payRateString[3] != '.'))
+		while ((isalpha(payRateString[1]) == true || isalpha(payRateString[3]) == true || isalpha(payRateString[4]) == true || isalpha(payRateString[2]) == true)||
+				(payRate < 0 || payRate > 99.99) || ((payRateString.length() > 5 || payRateString.length() < 5) && payRateString[3] != '.'))
 		{
 			cout << "Enter a Valid number for pay rate" << endl;
 			getline(cin, payRateString);
@@ -143,7 +143,7 @@ int main()
 		stringstream(hoursWorkedString) >> hoursWorked;
 
 		//check if hours worked is above 99 or below 0
-		while (is_alpha(hoursWorkedString) == true || hoursWorkedString.length() > 2 || isalpha(hoursWorkedString[1]))
+		while (is_alpha(hoursWorkedString) == true || hoursWorkedString.length() > 2 || isalpha(hoursWorkedString[1]) || isalpha(hoursWorkedString[0]))
 		{
 			cout << "Enter correct valuse for hours worked.. not " << hoursWorkedString << endl;
 			getline(cin, hoursWorkedString);
