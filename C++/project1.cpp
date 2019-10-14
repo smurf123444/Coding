@@ -143,8 +143,9 @@ int main()
 		stringstream(hoursWorkedString) >> hoursWorked;
 
 		//check if hours worked is above 99 or below 0
-		while (is_alpha(hoursWorkedString) == true)
+		while (is_alpha(hoursWorkedString) == true || hoursWorkedString.length() > 2 || isalpha(hoursWorkedString[1]))
 		{
+			cout << "Enter correct valuse for hours worked.. not " << hoursWorkedString << endl;
 			getline(cin, hoursWorkedString);
 			stringstream(hoursWorkedString) >> hoursWorked;
 		}
