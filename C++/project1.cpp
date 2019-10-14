@@ -7,7 +7,6 @@ to store into a .txt file using the fstream library and functions.
 We had to tell if the strings were only letters, and include a space in the job title.
 */
 #include <iostream> 
-
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -30,14 +29,14 @@ int employeeNumber()
 	// to check if it is a valid entry according to a 6 digit number.
 	while (!ready)
 	{
-		if (is_alpha(employeeNumberString) == true || isalpha(employeeNumberString[6]) == true)
+		if ( isalpha(employeeNumberString[6]) == true || isalpha(employeeNumberString[1]) == true || is_alpha(employeeNumberString) == true)
 		{
 			ready = false;
 			cout << "Enter number with out letters." << endl;
 			getline(cin, employeeNumberString);
 		}
 		stringstream(employeeNumberString) >> employeeNumber;
-		if ((employeeNumber < 100000 || employeeNumber > 999999) && is_alpha(employeeNumberString) != true)
+		if ((employeeNumber < 100000 || employeeNumber > 999999 || employeeNumberString.length() > 6) && is_alpha(employeeNumberString) != true)
 		{
 			ready = false;
 			cout << "Enter number between 10000 and 999999 not " << employeeNumberString << endl;
