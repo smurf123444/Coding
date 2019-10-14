@@ -54,7 +54,6 @@ int main()
 	//declare our variables
 	int location, hoursWorked, employeeInt;
 	string firstName, lastName, outputOvertime, inputOvertime, locationString, jobTitle, payRateString, hoursWorkedString, employeeNumberString;
-	locale loc, loc2;
 	double payRate;
 	bool quit = false, ready = false;
 	//loop for program to not quit after each question.
@@ -148,12 +147,6 @@ int main()
 			getline(cin, hoursWorkedString);
 			stringstream(hoursWorkedString) >> hoursWorked;
 		}
-		/*while ((hoursWorked < 0 || hoursWorked > 99) || (isalpha(hoursWorkedString[1]) || (is_alpha(hoursWorkedString))))
-		{
-			cout << "Enter Valid work hours in between 0 and 99" << endl;
-			getline(cin, hoursWorkedString);
-			stringstream(hoursWorkedString) >> hoursWorked;
-		}*/
 		//ask for job title in string format to be stored using getline.
 		cout << "Job Title" << endl;
 		getline(cin, jobTitle);
