@@ -29,7 +29,7 @@ int employeeNumber()
 	// to check if it is a valid entry according to a 6 digit number.
 	while (!ready)
 	{
-		if ( isalpha(employeeNumberString[6]) == true || isalpha(employeeNumberString[1]) == true || is_alpha(employeeNumberString) == true)
+		if (isalpha(employeeNumberString[6]) == true || isalpha(employeeNumberString[1]) == true || is_alpha(employeeNumberString) == true)
 		{
 			ready = false;
 			cout << "Enter number with out letters." << endl;
@@ -128,8 +128,9 @@ int main()
 		getline(cin, payRateString);
 		stringstream(payRateString) >> payRate;
 		//if pay rate is negative or over 1000
-		while ((isalpha(payRateString[1]) == true || isalpha(payRateString[3]) == true || isalpha(payRateString[4]) == true || isalpha(payRateString[2]) == true)||
-				(payRate < 0 || payRate > 99.99) || ((payRateString.length() > 5 || payRateString.length() < 5) && payRateString[3] != '.'))
+		while ((isalpha(payRateString[1]) == true || isalpha(payRateString[3]) == true || isalpha(payRateString[4]) == true ||
+						isalpha(payRateString[2]) == true || payRate < 0 || payRate > 99.99 ||
+					payRateString.length() > 5 || payRateString.length() < 5 || payRateString[3] != '.'))
 		{
 			cout << "Enter a Valid number for pay rate" << endl;
 			getline(cin, payRateString);
