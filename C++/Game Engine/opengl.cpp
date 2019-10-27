@@ -6,9 +6,9 @@ class Geeks
     private:
     
     // Data Members 
-    int itemNumber;
-    int quantity;
-    double cost;
+    int itemNumber = 0;
+    int quantity = 0;
+    double cost = 0;
     public: 
     // Member Functions() 
     int getItemNumber(){
@@ -26,31 +26,29 @@ class Geeks
         i = cost;
         return i;
     }
+     void resetZero() 
+     { 
+       itemNumber = 0;
+       quantity = 0;
+       cost = 0;
+     } 
+    double retVal(int item, int quantity, double cost)
+     {
+         item = getItemNumber();
+         quantity = getQuantity();
+         cost = getCost();
+         cout << " Quantity: " << item << " Item #: " << quantity << " Cost: " << cost << endl; 
+         return (0);
+     }
     void setTotalCost(){
-       
         cout << "Item #" << endl;
         cin >> itemNumber;
         cout << "Quantity" << endl;
         cin >> quantity;
         cout << "Total Cost" << endl;
         cin >> cost;
+        retVal(itemNumber, quantity, cost);
      }
-     void setZero() 
-     { 
-       itemNumber = 0;
-       quantity = 0;
-       cost = 0;
-     } 
-     double retVal(int item, int quantity, double cost)
-     {
-         int i, q;
-         double c;
-         i = item;
-         q = quantity;
-         c = cost;
-         return (0);
-     }
-    
 }; 
   
 int main() { 
@@ -60,7 +58,7 @@ int main() {
   
     // accessing data member 
     obj1.setTotalCost(); 
-    cout << " Quantity: " << obj1.getQuantity() << " Item #: " << obj1.getItemNumber()<< " Cost: " << obj1.getCost() << endl; 
+    obj1.resetZero();
     // accessing member function 
   
     return 0; 
