@@ -39,8 +39,8 @@ class Inventory
     void getTotalCost(int item, int quantity, double cost)
      {
          double costTotal;
-         costTotal = quantity * item;
-         cout << " Item #: " << getItemNumber(item) << endl;
+         costTotal = quantity * cost;
+         cout << " Item ID#: " << getItemNumber(item) << endl;
          cout << " Quantity: " << getQuantity(quantity) << endl;
          cout << " Cost Per: " << getCost(cost) << endl;
          cout << " Cost Total: " << costTotal << endl;
