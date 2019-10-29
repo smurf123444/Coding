@@ -29,16 +29,39 @@ class Inventory
        quantity = 0;
        cost = 0;
      }
-    double retVal(int item, int quantity, double cost)
+    double getTotalCost(int item, int quantity, double cost)
      {
-         cout << " Quantity: " << getItemNumber(item) << " Item #: " << getQuantity(quantity) << " Cost: " << getCost(cost) << endl; 
+         cost = quantity * item;
+         cout << " Item #: " << getItemNumber(item) << endl;
+         cout << " Quantity: " << getQuantity(quantity) << endl;
+         cout << " Cost: " << getCost(cost) << endl;
          return (0);
      }
 };  
 int main() {
     Inventory obj1;
-    int item = 20, quantity = 40;
-    double count = 60;
-    obj1.retVal(item,quantity,count);
+    int i, q;
+    double c;
+    bool quit = false;
+    cout << "Welcome to Assignment 4" << endl;
+    cout << "This program is designed to calculate total cost from quantity and item number" <<endl;
+    cout << "Press 0 to Continue and Press 1 to Quit" << endl;
+    cin >> quit;
+    if(quit){
+        return (0);
+    }
+    while (!quit)
+    {
+    cout << "Step #" << endl;
+    cout << "1. Enter the Inventory" << endl;
+    cin >> i;
+    cout << "2. Enter the Quantity" << endl;
+    cin >> q;
+    cout << "3. Enter the Cost" << endl;
+    cin >> c;
+    obj1.getTotalCost(obj1.getItemNumber(i),obj1.getQuantity(q),obj1.getCost(c));
+    cout << "Press 0 to Continue and Press 1 to Quit" << endl;
+    cin >> quit;
+    }
     return 0; 
 } 
