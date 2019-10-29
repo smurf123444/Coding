@@ -29,13 +29,12 @@ class Inventory
        quantity = 0;
        cost = 0;
      }
-    double getTotalCost(int item, int quantity, double cost)
+    void getTotalCost(int item, int quantity, double cost)
      {
          cost = quantity * item;
          cout << " Item #: " << getItemNumber(item) << endl;
          cout << " Quantity: " << getQuantity(quantity) << endl;
          cout << " Cost: " << getCost(cost) << endl;
-         return (0);
      }
 };  
 int main() {
