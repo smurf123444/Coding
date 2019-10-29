@@ -1,65 +1,44 @@
 #include <iostream>
 using namespace std; 
-class Geeks 
+class Inventory 
 { 
     // Access specifier 
-    private:
-    
+    private: 
     // Data Members 
-    int itemNumber = 0;
-    int quantity = 0;
-    double cost = 0;
+    int itemNumber;
+    int quantity;
+    double cost;
     public: 
     // Member Functions() 
-    int getItemNumber(){
-        int i = 0;
-        i = itemNumber;
-        return i;
+    int getItemNumber(int in){
+        itemNumber = in;
+        return itemNumber;
     }
-    int getQuantity(){
-        int i = 0;
-        i = quantity;
-        return i;
+    int getQuantity(int qn){
+        quantity = qn;
+        return quantity;
     }
-    double getCost(){
-        double i = 0;
-        i = cost;
-        return i;
+    double getCost(double c){
+        cost = c;
+        return cost;
     }
-     void resetZero() 
+    //default constructor
+     Inventory() 
      { 
        itemNumber = 0;
        quantity = 0;
        cost = 0;
-     } 
+     }
     double retVal(int item, int quantity, double cost)
      {
-         item = getItemNumber();
-         quantity = getQuantity();
-         cost = getCost();
-         cout << " Quantity: " << item << " Item #: " << quantity << " Cost: " << cost << endl; 
+         cout << " Quantity: " << getItemNumber(item) << " Item #: " << getQuantity(quantity) << " Cost: " << getCost(cost) << endl; 
          return (0);
      }
-    void setTotalCost(){
-        cout << "Item #" << endl;
-        cin >> itemNumber;
-        cout << "Quantity" << endl;
-        cin >> quantity;
-        cout << "Total Cost" << endl;
-        cin >> cost;
-        retVal(itemNumber, quantity, cost);
-     }
-}; 
-  
-int main() { 
-  
-    // Declare an object of class geeks 
-    Geeks obj1; 
-  
-    // accessing data member 
-    obj1.setTotalCost(); 
-    obj1.resetZero();
-    // accessing member function 
-  
+};  
+int main() {
+    Inventory obj1;
+    int item = 20, quantity = 40;
+    double count = 60;
+    obj1.retVal(item,quantity,count);
     return 0; 
 } 
