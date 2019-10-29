@@ -1,3 +1,10 @@
+/*
+Christopher Manning 
+Assignment #4: Inventory Class
+Page 501 Problem #7
+COP2224 Tues 6-8:50 p.m.
+*/
+
 #include <iostream>
 using namespace std; 
 class Inventory 
