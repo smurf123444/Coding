@@ -38,10 +38,12 @@ class Inventory
      }
     void getTotalCost(int item, int quantity, double cost)
      {
-         cost = quantity * item;
+         double costTotal;
+         costTotal = quantity * item;
          cout << " Item #: " << getItemNumber(item) << endl;
          cout << " Quantity: " << getQuantity(quantity) << endl;
-         cout << " Cost: " << getCost(cost) << endl;
+         cout << " Cost Per: " << getCost(cost) << endl;
+         cout << " Cost Total: " << costTotal << endl;
      }
 };  
 int main() {
@@ -49,9 +51,9 @@ int main() {
     int i, q;
     double c;
     bool quit = false;
-    cout << "Welcome to Assignment 4" << endl;
-    cout << "This program is designed to calculate total cost from quantity and item number" <<endl;
-    cout << "Press 0 to Continue and Press 1 to Quit" << endl;
+    cout << " Welcome to Assignment 4 " << endl;
+    cout << " This program is designed to calculate total cost (quantity * item number) " <<endl;
+    cout << " Press 0 to Continue and Press 1 to Quit " << endl;
     cin >> quit;
     if(quit){
         return (0);
@@ -63,7 +65,7 @@ int main() {
     cin >> i;
     cout << "2. Enter the Quantity" << endl;
     cin >> q;
-    cout << "3. Enter the Cost" << endl;
+    cout << "3. Enter the Cost per Item." << endl;
     cin >> c;
     obj1.getTotalCost(obj1.getItemNumber(i),obj1.getQuantity(q),obj1.getCost(c));
     cout << "Press 0 to Continue and Press 1 to Quit" << endl;
