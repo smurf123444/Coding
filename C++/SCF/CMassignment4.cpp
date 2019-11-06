@@ -75,7 +75,6 @@ class Inventory
      }
 };  
 int main() {
-    Inventory obj1;
     string desc;
     int i, q;
     double c;
