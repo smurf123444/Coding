@@ -21,27 +21,34 @@ public:
 			cin >> payRate;
 			cout << "Input Hours Worked : " << endl;
 			cin >> hoursWorked;
-			cout << "Total Pay" << endl;
+			cout << "Total Pay : " << endl;
 			cout << grossPay() << endl;
 	}
 };
-int main() 
+int main()
 {
 	int i = 1, t = 0;
 	const int array = 7;
 	string quit = "0";
 	PayRoll obj1[array];
 	cout << "Welcome to program Quit? 0 for No 1 for Yes" << endl;
-	getline(cin,quit);
+	getline(cin, quit);
 	if (quit == "1")
 	{
 		return 0;
 	}
 	while (i <= array)
 	{
-		
+
 		cout << "Pay Roll item # " << i++ << endl;
 		obj1[t++].function();
+		if (i == 8)
+		{	
+			cout << endl;
+			cout << "End of Loop Reached..." << endl;
+			cout << "Thanks for Playing!" << endl;
+			return (0);
+		}
 		cout << "Would you like to quit? 0 for No 1 for Yes" << endl;
 		cin >> quit;
 		if (quit == "1")
@@ -49,8 +56,5 @@ int main()
 			return (0);
 		}
 	}
-	if (quit != "1") {
-		obj1[0];
-	}
-	return 0;
+	return (0);
 }
