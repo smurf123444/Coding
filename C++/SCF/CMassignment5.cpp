@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -15,46 +13,44 @@ public:
 		total = payRate * hoursWorked;
 		return (total);
 	}
-	PayRoll()
+	void function()
 	{
 		hoursWorked = 0;
 		payRate = 0;
-
 			cout << "input Pay Rate here : " << endl;
 			cin >> payRate;
 			cout << "Input Hours Worked : " << endl;
 			cin >> hoursWorked;
 			cout << "Total Pay" << endl;
-
 			cout << grossPay() << endl;
-			cout << "Would you like to quit? 0 for No 1 for Yes" << endl;
-			cin >> quit;
-			if (quit == true) {
-				return;
-			}
-
 	}
-
 };
 int main() 
 {
-	int i = 0;
+	int i = 1, t = 0;
 	const int array = 7;
-	bool quit = false;
-
+	string quit = "0";
+	PayRoll obj1[array];
 	cout << "Welcome to program Quit? 0 for No 1 for Yes" << endl;
-	cin >> quit;
-	if (quit == true)
+	getline(cin,quit);
+	if (quit == "1")
 	{
 		return 0;
 	}
-	while (i <= array && !quit)
+	while (i <= array)
 	{
-		PayRoll obj1[array];
-
+		
+		cout << "Pay Roll item # " << i++ << endl;
+		obj1[t++].function();
 		cout << "Would you like to quit? 0 for No 1 for Yes" << endl;
 		cin >> quit;
-
+		if (quit == "1")
+		{
+			return (0);
+		}
+	}
+	if (quit != "1") {
+		obj1[0];
 	}
 	return 0;
 }
