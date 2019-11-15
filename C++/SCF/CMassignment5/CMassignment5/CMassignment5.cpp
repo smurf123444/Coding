@@ -1,25 +1,34 @@
 // CMassignment5.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "Header.h"
+#include "Header.hpp"
 
 using namespace std;
-int SavingsAccount::annualInterestRate = 5;
+int SavingsAccount::annualInterestRate = 3;
+int SavingsAccount::savingBalance = 0;
 int main()
 {
 	int l = 0, t = 0;
 	const int array = 5;
-	SavingsAccount obj[array] = {};
+	SavingsAccount savings[array];
 	string annual = " ";
-	while (l < array)
-	{
+
+		cout << "Test" << endl;
+		for (SavingsAccount x : savings)
+		{
+			SavingsAccount(0,0);
+
+			cout << t++ << endl;
+		}
+		/*
 		getline(cin, annual);
 		int stream = stoi(annual);
 		cout << stream << endl;
-		t = obj[l].calculateMonthlyInterest(stream) + t;
-		cout << obj[l++].calculateMonthlyInterest(stream) << endl;
+		t = savings[l].calculateMonthlyInterest(stream) + t;
+		cout << savings[l++].calculateMonthlyInterest(stream) << endl;
+		*/
 		
-	}
+	
 	cout << "RESULT" << endl;
 	cout << t << endl;
 }
