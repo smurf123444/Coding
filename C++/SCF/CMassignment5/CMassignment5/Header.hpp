@@ -1,8 +1,7 @@
+
 #pragma once
-#include <string>
+
 #include <iostream>
-#include <sstream>
-#include <vector>
 class SavingsAccount {
 
 	int savingBalance;
@@ -10,15 +9,16 @@ class SavingsAccount {
 public:
 	static int annualInterestRate;
 	int amountKept;
-	void calculateMonthlyInterest();
+	int calculateMonthlyInterest();
 	static void modifyInterestRate();
 	SavingsAccount(){
 		savingBalance = 0;
 	}
-	SavingsAccount(int amount,int interestRate = 0) {
-		std::cout << "Function contructor called: " << std::endl;
+	int add(int num){
+		savingBalance = num + savingBalance;
+		return (num);
+	}
+	SavingsAccount(float amount,int interestRate = 0) {
 		amountKept = amount;
-		savingBalance = amount + savingBalance;
-		std::cout << amountKept << std::endl;
 	}
 };
