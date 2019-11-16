@@ -2,7 +2,7 @@
 //
 
 #include "Header.hpp"
-using namespace std;
+
 
 int SavingsAccount::annualInterestRate = 3;
 
@@ -11,27 +11,23 @@ int main()
 	int l = 0, t = 0;
 	const int array = 5;
 	SavingsAccount savings[array]= {(2333), (4333), (2543), (6533), (2055)};
-	cout << endl;
+	std::cout << std::endl;
 	
 		//cout << "Test" << endl;
 	while (t < array)
 		{
 			int month;
-			cout << endl;
-			cout << "item # " << t << endl;
-			cout << "-----" << endl;
+			std::cout << std::endl;
+			std::cout << "item # " << t << std::endl;
+			std::cout << "-----" << std::endl;
 
 			month = savings[t].calculateMonthlyInterest();
-			l = savings[t++].add(month) + l;
-			cout << "Savings balance : $" << l << endl;
+			l = savings[t++].read(month) + l;
+			std::cout << "Savings balance : $" << l << std::endl;
 			//savings[l++].calculateMonthlyInterest();
 			//SavingsAccount::write(9);
 			//cout << t++ << endl 
 		}
-	
-	
-	cout << "RESULT" << endl;
-	cout << l << endl;
 }
 	/*
 		getline(cin, annual);

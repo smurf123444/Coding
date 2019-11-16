@@ -14,7 +14,7 @@ public:
 	SavingsAccount(){
 		savingBalance = 0;
 	}
-	int add(int num){
+	int read(int num){
 		savingBalance = num + savingBalance;
 		return (num);
 	}
