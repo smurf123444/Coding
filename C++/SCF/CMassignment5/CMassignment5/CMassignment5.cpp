@@ -5,22 +5,31 @@
 
 using namespace std;
 int SavingsAccount::annualInterestRate = 3;
-int SavingsAccount::savingBalance = 0;
+
 int main()
 {
 	int l = 0, t = 0;
 	const int array = 5;
-	SavingsAccount savings[array];
+	SavingsAccount savings[array]= {(2333), (4333), (2543), (6533)};
+	
 	string annual = " ";
-
-		cout << "Test" << endl;
-		for (SavingsAccount x : savings)
+	cout << "Savings array item #1" << endl;
+	cout << savings[t].amountKept << endl;
+	
+		//cout << "Test" << endl;
+	while (t < array)
 		{
-			SavingsAccount(0,0);
-
-			cout << t++ << endl;
+			savings[t++].calculateMonthlyInterest();
+			//savings[l++].calculateMonthlyInterest();
+			//SavingsAccount::write(9);
+			//cout << t++ << endl;
 		}
-		/*
+	
+	
+	cout << "RESULT" << endl;
+	cout << l << endl;
+}
+	/*
 		getline(cin, annual);
 		int stream = stoi(annual);
 		cout << stream << endl;
@@ -28,11 +37,6 @@ int main()
 		cout << savings[l++].calculateMonthlyInterest(stream) << endl;
 		*/
 		
-	
-	cout << "RESULT" << endl;
-	cout << t << endl;
-}
-
 //static member function 
 
 /*
