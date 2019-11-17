@@ -1,11 +1,7 @@
-
 #pragma once
-
 #include <iostream>
 class SavingsAccount {
-
 	int savingBalance = 0;
-	
 public:
 	static float annualInterestRate;
 	int amountKept;
@@ -19,11 +15,7 @@ public:
 		savingBalance = num + savingBalance;
 		return (num);
 	}
-	void write() {
-		std::cout << savingBalance << std::endl;
-	}
 	SavingsAccount(float amount,int interestRate = 0) {
 		amountKept = amount;
-		
 	}
 };
