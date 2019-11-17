@@ -1,0 +1,9 @@
+﻿  CMassignment5.cpp
+C:\Users\Chris\Desktop\Coding\C++\SCF\CMassignment5\CMassignment5\Header.hpp(26,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Chris\Desktop\Coding\C++\SCF\CMassignment5\CMassignment5\CMassignment5.cpp(7,46): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Header.cpp
+C:\Users\Chris\Desktop\Coding\C++\SCF\CMassignment5\CMassignment5\CMassignment5.cpp(30,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Chris\Desktop\Coding\C++\SCF\CMassignment5\CMassignment5\Header.hpp(26,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+C:\Users\Chris\Desktop\Coding\C++\SCF\CMassignment5\CMassignment5\Header.cpp(13,9): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  CMassignment5.vcxproj -> C:\Users\Chris\Desktop\Coding\C++\SCF\CMassignment5\x64\Debug\CMassignment5.exe
