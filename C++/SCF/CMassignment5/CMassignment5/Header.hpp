@@ -1,18 +1,15 @@
-
 #pragma once
-
 #include <iostream>
 class SavingsAccount {
-
-	int savingBalance;
-	
+	int savingBalance = 0;
 public:
-	static int annualInterestRate;
+	static float annualInterestRate;
 	int amountKept;
 	int calculateMonthlyInterest();
-	static void modifyInterestRate();
+	static void modifyInterestRate(float input);
 	SavingsAccount(){
 		savingBalance = 0;
+		amountKept = 0;
 	}
 	int read(int num){
 		savingBalance = num + savingBalance;
