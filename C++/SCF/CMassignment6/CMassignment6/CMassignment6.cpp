@@ -20,6 +20,8 @@ int main()
 		std::cout << std::endl;
 		std::cout << " /////////////////////////////// " << std::endl;
 		std::cout << std::endl;
+		std::cout << " Interest Rate : 3%" << std::endl;
+		std::cout << std::endl;
 		std::cout << " >> Month # 1 << " << std::endl;
 		std::cout << std::endl;
 		std::cout << "  > Item #  " << t << " < " << std::endl;
@@ -46,6 +48,8 @@ int main()
 		month = 0;
 		std::cout << std::endl;
 		std::cout << " /////////////////////////////// " << std::endl;
+		std::cout << std::endl;
+		std::cout << " Interest Rate : 4%" << std::endl;
 		std::cout << std::endl;
 		std::cout << " >> Month # 2 << " << std::endl;
 		std::cout << std::endl;
