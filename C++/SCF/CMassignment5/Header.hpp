@@ -1,17 +1,19 @@
-#pragma once
+#ifndef HEADER_H
+#define HEADER_H
 #include <iostream>
+#include <iomanip>
 class SavingsAccount {
 	int savingBalance = 0;
 public:
 	static float annualInterestRate;
 	float amountKept;
-	int calculateMonthlyInterest();
+	float calculateMonthlyInterest();
 	static void modifyInterestRate(float input);
 	SavingsAccount(){
 		savingBalance = 0;
 		amountKept = 0;
 	}
-	int read(int num){
+	float read(float num){
 		savingBalance = num + savingBalance;
 		return (num);
 	}
@@ -19,3 +21,4 @@ public:
 		amountKept = amount;
 	}
 };
+#endif
