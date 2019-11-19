@@ -1,0 +1,10 @@
+﻿  CMassignment6.cpp
+C:\Users\Chris\Desktop\CMassignment6\CMassignment6\Header.hpp(17,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Chris\Desktop\CMassignment6\CMassignment6\CMassignment6.cpp(2,47): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Chris\Desktop\CMassignment6\CMassignment6\CMassignment6.cpp(27,46): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Chris\Desktop\CMassignment6\CMassignment6\CMassignment6.cpp(28,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Header.cpp
+C:\Users\Chris\Desktop\CMassignment6\CMassignment6\CMassignment6.cpp(39,40): warning C4305: 'argument': truncation from 'double' to 'float'
+  Generating Code...
+C:\Users\Chris\Desktop\CMassignment6\CMassignment6\Header.hpp(17,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  CMassignment6.vcxproj -> C:\Users\Chris\Desktop\CMassignment6\Debug\CMassignment6.exe
