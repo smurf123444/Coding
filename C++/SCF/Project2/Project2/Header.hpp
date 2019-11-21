@@ -4,47 +4,6 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-/*
-bool is_alphaQ(const std::string& s)
-{
-	std::string::const_iterator it = s.begin();
-	while (it != s.end() && isalpha(*it)) ++it;
-	return !s.empty() && it == s.end();
-}
-*/
-int employeeNumber()
-{
-	int employeeNumberR = 0;
-	std::string employeeNumberString;
-	bool ready = false;
-	std::cout << "Employee number?" << std::endl;
-	std::cin.ignore();
-	getline(std::cin, employeeNumberString);
-	// to check if it is a valid entry according to a 6 digit number.
-	while (!ready)
-	{
-		if (isalpha(employeeNumberString[6]) == true || isalpha(employeeNumberString[1]) == true /*|| is_alphaQ(employeeNumberString) == true*/)
-		{
-			ready = false;
-			std::cout << "Enter number with out letters." << std::endl;
-			getline(std::cin, employeeNumberString);
-		}
-		std::stringstream(employeeNumberString) >> employeeNumberR;
-		if ((employeeNumberR < 100000 || employeeNumberR > 999999 || employeeNumberString.length() > 6) /*&& is_alphaQ(employeeNumberString) != true*/)
-		{
-			ready = false;
-			std::cout << "Enter number between 10000 and 999999 not " << employeeNumberString << std::endl;
-			getline(std::cin, employeeNumberString);
-		}
-
-		if ((employeeNumberR > 100000 && employeeNumberR < 999999) && isalpha(employeeNumberString[6]) != true /*&& is_alphaQ(employeeNumberString) != true*/)
-		{
-			ready = true;
-		}
-        	
-	}
-    return (employeeNumberR);
-}
 
 class PayRoll{
 private:
@@ -52,6 +11,7 @@ private:
 	std::string employeeNumberStringQ, firstName, lastName, payRateString, hoursWorkedString, payAmount;
 	double payRate;
 public:
+	static int Number;
 	PayRoll() {
 		employeeNumberStringQ = "";
 		hoursWorked = 0;
@@ -87,10 +47,46 @@ public:
 		hoursWorkedString = h;
 		return (h);
 	}
-	std::string setPayAmout(std::string h)
+	std::string setPayAmount(std::string h)
 	{
 		payAmount = h;
 		return (h);
+	}
+	void getEmployeeNumber()
+	{
+		std::string h;
+		std::getline(std::cin, h);
+		setEmployeeNumber(h);
+	}
+	void getFirstName()
+	{
+		std::string h;
+		std::getline(std::cin, h);
+		setFirstName(h);
+	}
+	void getLastName(std::string h)
+	{
+		std::string h;
+		std::getline(std::cin, h);
+		setLastName(h);
+	}
+	void getPayRate(std::string h)
+	{
+		std::string h;
+		std::getline(std::cin, h);
+		setPayRate(h);
+	}
+	void getHoursWorked(std::string h)
+	{
+		std::string h;
+		std::getline(std::cin, h);
+		setHoursWorked(h);
+	}
+	void getPayAmout(std::string h)
+	{
+		std::string h;
+		std::getline(std::cin, h);
+		setPayAmount(h);
 	}
 	static int increment(int i);
 };
