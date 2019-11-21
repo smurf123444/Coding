@@ -1,5 +1,5 @@
 #include "Header.hpp"
-
+#include "Functions.cpp"
 int main()
 {
 int h = 0;
