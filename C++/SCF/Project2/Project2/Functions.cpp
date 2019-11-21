@@ -1,15 +1,15 @@
 #include "Header.hpp"
 
-bool func_isalpa(const std::string& s)
+bool fread(const std::string& s)
 {
 	std::string::const_iterator it = s.begin();
 	while (it != s.end() && isalpha(*it)) ++it;
 	return !s.empty() && it == s.end();
 }
 
-int func_employeeNumber()
+int trade()
 {
-	int employeeNumberR = 0;
+	int var_employeeNumber = 0;
 	std::string employeeNumberString;
 	bool ready = false;
 	std::cout << "Employee number?" << std::endl;
@@ -24,19 +24,19 @@ int func_employeeNumber()
 			std::cout << "Enter number with out letters." << std::endl;
 			getline(std::cin, employeeNumberString);
 		}
-		std::stringstream(employeeNumberString) >> employeeNumberR;
-		if ((employeeNumberR < 100000 || employeeNumberR > 999999 || employeeNumberString.length() > 6) /*&& is_alphaQ(employeeNumberString) != true*/)
+		std::stringstream(employeeNumberString) >> var_employeeNumber;
+		if ((var_employeeNumber < 100000 || var_employeeNumber > 999999 || employeeNumberString.length() > 6) /*&& is_alphaQ(employeeNumberString) != true*/)
 		{
 			ready = false;
 			std::cout << "Enter number between 10000 and 999999 not " << employeeNumberString << std::endl;
 			getline(std::cin, employeeNumberString);
 		}
 
-		if ((employeeNumberR > 100000 && employeeNumberR < 999999) && isalpha(employeeNumberString[6]) != true /*&& is_alphaQ(employeeNumberString) != true*/)
+		if ((var_employeeNumber > 100000 && var_employeeNumber < 999999) && isalpha(employeeNumberString[6]) != true /*&& is_alphaQ(employeeNumberString) != true*/)
 		{
 			ready = true;
 		}
 
 	}
-	return (employeeNumberR);
+	return (var_employeeNumber);
 }
