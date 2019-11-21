@@ -7,11 +7,14 @@ bool is_alpha(const std::string& s)
 }
 
 void employeeNumberFunc(std::string num);
+int PayRoll::records = 8;
 int main()
 {
 int h = 0;
 std::string num = "";
 bool quit = false;
+std::cout << PayRoll::increment() << std::endl;
+
 while (!quit)
 {
     std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
@@ -25,7 +28,7 @@ while (!quit)
 	employeeNumberFunc(num);
 }
 
-std::cout << PayRoll::increment(h);
+std::cout << PayRoll::increment();
 return (0);
 }
 
@@ -34,6 +37,7 @@ void employeeNumberFunc(std::string num)
 	std::string employeeNumber_string = num;
 	int var_employeeNumber = 0;
 	bool ready = false;
+    std::cin.ignore();
 	// to check if it is a valid entry according to a 6 digit number.
 	while (!ready)
 	{
@@ -41,7 +45,7 @@ void employeeNumberFunc(std::string num)
 		{
 			ready = false;
 			std::cout << "Enter number with out letters." << std::endl;
-			std::cin.ignore();
+			
 			getline(std::cin, employeeNumber_string);
 		}
 		std::stringstream(employeeNumber_string) >> var_employeeNumber;
@@ -60,4 +64,3 @@ void employeeNumberFunc(std::string num)
 
 	}
 }
-
