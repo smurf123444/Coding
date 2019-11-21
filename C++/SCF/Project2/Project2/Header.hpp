@@ -11,8 +11,14 @@ private:
 	int hoursWorked;
 	std::string employeeNumberString, firstName, lastName, payRateString, hoursWorkedString, payAmount;
 	double payRate;
+	
 public:
-	static int increment(int i);
+	static int increment();
+	static int records;
+	int calculatePay()
+	{
+		return(payRate * hoursWorked);
+	}
 	PayRoll() {
 		employeeNumberString = "";
 		hoursWorked = 0;
