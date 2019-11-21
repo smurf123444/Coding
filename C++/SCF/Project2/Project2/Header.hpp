@@ -1,5 +1,6 @@
 #ifndef HEADER_H
 #define HEADER_H
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -8,12 +9,12 @@
 class PayRoll{
 private:
 	int hoursWorked;
-	std::string employeeNumberStringQ, firstName, lastName, payRateString, hoursWorkedString, payAmount;
+	std::string employeeNumberString, firstName, lastName, payRateString, hoursWorkedString, payAmount;
 	double payRate;
 public:
-	static int Number;
+	static int increment(int i);
 	PayRoll() {
-		employeeNumberStringQ = "";
+		employeeNumberString = "";
 		hoursWorked = 0;
 		firstName = "";
 		lastName = "";
@@ -22,35 +23,35 @@ public:
 		payAmount = "";
 		payRate = 0;
 	}
-	std::string setEmployeeNumber(std::string h)
+	std::string setEmployeeNumber(std::string employeeNumber)
 	{
-		employeeNumberStringQ = h;
-		return (h);
+		employeeNumberString = employeeNumber;
+		return (employeeNumber);
 	}
-	std::string setFirstName(std::string h)
+	std::string setFirstName(std::string firstNameInput)
 	{
-		firstName = h;
-		return (h);
+		firstName = firstNameInput;
+		return (firstNameInput);
 	}
-	std::string setLastName(std::string h)
+	std::string setLastName(std::string lastNameInput)
 	{
-		lastName = h;
-		return (h);
+		lastName = lastNameInput;
+		return (lastNameInput);
 	}
-	std::string setPayRate(std::string h)
+	std::string setPayRate(std::string payRateInput)
 	{
-		payRateString = h;
-		return (h);
+		payRateString = payRateInput;
+		return (payRateInput);
 	}
-	std::string setHoursWorked(std::string h)
+	std::string setHoursWorked(std::string hoursWorkedInput)
 	{
-		hoursWorkedString = h;
-		return (h);
+		hoursWorkedString = hoursWorkedInput;
+		return (hoursWorkedInput);
 	}
-	std::string setPayAmount(std::string h)
+	std::string setPayAmount(std::string payAmountInput)
 	{
-		payAmount = h;
-		return (h);
+		payAmount = payAmountInput;
+		return (payAmountInput);
 	}
 	void getEmployeeNumber()
 	{
@@ -64,30 +65,30 @@ public:
 		std::getline(std::cin, h);
 		setFirstName(h);
 	}
-	void getLastName(std::string h)
+	void getLastName()
 	{
 		std::string h;
 		std::getline(std::cin, h);
 		setLastName(h);
 	}
-	void getPayRate(std::string h)
+	void getPayRate()
 	{
 		std::string h;
 		std::getline(std::cin, h);
 		setPayRate(h);
 	}
-	void getHoursWorked(std::string h)
+	void getHoursWorked()
 	{
 		std::string h;
 		std::getline(std::cin, h);
 		setHoursWorked(h);
 	}
-	void getPayAmout(std::string h)
+	void getPayAmout()
 	{
 		std::string h;
 		std::getline(std::cin, h);
 		setPayAmount(h);
 	}
-	static int increment(int i);
+	
 };
 #endif
