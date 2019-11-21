@@ -16,7 +16,7 @@ while (!quit)
 {
     std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
     std::cin >> quit;
-	if (quit = true)
+	if (quit == true)
 	{
 		return (0);
 	}
