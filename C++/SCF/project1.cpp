@@ -128,9 +128,9 @@ int main()
 		getline(cin, payRateString);
 		stringstream(payRateString) >> payRate;
 		//if pay rate is negative or over 1000
-		while ((isalpha(payRateString[1]) == true || isalpha(payRateString[3]) == true || isalpha(payRateString[4]) == true ||
-						isalpha(payRateString[2]) == true || payRate < 0 || payRate > 99.99 ||
-					payRateString.length() > 5 || payRateString.length() < 5 || payRateString[3] != '.'))
+		while ((isalpha(payRateString[0]) == true || isalpha(payRateString[3]) == true || isalpha(payRateString[4]) == true ||
+						isalpha(payRateString[1]) == true || payRate < 0 || payRate > 99.99 ||
+					payRateString.length() > 5 || payRateString.length() < 5 || payRateString[2] != '.'))
 		{
 			cout << "Enter a Valid number for pay rate" << endl;
 			getline(cin, payRateString);
