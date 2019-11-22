@@ -6,38 +6,97 @@ bool is_alpha(const std::string& s)
 	return !s.empty() && it == s.end();
 }
 
-void employeeNumberFunc(std::string num);
+bool employeeNumberFunc(std::string num);
 int PayRoll::records = 8;
+
 int main()
 {
-int h = 0;
-std::string num = "";
-bool quit = false;
-std::cout << PayRoll::increment() << std::endl;
+	int i = 0, size = 0, h = 0;
+	std::string num = "";
+	bool quit = false;
+	std::cout << "Enter the amount of records." << std::endl;
+	std::cin >> size;
+	//declare dynamic ptr for class payRoll
+	PayRoll* iptr = nullptr;
+	//make it the amount of records.
+	iptr = new PayRoll[size];
 
-while (!quit)
-{
-    std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
-    std::cin >> quit;
-	if (quit == true)
+
+	while (!quit)
 	{
+
+		while (i < size) {
+			std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
+			std::cin >> quit;
+			if (quit == true)
+			{
+				return (0);
+			}
+
+			std::cout << "Enter Employee Number" << std::endl;
+			std::cin >> num;
+			
+			if (employeeNumberFunc(num))
+			{
+				int var_num;
+				std::stringstream(num) >> var_num;
+				iptr[i].setEmployeeNumber(var_num);
+
+			}
+			std::cout << "First Name?" << std::endl;
+			
+			iptr[i].setFirstName();
+			//if first name includes anything besides letters
+			while (is_alpha(iptr[i].getFirstName()) != true)
+			{
+				std::cout << "First Name contains a non alpha character, Enter correct Name" << std::endl;
+				iptr[i].setFirstName();
+			}
+			std::cout << "Last Name?" << std::endl;
+			iptr[i].setLastName();
+			//if last name has anything besides letters
+			while (is_alpha(iptr[i].getLastName()) != true)
+			{
+				std::cout << "Last Name contains a non alpha character, Enter correct Name" << std::endl;
+				iptr[i].setLastName();
+			}
+			
+			std::cout << "Pay Rate ($$.$$)" << std::endl;
+			std::string payRateString = "";
+			std::cin.ignore();
+			getline(std::cin, payRateString);
+			iptr[i].setPayRate(payRateString);
+			float payRate = iptr[i].getPayRate();
+		
+			//if pay rate is negative or over 1000
+			while ((isalpha(payRateString[0]) == true || isalpha(payRateString[3]) == true || isalpha(payRateString[4]) == true ||
+				isalpha(payRateString[1]) == true || payRate < 0 || payRate > 99.99 ||
+				payRateString.length() > 5 || payRateString.length() < 5 || payRateString[2] != '.'))
+			{
+				std::cout << "Enter a Valid number for pay rate" << std::endl;
+				getline(std::cin, payRateString);
+				std::stringstream(payRateString) >> payRate;
+			}
+		
+			int info1 = iptr[i].getEmployeeNumber();
+			std::string info2 = iptr[i].getFirstName();
+			std::string info3 = iptr[i].getLastName();
+			double info4 = iptr[i].getPayRate();
+			std::cout << "Records # : " << ++i << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," << std::endl;
+		}
+		delete[] iptr;
+
 		return (0);
 	}
-	std::cout << "enter number" << std::endl;
-	std::cin >> num;
-	employeeNumberFunc(num);
 }
 
-std::cout << PayRoll::increment();
-return (0);
-}
 
-void employeeNumberFunc(std::string num)
+bool employeeNumberFunc(std::string num)
 {
 	std::string employeeNumber_string = num;
 	int var_employeeNumber = 0;
 	bool ready = false;
-    std::cin.ignore();
+	std::cin.ignore();
 	// to check if it is a valid entry according to a 6 digit number.
 	while (!ready)
 	{
@@ -45,7 +104,7 @@ void employeeNumberFunc(std::string num)
 		{
 			ready = false;
 			std::cout << "Enter number with out letters." << std::endl;
-			
+
 			getline(std::cin, employeeNumber_string);
 		}
 		std::stringstream(employeeNumber_string) >> var_employeeNumber;
@@ -53,13 +112,14 @@ void employeeNumberFunc(std::string num)
 		{
 			ready = false;
 			std::cout << "Enter number between 10000 and 999999 not " << employeeNumber_string << std::endl;
-			
+
 			getline(std::cin, employeeNumber_string);
 		}
 
 		if ((var_employeeNumber > 100000 && var_employeeNumber < 999999) && std::isalpha(employeeNumber_string[6]) != true && is_alpha(employeeNumber_string) != true)
 		{
 			ready = true;
+			return (true);
 		}
 
 	}
