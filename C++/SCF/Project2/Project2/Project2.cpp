@@ -119,8 +119,8 @@ bool employeeNumberFunc(std::string num)
 		if ((var_employeeNumber > 100000 && var_employeeNumber < 999999) && std::isalpha(employeeNumber_string[6]) != true && is_alpha(employeeNumber_string) != true)
 		{
 			ready = true;
-			return (true);
+			
 		}
-
 	}
+	return (ready);
 }
