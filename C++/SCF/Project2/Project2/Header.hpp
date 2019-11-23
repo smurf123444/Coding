@@ -13,7 +13,7 @@ private:
 	float payRate, payAmount, hoursWorked;
 
 public:
-	static int increment(int h);
+	static int increment();
 	static int records;
 	int calculatePay()
 	{
