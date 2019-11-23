@@ -1,6 +1,6 @@
 #include "Header.hpp"
 
-int PayRoll::increment(int h)
+int PayRoll::increment()
 {
-	return (++h);
+	return (++records);
 }
