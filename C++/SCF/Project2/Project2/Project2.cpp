@@ -82,14 +82,15 @@ int main()
 			}
 			std::string test = iptr[i].setPayAmount();
 			std::cout << test << std::endl;
-			std::cout << "End of" << i++ << " Enter 1 for quit 0 for continue" << std::endl;
+			std::cout << "End of " << ++i << " Enter 1 for quit 0 for continue" << std::endl;
 			std::cin >> quit;
 			if (quit == true)
 			{
-				return (0);
+				size = i;
 			}
 	}
 		int mi = 0;
+		std::cout << "Records # : " << size << std::endl;
 		while (mi < size) 
 		{
 		int info1 = iptr[mi].getEmployeeNumber();
@@ -98,7 +99,7 @@ int main()
 		double info4 = iptr[mi].getPayRate();
 		double info5 = iptr[mi].getHoursWorked();
 		double info6 = iptr[mi++].getPayAmount();
-		std::cout << "Records # : " << size << std::endl << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
+		std::cout << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
 		}
 	delete[] iptr;
 	return (0);
