@@ -99,8 +99,12 @@ int main()
 	}
 		int mi = 0;
 		std::cout << "Records # : " << global << std::endl;
+		std::fstream fs;
+		fs.open("cop2224_proj1.txt", std::fstream::in | std::fstream::out | std::fstream::ate);
 		while (mi < size) 
 		{
+			
+			
 		int info1 = iptr[mi].getEmployeeNumber();
 		std::string info2 = iptr[mi].getFirstName();
 		std::string info3 = iptr[mi].getLastName();
@@ -108,6 +112,8 @@ int main()
 		double info5 = iptr[mi].getHoursWorked();
 		double info6 = iptr[mi++].getPayAmount();
 		std::cout << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
+		fs << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
+		fs.close();
 		}
 	delete[] iptr;
 	return (0);
