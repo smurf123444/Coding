@@ -37,7 +37,7 @@ public:
 	std::string setFirstName()
 	{
 		std::cin >> firstName;
-		
+
 		return (firstName);
 	}
 	std::string setLastName()
