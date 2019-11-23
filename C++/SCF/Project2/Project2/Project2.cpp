@@ -6,7 +6,8 @@ bool is_alpha(const std::string& s)
 	return !s.empty() && it == s.end();
 }
 bool employeeNumberFunc(std::string num);
-int PayRoll::records = 0;
+int global = 0;
+int PayRoll::records = global;
 int main()
 {
 	int i = 0, size = 0, h = 0;
@@ -82,15 +83,22 @@ int main()
 			}
 			std::string test = iptr[i].setPayAmount();
 			std::cout << test << std::endl;
-			std::cout << "End of " << ++i << " Enter 1 for quit 0 for continue" << std::endl;
+			std::cout << "End of " << ++i << std::endl << " Enter 1 for quit 0 for continue" << std::endl;
 			std::cin >> quit;
 			if (quit == true)
 			{
+				global = i;
+				PayRoll::increment();
 				size = i;
+			}
+			else
+			{
+				global++;
+				PayRoll::increment();
 			}
 	}
 		int mi = 0;
-		std::cout << "Records # : " << size << std::endl;
+		std::cout << "Records # : " << global << std::endl;
 		while (mi < size) 
 		{
 		int info1 = iptr[mi].getEmployeeNumber();
