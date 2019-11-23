@@ -5,10 +5,8 @@ bool is_alpha(const std::string& s)
 	while (it != s.end() && isalpha(*it)) ++it;
 	return !s.empty() && it == s.end();
 }
-
 bool employeeNumberFunc(std::string num);
 int PayRoll::records = 0;
-
 int main()
 {
 	int i = 0, size = 0, h = 0;
@@ -20,11 +18,8 @@ int main()
 	PayRoll* iptr = nullptr;
 	//make it the amount of records.
 	iptr = new PayRoll[size];
-
-
 	while (!quit)
 	{
-
 		while (i < size) {
 			std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
 			std::cin >> quit;
@@ -32,10 +27,8 @@ int main()
 			{
 				return (0);
 			}
-
 			std::cout << "Enter Employee Number" << std::endl;
 			std::cin >> num;
-			
 			if (employeeNumberFunc(num))
 			{
 				int var_num;
@@ -44,7 +37,6 @@ int main()
 
 			}
 			std::cout << "First Name?" << std::endl;
-			
 			iptr[i].setFirstName();
 			//if first name includes anything besides letters
 			while (is_alpha(iptr[i].getFirstName()) != true)
@@ -54,21 +46,18 @@ int main()
 			}
 			std::cout << "Last Name?" << std::endl;
 			iptr[i].setLastName();
-			
 			//if last name has anything besides letters
 			while (is_alpha(iptr[i].getLastName()) != true)
 			{
 				std::cout << "Last Name contains a non alpha character, Enter correct Name" << std::endl;
 				iptr[i].setLastName();
 			}
-			
 			std::cout << "Pay Rate ($$.$$)" << std::endl;
 			std::string payRateString = "";
 			std::cin.ignore();
 			getline(std::cin, payRateString);
 			iptr[i].setPayRate(payRateString);
 			float payRate = iptr[i].getPayRate();
-		
 			//if pay rate is negative or over 1000
 			while ((isalpha(payRateString[0]) == true || isalpha(payRateString[3]) == true || isalpha(payRateString[4]) == true ||
 				isalpha(payRateString[1]) == true || payRate < 0 || payRate > 99.99 ||
@@ -94,6 +83,8 @@ int main()
 			getline(std::cin, hoursWorkedString);
 			std::stringstream(hoursWorkedString) >> hoursWorked;
 		}
+		std::string test = iptr[i].setPayAmount();
+		std::cout << test << std::endl;
 		i = 0;
 		while (i < size){
 			int info1 = iptr[i].getEmployeeNumber();
@@ -101,15 +92,16 @@ int main()
 			std::string info3 = iptr[i].getLastName();
 			double info4 = iptr[i].getPayRate();
 			double info5 = iptr[i].getHoursWorked();
-			std::cout << "Records # : " << ++i << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," <<  info5 << "," << std::endl;
+			double info6 = iptr[i].getPayAmount();
+			std::cout << "Records # : " << ++i << std::endl << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," <<  info5 << "," << info6 << std::endl;
 		}
 		}
-		delete[] iptr;
-		return (0);
+		
+		
 	}
+	delete[] iptr;
+	return (0);
 }
-
-
 bool employeeNumberFunc(std::string num)
 {
 	std::string employeeNumber_string = num;
