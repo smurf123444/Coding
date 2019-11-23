@@ -34,7 +34,6 @@ int main()
 				int var_num;
 				std::stringstream(num) >> var_num;
 				iptr[i].setEmployeeNumber(var_num);
-
 			}
 			std::cout << "First Name?" << std::endl;
 			iptr[i].setFirstName();
@@ -73,7 +72,6 @@ int main()
 			std::getline(std::cin, hoursWorkedString);
 			iptr[i].setHoursWorked(hoursWorkedString);
 			std::stringstream(hoursWorkedString) >> hoursWorked;
-
 		//check if hours worked is above 99 or below 0
 		while ((isalpha(hoursWorkedString[0]) == true || isalpha(hoursWorkedString[3]) == true || isalpha(hoursWorkedString[4]) == true ||
 				isalpha(hoursWorkedString[1]) == true || hoursWorked < 0 || hoursWorked > 99.99 ||
@@ -95,9 +93,7 @@ int main()
 			double info6 = iptr[i].getPayAmount();
 			std::cout << "Records # : " << ++i << std::endl << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," <<  info5 << "," << info6 << std::endl;
 		}
-		}
-		
-		
+		}	
 	}
 	delete[] iptr;
 	return (0);
@@ -126,11 +122,9 @@ bool employeeNumberFunc(std::string num)
 
 			getline(std::cin, employeeNumber_string);
 		}
-
 		if ((var_employeeNumber > 100000 && var_employeeNumber < 999999) && std::isalpha(employeeNumber_string[6]) != true && is_alpha(employeeNumber_string) != true)
 		{
 			ready = true;
-			
 		}
 	}
 	return (ready);
