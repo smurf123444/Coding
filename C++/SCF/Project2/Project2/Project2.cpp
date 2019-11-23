@@ -7,7 +7,7 @@ bool is_alpha(const std::string& s)
 }
 
 bool employeeNumberFunc(std::string num);
-int PayRoll::records = 8;
+int PayRoll::records = 0;
 
 int main()
 {
@@ -54,6 +54,7 @@ int main()
 			}
 			std::cout << "Last Name?" << std::endl;
 			iptr[i].setLastName();
+			
 			//if last name has anything besides letters
 			while (is_alpha(iptr[i].getLastName()) != true)
 			{
@@ -77,15 +78,33 @@ int main()
 				getline(std::cin, payRateString);
 				std::stringstream(payRateString) >> payRate;
 			}
-		
+			std::cout << "Hours Worked (##.##)" << std::endl;
+			std::string hoursWorkedString = "";
+			int hoursWorked = 0;
+			std::getline(std::cin, hoursWorkedString);
+			iptr[i].setHoursWorked(hoursWorkedString);
+			std::stringstream(hoursWorkedString) >> hoursWorked;
+
+		//check if hours worked is above 99 or below 0
+		while ((isalpha(hoursWorkedString[0]) == true || isalpha(hoursWorkedString[3]) == true || isalpha(hoursWorkedString[4]) == true ||
+				isalpha(hoursWorkedString[1]) == true || hoursWorked < 0 || hoursWorked > 99.99 ||
+				hoursWorkedString.length() > 5 || hoursWorkedString.length() < 5 || hoursWorkedString[2] != '.'))
+		{
+			std::cout << "Enter correct valuse for hours worked.. not " << hoursWorkedString << std::endl;
+			getline(std::cin, hoursWorkedString);
+			std::stringstream(hoursWorkedString) >> hoursWorked;
+		}
+		i = 0;
+		while (i < size){
 			int info1 = iptr[i].getEmployeeNumber();
 			std::string info2 = iptr[i].getFirstName();
 			std::string info3 = iptr[i].getLastName();
 			double info4 = iptr[i].getPayRate();
-			std::cout << "Records # : " << ++i << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," << std::endl;
+			double info5 = iptr[i].getHoursWorked();
+			std::cout << "Records # : " << ++i << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," <<  info5 << "," << std::endl;
+		}
 		}
 		delete[] iptr;
-
 		return (0);
 	}
 }
