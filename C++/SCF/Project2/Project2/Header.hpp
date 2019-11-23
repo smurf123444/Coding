@@ -8,12 +8,12 @@
 
 class PayRoll {
 private:
-	int hoursWorked, employeeNum, payAmount;
+	int employeeNum, payAmount;
 	std::string employeeNumberString, firstName, lastName, payRateString, hoursWorkedString, payAmountString;
-	float payRate;
+	float payRate, hoursWorked;
 
 public:
-	static int increment();
+	static int increment(int h);
 	static int records;
 	int calculatePay()
 	{
@@ -21,7 +21,7 @@ public:
 	}
 	PayRoll() {
 		employeeNumberString = "";
-		hoursWorked = 0;
+		hoursWorked = 0.00;
 		firstName = "";
 		lastName = "";
 		payRateString = "";
@@ -53,7 +53,7 @@ public:
 	}
 	std::string setHoursWorked(std::string hoursWorkedInput)
 	{
-		hoursWorkedString = hoursWorkedInput;
+		std::stringstream(hoursWorkedInput) >> hoursWorked;
 		return (hoursWorkedInput);
 	}
 	std::string setPayAmount(std::string payAmountInput)
@@ -77,7 +77,7 @@ public:
 	{
 		return (payRate);
 	}
-	int getHoursWorked()
+	float getHoursWorked()
 	{
 		return (hoursWorked);
 	}
