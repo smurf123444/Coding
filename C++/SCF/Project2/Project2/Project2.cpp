@@ -100,7 +100,7 @@ int main()
 		int mi = 0;
 		std::cout << "Records # : " << global << std::endl;
 		std::fstream fs;
-		fs.open("cop2224_proj1.txt", std::fstream::in | std::fstream::out | std::fstream::ate);
+		fs.open("cop_2224_project2.txt", std::fstream::in | std::fstream::out | std::fstream::ate | std::fstream::app);
 		while (mi < size) 
 		{
 			
@@ -113,8 +113,8 @@ int main()
 		double info6 = iptr[mi++].getPayAmount();
 		std::cout << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
 		fs << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
-		fs.close();
 		}
+		fs.close();
 	delete[] iptr;
 	return (0);
 }
