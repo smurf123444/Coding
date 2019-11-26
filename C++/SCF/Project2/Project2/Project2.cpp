@@ -17,16 +17,17 @@ int main()
 	std::cin >> size;
 	//declare dynamic ptr for class payRoll
 	PayRoll* iptr = nullptr;
-	//make it the amount of records.
-	iptr = new PayRoll[size];
-		while (i < size) 
-		{
-			std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
+		std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
 			std::cin >> quit;
 			if (quit == true)
 			{
 				return (0);
 			}
+	//make it the amount of records.
+	iptr = new PayRoll[size];
+		while (i < size) 
+		{
+		
 			std::cout << "Enter Employee Number" << std::endl;
 			std::cin >> num;
 			if (employeeNumberFunc(num))
