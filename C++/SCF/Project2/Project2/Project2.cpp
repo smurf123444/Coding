@@ -5,7 +5,7 @@ bool is_alpha(const std::string& s)
 	while (it != s.end() && isalpha(*it)) ++it;
 	return !s.empty() && it == s.end();
 }
-bool employeeNumberFunc(std::string num);
+int employeeNumberFunc(std::string num);
 int global = 0;
 int PayRoll::records = global;
 int main()
@@ -13,32 +13,55 @@ int main()
 	int i = 0, size = 0, h = 0;
 	std::string num = "";
 	bool quit = false;
+	std::cout << "Welcome to Project 2! Our final project for this COP2224, " << std::endl;
+	std::cout << " This program is designed to take in employee Information and store them in a class array." << std::endl;
+	std::cout << "Please type in below the information asked, also if you would like to exit this program before coninuing... " << std::endl;
+	std::cout << " " << std::endl;
+	std::cout << "Enter Anything for [Exit Program] OR 0 for [Enter Program]" << std::endl;
+	std::cin >> quit;
+		if (quit == true)
+		{
+			return (0);
+		}
 	std::cout << "Enter the amount of records." << std::endl;
 	std::cin >> size;
+	bool ready = false;
+	int var_num = 0;
 	//declare dynamic ptr for class payRoll
 	PayRoll* iptr = nullptr;
-		std::cout << "Would you like to enter program? Enter 1 for no 0 for Yes" << std::endl;
-			std::cin >> quit;
-			if (quit == true)
-			{
-				return (0);
-			}
+	std::cin.ignore();
 	//make it the amount of records.
 	iptr = new PayRoll[size];
 		while (i < size) 
 		{
-		
 			std::cout << "Enter Employee Number" << std::endl;
-			std::cin >> num;
-			if (employeeNumberFunc(num))
-			{
-				int var_num;
-				std::stringstream(num) >> var_num;
-				iptr[i].setEmployeeNumber(var_num);
+			num = iptr[i].setEmployeeNumber();
+			std::cin.ignore();
+				while (!ready)
+				{
+			if (std::isalpha(num[0]) == true || std::isalpha(num[0]) == true || is_alpha(num) == true)
+				{
+				ready = false;
+				std::cout << "Enter something without letters" << std::endl;
+				getline(std::cin, num);
+				
+				}
+			std::stringstream(num) >> var_num;
+			if ((var_num < 100000 || var_num > 999999 || num.length() > 6) && is_alpha(num) != true)
+				{
+				ready = false;
+				std::cout << "Enter something between 100000 & 999999" << std::endl;
+				getline(std::cin, num);
+				}
+			if ((var_num > 100000 && var_num < 999999) && std::isalpha(num[6]) != true && is_alpha(num) != true)
+				{
+				ready = true;
+				iptr[i].quickSet(var_num);
+				}
 			}
-			std::cout << "First Name?" << std::endl;
-			iptr[i].setFirstName();
-			//if first name includes anything besides letters
+				std::cout << "First Name?" << std::endl;
+				iptr[i].setFirstName();
+				//if first name includes anything besides letters
 			while (is_alpha(iptr[i].getFirstName()) != true)
 			{
 				std::cout << "First Name contains a non alpha character, Enter correct Name" << std::endl;
@@ -99,54 +122,23 @@ int main()
 			}
 	}
 		int mi = 0;
-		std::cout << "Records # : " << global << std::endl;
+		std::cout << "<Total Records> : " << global << std::endl;
 		std::fstream fs;
-		fs.open("cop_2224_project2.txt", std::fstream::in | std::fstream::out | std::fstream::ate | std::fstream::app);
+		fs.open("cop2224_proj2.txt", std::fstream::in | std::fstream::out | std::fstream::ate | std::fstream::app);
 		while (mi < size) 
 		{
-			
-			
 		int info1 = iptr[mi].getEmployeeNumber();
 		std::string info2 = iptr[mi].getFirstName();
 		std::string info3 = iptr[mi].getLastName();
 		double info4 = iptr[mi].getPayRate();
 		double info5 = iptr[mi].getHoursWorked();
 		double info6 = iptr[mi++].getPayAmount();
-		std::cout << " Info : " << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
-		fs << info1 << "," << info2 << "," << info3 << "," << info4 << "," << info5 << "," << info6 << std::endl;
+		std::cout << std::fixed << std::showpoint;
+		std::cout << std::setprecision(2);
+		std::cout << " Info : " << info1 << "," << info2 << "," << info3 << ",$" << info4 << "," << info5 << ",$" << info6 << std::endl;
+		fs << info1 << "," << info2 << "," << info3 << ",$" << info4 << "," << info5 << ",$" << info6 << std::endl;
 		}
 		fs.close();
 	delete[] iptr;
 	return (0);
-}
-bool employeeNumberFunc(std::string num)
-{
-	std::string employeeNumber_string = num;
-	int var_employeeNumber = 0;
-	bool ready = false;
-	std::cin.ignore();
-	// to check if it is a valid entry according to a 6 digit number.
-	while (!ready)
-	{
-		if (std::isalpha(employeeNumber_string[0]) == true || std::isalpha(employeeNumber_string[0]) == true || is_alpha(employeeNumber_string) == true)
-		{
-			ready = false;
-			std::cout << "Enter number with out letters." << std::endl;
-
-			getline(std::cin, employeeNumber_string);
-		}
-		std::stringstream(employeeNumber_string) >> var_employeeNumber;
-		if ((var_employeeNumber < 100000 || var_employeeNumber > 999999 || employeeNumber_string.length() > 6) && is_alpha(employeeNumber_string) != true)
-		{
-			ready = false;
-			std::cout << "Enter number between 10000 and 999999 not " << employeeNumber_string << std::endl;
-
-			getline(std::cin, employeeNumber_string);
-		}
-		if ((var_employeeNumber > 100000 && var_employeeNumber < 999999) && std::isalpha(employeeNumber_string[6]) != true && is_alpha(employeeNumber_string) != true)
-		{
-			ready = true;
-		}
-	}
-	return (ready);
 }

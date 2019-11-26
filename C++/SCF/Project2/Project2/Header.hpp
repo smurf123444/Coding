@@ -2,6 +2,7 @@
 #define HEADER_H
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <sstream>
 #include <string>
@@ -15,7 +16,7 @@ private:
 public:
 	static int increment();
 	static int records;
-	int calculatePay()
+	float calculatePay()
 	{
 		return(payRate * hoursWorked);
 	}
@@ -29,9 +30,15 @@ public:
 		payAmountString = "";
 		payRate = 0.00;
 	}
-	int setEmployeeNumber(int test)
+	int quickSet(int i)
 	{
-		employeeNum = test;
+		return (employeeNum = i);
+	}
+	std::string setEmployeeNumber()
+	{
+		std::string test;
+		std::cin >> test;
+		std::stringstream(test) >> employeeNum;
 		return (test);
 	}
 	std::string setFirstName()
@@ -58,8 +65,9 @@ public:
 	}
 	std::string setPayAmount()
 	{
-		int payAmountInput = calculatePay();
+		float payAmountInput = calculatePay();
 		payAmountString = std::to_string(payAmountInput);
+
 		payAmount = payAmountInput;
 		return (payAmountString);
 	}
