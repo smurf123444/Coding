@@ -1,5 +1,5 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef EMPLOYEECLASS_H
+#define EMPLOYEECLASS_H
 
 #include <iostream>
 #include <iomanip>
