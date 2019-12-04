@@ -1,5 +1,14 @@
 #pragma once
-
+/*
+#include "NumberArray.h"
+NumberArray::NumberArray(const NumberArray &obj)
+{
+	arraySize = obj.arraySize;
+	aPtr = new double[arraySize];
+	for (int index = 0; index < arraySize; index++)
+		aPtr[index] = obj.aPtr[index];
+}
+*/
 #include <string>
 using namespace std;
 
