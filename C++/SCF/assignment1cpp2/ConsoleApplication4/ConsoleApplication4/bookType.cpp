@@ -70,8 +70,7 @@ int main() {
 				break;
 			case 2: cout << "Which Book would you like to update? 1-10" << endl;
 				cin >> bookChoice;
-				bookChoice - 1;
-				obj[bookChoice] = setInfo(obj[bookChoice]);
+				obj[bookChoice - 1] = setInfo(obj[bookChoice - 1]);
 				break;
 			case 3: cout << "Which Title are you searching for?" << endl;
 				cin >> titleSearch;
