@@ -86,7 +86,7 @@ int main() {
 			i = 0;
 			int fun = 1;
 			while (i < 10) {
-				cout << "# " << fun++ << endl;
+				cout << "Book # : " << fun++ << endl;
 				cout << "Title : " << obj[i].getTitle() << endl;
 				cout << "Author : ";
 				obj[i++].getAuthor();
