@@ -27,10 +27,18 @@ BookType setInfo(BookType obj) {
 	obj.authorCount = t;
 	return(obj);
 }
+
+void searchTitle(string search, BookType obj) {
+	obj.checkTitle(search);
+}
+
+
 int main() {
 	BookType obj[10];
 	bool quit = false;
 	int selection;
+	int bookChoice;
+	string titleSearch;
 		cout << ">>>>>>>>>>>>>>>>>>>>>>>" << endl;
 		cout << "Welcome to Assignment 1 for CPP 2 SCF!" << endl;
 		while (!quit) {
@@ -43,15 +51,50 @@ int main() {
 			cout << endl;
 			cout << "Type Here then press [Enter]: ";
 			cin >> selection;
+			int i = 0;
+			string leave;
 			switch (selection) {
-			case 1: obj[0] = setInfo(obj[0]);
+			case 1: 
+				while (i < 10) {
+					cout << "Enter 0 to move to next step" << endl;
+					cin >> leave;
+					if (leave == "0")
+					{
+						i = 10;
+					}
+					else {
+						obj[i] = setInfo(obj[i]);
+					}
+					i++;
+				}
+				break;
+			case 2: cout << "Which Book would you like to update? 1-10" << endl;
+				cin >> bookChoice;
+				bookChoice - 1;
+				obj[bookChoice] = setInfo(obj[bookChoice]);
+				break;
+			case 3: cout << "Which Title are you searching for?" << endl;
+				cin >> titleSearch;
+				while (i < 10) {
+					searchTitle(titleSearch, obj[i++]);
+				}
+				break;
+			case 4:
+
+				break;
+			case 5:
+				cout << "Exiting.." << endl;
+				quit = true;
 				break;
 			default: break;
 			};
-			cout << "Title : " << obj[0].getTitle() << endl;
-			cout << "Author : ";
-			obj[0].getAuthor();
-			cout << endl;
+			i = 0;
+			while (i < 10) {
+				cout << "Title : " << obj[i].getTitle() << endl;
+				cout << "Author : ";
+				obj[i++].getAuthor();
+				cout << endl;
+			}
 	}
 	return (0);
 }
