@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "bookType.h"
 BookType setInfo(BookType obj) {
@@ -27,12 +26,9 @@ BookType setInfo(BookType obj) {
 	obj.authorCount = t;
 	return(obj);
 }
-
 void searchTitle(string search, BookType obj) {
 	obj.checkTitle(search);
 }
-
-
 int main() {
 	BookType obj[10];
 	bool quit = false;
@@ -56,9 +52,9 @@ int main() {
 			switch (selection) {
 			case 1: 
 				while (i < 10) {
-					cout << "Enter 0 to move to next step" << endl;
+					cout << "Enter 0 to Continue Adding to the list of Books, or 1 for End of List" << endl;
 					cin >> leave;
-					if (leave == "0")
+					if (leave == "1")
 					{
 						i = 10;
 					}
@@ -88,7 +84,9 @@ int main() {
 			default: break;
 			};
 			i = 0;
+			int fun = 1;
 			while (i < 10) {
+				cout << "# " << fun++ << endl;
 				cout << "Title : " << obj[i].getTitle() << endl;
 				cout << "Author : ";
 				obj[i++].getAuthor();
