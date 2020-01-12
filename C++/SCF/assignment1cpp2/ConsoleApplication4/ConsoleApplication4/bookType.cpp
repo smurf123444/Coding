@@ -16,7 +16,7 @@ BookType setInfo(BookType obj) {
 	cout << "Set Author(s) " << endl;
 	while (i < 4)
 	{
-		cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0])" << endl;
+		cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0] to skip)" << endl;
 		cin >> authorInput;
 		obj.setAuthor(authorInput, i);
 		if (authorInput == "" || authorInput == "0")
@@ -127,7 +127,7 @@ int main() {
 			cout << "Publisher : ";
 			cout << obj[i].getPublisher();
 			cout << endl;
-			cout << "ISBN # ";
+			cout << "ISBN # : ";
 			cout << obj[i].getISBN();
 			cout << endl;
 			cout << "Price : ";
