@@ -44,6 +44,127 @@ BookType setInfo(BookType obj) {
 
 	return(obj);
 }
+BookType updateInfo(BookType obj) {
+	BookType input;
+	string titleInput;
+	string authorInput;
+	string publisherInput;
+	string ISBNinput;
+	double priceInput;
+	int stockInput;
+	int i = 0;
+	int t = 0;
+	cout << "Update Title" << endl;
+	cin >> titleInput;
+	if (titleInput == "0")
+	{
+		cout << "Set Author(s) " << endl;
+		while (i < 4)
+		{
+			cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0] to skip)" << endl;
+			cin >> authorInput;
+			obj.setAuthor(authorInput, i);
+			if (authorInput == "" || authorInput == "0")
+			{
+				authorInput = "";
+				i = 4;
+			}
+
+			i++;
+			t++;
+		}
+	}
+	else {
+		obj.updateTitle(titleInput);
+		cout << "Set Author(s) " << endl;
+
+		while (i < 4)
+		{
+			cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0] to skip)" << endl;
+			cin >> authorInput;
+			obj.setAuthor(authorInput, i);
+			if (authorInput == "" || authorInput == "0")
+			{
+				authorInput = "";
+				i = 4;
+			}
+
+			i++;
+			t++;
+		}
+		obj.authorCount = t;
+		cout << "Set Publisher : ";
+		cin >> publisherInput;
+		if (publisherInput == "0")
+		{
+			cout << "Set ISBN # : ";
+			cin >> ISBNinput;
+			if (ISBNinput == "0")
+			{
+				cout << "Set Price : ";
+				cin >> priceInput;
+				if (priceInput == 0)
+				{
+					cout << "Set Stock : ";
+					cin >> stockInput;
+					if (stockInput == 0)
+					{
+						return(obj);
+					}
+					else
+						obj.updateStock(stockInput);
+				}
+				else
+					obj.updatePrice(priceInput);
+			}
+			else
+				obj.updateISBN(ISBNinput);
+
+		}
+		else
+			obj.updatePublisher(publisherInput);
+	}
+/*	cout << "Set Publisher : ";
+	cin >> publisherInput;
+	if (publisherInput == "0")
+	{
+		cout << "Set ISBN # : ";
+		cin >> ISBNinput;
+		if (ISBNinput == "0")
+		{
+			cout << "Set Price : ";
+			cin >> priceInput;
+			if (priceInput == 0)
+			{
+				cout << "Set Stock : ";
+				cin >> stockInput;
+				if (stockInput == 0)
+				{
+					return(obj);
+				}
+				else
+				obj.updateStock(stockInput);
+			}
+			else
+			obj.updatePrice(priceInput);
+		}
+		else
+		obj.updateISBN(ISBNinput);
+
+	}
+	else
+	obj.updatePublisher(publisherInput);
+/*	cout << "Set ISBN # : ";
+	cin >> ISBNinput;
+	obj.updateISBN(ISBNinput);
+	cout << "Set Price : ";
+	cin >> priceInput;
+	obj.updatePrice(priceInput);
+	cout << "Set Stock : ";
+	cin >> stockInput;
+	obj.updateStock(stockInput);*/
+	return(obj);
+}
 void searchTitle(string search, BookType obj) {
 	obj.checkTitle(search);
 }
@@ -92,7 +213,7 @@ int main() {
 			break;
 		case 2: cout << "Which Book would you like to update? 1-10" << endl;
 			cin >> bookChoice;
-			obj[bookChoice - 1] = setInfo(obj[bookChoice - 1]);
+			obj[bookChoice - 1] = updateInfo(obj[bookChoice - 1]);
 			break;
 		case 3:
 			cout << "Which Title are you searching for?" << endl;
