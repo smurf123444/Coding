@@ -11,7 +11,7 @@ number of authors, add another member variable.
 Include the member functions to perform the various operations on
 objects of type bookType. For example, the usual operations that
 can be performed on the title are to show the title, set the title, and
-check whether a title is the same as the actual title of the book.
+check whether a title iAs the same as the actual title of the book.
 Similarly, the typical operations that can be performed on the
 number of copies in stock are to show the number of copies in
 stock, set the number of copies in stock, update the number of
@@ -20,26 +20,26 @@ similar operations for the publisher, ISBN, book price, and authors.
 Add the appropriate constructors and a destructor (if one is needed).
 */
 using namespace std;
-class BookType{
-	private:
-	public:
-		string title;
-		string authors[4] = { "", "", "", "" };
-		int authorCount;
-		string publisher;
-		string ISBN;
-		double price;
-		int stock;
-		BookType() {
-			title = "";
-			publisher = "";
-			ISBN = "";
-			price = 00.00;
-			stock = 00;
-			authorCount = 0;
-		}
-	void checkTitle(string input){
-		if(input == title)
+class BookType {
+private:
+public:
+	string title;
+	string authors[4] = { "", "", "", "" };
+	int authorCount;
+	string publisher;
+	string ISBN;
+	double price;
+	int stock;
+	BookType() {
+		title = "";
+		publisher = "";
+		ISBN = "";
+		price = 00.00;
+		stock = 00;
+		authorCount = 0;
+	}
+	void checkTitle(string input) {
+		if (input == title)
 		{
 			cout << "Correct title" << endl;
 		}
@@ -47,6 +47,14 @@ class BookType{
 		{
 			cout << "Incorrect title" << endl;
 		}
+	}
+	void showTitle()
+	{
+		cout << title;
+	}
+	void updateTitle(string set)
+	{
+		title = set;
 	}
 	void setTitle(string set)
 	{
@@ -66,6 +74,16 @@ class BookType{
 			cout << "Incorrect author" << endl;
 		}
 	}
+	void showAuthor()
+	{
+		int i = 0;
+		while (i < authorCount)
+			cout << authors[i++];
+	}
+	void updateAuthor(string set, int select)
+	{
+		authors[select] = set;
+	}
 	void setAuthor(string set, int select)
 	{
 		authors[select] = set;
@@ -82,12 +100,16 @@ class BookType{
 			else
 			{
 				cout << authors[i++];
-				if (i != authorCount-1)
+				if (i != authorCount - 1)
 				{
 					cout << ", ";
 				}
 			}
 		}
+	}
+	void showPublisher()
+	{
+		cout << publisher;
 	}
 	void checkPublisher(string input) {
 		if (input == publisher)
@@ -99,6 +121,10 @@ class BookType{
 			cout << "Incorrect publisher" << endl;
 		}
 	}
+	void updatePublisher(string set)
+	{
+		publisher = set;
+	}
 	void setPublisher(string set)
 	{
 		publisher = set;
@@ -106,6 +132,9 @@ class BookType{
 	string getPublisher()
 	{
 		return (publisher);
+	}
+	void showISBN() {
+		cout << ISBN;
 	}
 	void checkISBN(string input) {
 		if (input == ISBN)
@@ -117,6 +146,10 @@ class BookType{
 			cout << "Incorrect ISBN" << endl;
 		}
 	}
+	void updateISBN(string set)
+	{
+		ISBN = set;
+	}
 	void setISBN(string set)
 	{
 		ISBN = set;
@@ -125,15 +158,12 @@ class BookType{
 	{
 		return (ISBN);
 	}
-	void checkPrice(double input) {
-		if (input == price)
-		{
-			cout << "Correct Price" << endl;
-		}
-		else
-		{
-			cout << "Incorrect Price" << endl;
-		}
+	void showPrice() {
+		cout << price;
+	}
+	void updatePrice(double set)
+	{
+		price = set;
 	}
 	void setPrice(double set)
 	{
@@ -143,21 +173,19 @@ class BookType{
 	{
 		return (price);
 	}
-	void checkStock(int input) {
-		if (input == stock)
-		{
-			cout << "Correct Stock" << endl;
-		}
-		else
-		{
-			cout << "Incorrect Stock" << endl;
-		}
+	void showStock()
+	{
+		cout << stock;
+	}
+	void updateStock(int set)
+	{
+		stock = set;
 	}
 	void setStock(int set)
 	{
 		stock = set;
 	}
-	int getStock()	
+	int getStock()
 	{
 		return (stock);
 	}
