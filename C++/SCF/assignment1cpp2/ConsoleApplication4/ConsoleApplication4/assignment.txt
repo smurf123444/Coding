@@ -1,0 +1,29 @@
+Program the following problem from the textbook
+
+Chapter 10
+Pg 732 – Programming Exercise 10 - bookType class program
+Create the BookType class as specified in the book
+Set the array to 10 rather than 100 as specified in the book
+When you write the program to use the BookType class, structure the program as follows:
+Create a menu with the following options
+Enter Book Information
+Update Book information
+The Update choice should allow the user to change the book publisher, ISBN, price, number of copies, one of the authors
+Search by Title
+Search by ISBN
+Exit
+The program should return the appropriate message if there are no books yet entered
+The choice to enter Book information should not allow you to enter more books once the limit of 10 is entered
+The Update menu choice should allow you to update any data member of the bookType object.
+The Update menu choice should print out all data elements for the book after the data has been updated
+The search menu choices should print out the information for the book if it is found, or provide a message that the book was not found
+The user should be allowed to use all menu functions until they decide to exit the program.  The program should not exit when the array is full
+Rubric
+Create BookType Object         4 pts
+Store Objects in array              2 pts
+Message - no objects entered 1 pt
+Enter Data into Book Object    4 pts
+No more than 10 objects         1 pt
+Update Book object data         4 pts
+Search by Title                         2 pts
+Search by ISBN                       2 pts
