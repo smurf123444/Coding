@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 /*
 
 Each object of the class bookType can hold the following
@@ -86,7 +87,20 @@ public:
 	}
 	void setAuthor(string set, int select)
 	{
-		authors[select] = set;
+		int i = 0;
+		do
+		{
+			
+			if(set[i] == ' '){
+				i++;
+			}
+			else{
+			authors[select] = set;
+			i++;
+			}
+		}
+		while (i < set.length());
+		
 	}
 	void getAuthor()
 	{
