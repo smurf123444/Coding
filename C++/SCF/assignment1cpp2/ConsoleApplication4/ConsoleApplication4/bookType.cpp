@@ -240,7 +240,7 @@ int main() {
 		case 1:
 			while (bookCount < 10) {
 				cout << "Enter 0 to Continue Adding to the list of Books, or 1 for End of List" << endl;
-				cin >> leave;
+				getline(cin, leave);
 				if (leave == "1")
 				{
 					break;
