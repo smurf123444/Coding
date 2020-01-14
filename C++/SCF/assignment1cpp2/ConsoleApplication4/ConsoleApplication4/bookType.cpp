@@ -8,11 +8,13 @@ BookType setInfo(BookType obj) {
 	string ISBNinput;
 	//Fix this for input breaking (double to string convesion)
 	double priceInput;
+	string priceString;
+	string stockString;
 	int stockInput;
 	int i = 0;
 	int t = 0;
 	cout << "Set Title" << endl;
-	cin >> titleInput;
+	getline(cin, titleInput);
 	obj.setTitle(titleInput);
 	cout << "Set Author(s) " << endl;
 	while (i < 4)
@@ -39,11 +41,14 @@ BookType setInfo(BookType obj) {
 	getline(cin, ISBNinput);
 	obj.setISBN(ISBNinput);
 	cout << "Set Price : " << endl;
-	getline(cin, priceInput);
+	getline(cin, priceString);
+	stringstream(priceString) >> priceInput;
 	obj.setPrice(priceInput);
 	cout << "Set Stock : " << endl;
+	
 	//set up stringstream for an int...
-	getline(cin, stockInput);
+	getline(cin, stockString);
+	stringstream(stockString) >> stockInput;
 	obj.setStock(stockInput);
 
 	return(obj);
@@ -210,7 +215,9 @@ int main() {
 	BookType obj[10];
 	bool quit = false;
 	int selection;
+	string selectionString;
 	int bookChoice;
+	string bookChoiceString;
 	string titleSearch;
 	string ISBNSearch;
 	cout << ">>>>>>>>>>>>>>>>>>>>>>>" << endl;
@@ -224,7 +231,8 @@ int main() {
 		cout << "5. Exit" << endl;
 		cout << endl;
 		cout << "Type Here then press [Enter]: ";
-		cin >> selection;
+		getline(cin,selectionString);
+		stringstream(selectionString) >> selection;
 		int i = 0;
 		int bookCount = 0;
 		string leave;
@@ -244,8 +252,14 @@ int main() {
 			}
 			break;
 		case 2: cout << "Which Book would you like to update? 1-10" << endl;
-			cin >> bookChoice;
+			getline(cin, bookChoiceString);
+			stringstream(bookChoiceString) >> bookChoice;
+			if(bookChoice <= bookCount){
 			obj[bookChoice - 1] = updateInfo(obj[bookChoice - 1]);
+			}
+			else{
+			break;
+			}
 			break;
 		case 3:
 			cout << "Which Title are you searching for?" << endl;
