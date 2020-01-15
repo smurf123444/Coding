@@ -210,6 +210,7 @@ int main() {
 				}
 				std::cout << "Type Anything to Continue Adding to the list of Books, or 1 to save & return to Menu" << std::endl;
 				std::cout << " Then click [Enter]" << std::endl;
+				std::cout << std::endl;
 				std::getline(cin, leave);
 				bookCount++;
 			}
