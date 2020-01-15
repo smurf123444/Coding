@@ -14,13 +14,13 @@ BookType setInfo(BookType obj) {
 	int i = 0;
 	int t = 0;
 	cout << "Set Title" << endl;
+	
 	getline(cin, titleInput);
 	obj.setTitle(titleInput);
 	cout << "Set Author(s) " << endl;
 	while (i < 4)
 	{
 		cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0] to skip)" << endl;
-		cin.ignore();
 		 getline(cin,authorInput);
 		obj.setAuthor(authorInput, i);
 		if (authorInput == "" || authorInput == "0")
@@ -202,13 +202,29 @@ BookType updateInfo(BookType obj) {
 	cout << "Set Stock : ";
 	cin >> stockInput;
 	obj.updateStock(stockInput);*/
-void searchTitle(string search, BookType obj) {
-	obj.checkTitle(search);
+bool searchTitle(string search, BookType obj) {
+	if (obj.checkTitle(search) == true)
+	{
+		return (true);
+	}
+	else
+	{
+		return (false);
+	}
+	
 }
-void searchISBN(string search, BookType obj) {
-	obj.checkISBN(search);
+bool searchISBN(string search, BookType obj) {
+	if (obj.checkISBN(search) == true){
+		return (true);
+	} 
+	else
+	{
+		return (false);
+	}
+	
+	
 }
-void searchPublisher(string search, BookType obj) {
+bool searchPublisher(string search, BookType obj) {
 	obj.checkPublisher(search);
 }
 int main() {
@@ -230,17 +246,24 @@ int main() {
 		cout << "4. Search ISBN" << endl;
 		cout << "5. Exit" << endl;
 		cout << endl;
+		if (obj[0].title.empty())
+		{
+			cout << "NO BOOKS HAVE BEEN ADDED YET." << endl;
+		}
+		cout << endl;
 		cout << "Type Here then press [Enter]: ";
 		getline(cin,selectionString);
 		stringstream(selectionString) >> selection;
 		int i = 0;
 		int bookCount = 0;
 		string leave;
+		bool found = false;
 		switch (selection) {
 		case 1:
 			while (bookCount < 10) {
 				cout << "Enter 0 to Continue Adding to the list of Books, or 1 for End of List" << endl;
 				getline(cin, leave);
+				
 				if (leave == "1")
 				{
 					break;
@@ -258,14 +281,24 @@ int main() {
 			obj[bookChoice - 1] = updateInfo(obj[bookChoice - 1]);
 			}
 			else{
+				cout << "Book " << bookChoiceString << " does not exist yet. Try it in first..." << endl;
+				cout << " ----------------- "<<endl;
 			break;
 			}
 			break;
 		case 3:
 			cout << "Which Title are you searching for?" << endl;
 			cin >> titleSearch;
+			
 			while (i < 10) {
-				searchTitle(titleSearch, obj[i++]);
+				if (searchTitle(titleSearch, obj[i++]) == true)
+				{
+					found = true;
+				}
+			}
+			if (found == true)
+			{
+				cout << "Found at book " << ++i << endl;
 			}
 			i = 0;
 			break;

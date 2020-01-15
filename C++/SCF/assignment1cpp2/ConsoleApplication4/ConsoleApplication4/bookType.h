@@ -40,14 +40,16 @@ public:
 		stock = 00;
 		authorCount = 0;
 	}
-	void checkTitle(string input) {
+	bool checkTitle(string input) {
 		if (input == title)
 		{
 			cout << "Correct title" << endl;
+			return (true);
 		}
 		else
 		{
 			cout << "Incorrect title" << endl;
+			return (false);
 		}
 	}
 	void showTitle()
@@ -151,14 +153,16 @@ public:
 	void showISBN() {
 		cout << ISBN;
 	}
-	void checkISBN(string input) {
+	bool checkISBN(string input) {
 		if (input == ISBN)
 		{
 			cout << "Correct ISBN" << endl;
+			return (true);
 		}
 		else
 		{
 			cout << "Incorrect ISBN" << endl;
+			return (false);
 		}
 	}
 	void updateISBN(string set)
