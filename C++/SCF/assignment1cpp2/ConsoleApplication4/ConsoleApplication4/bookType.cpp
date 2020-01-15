@@ -87,7 +87,7 @@ BookType updateInfo(BookType obj) {
 		{
 			std::cout << std::endl;
 			std::cout << "Type in one to four Authors Names then press [Enter]" << std::endl << "(type [0] to skip)" << std::endl;
-			std::getline(cin, authorInput); 
+			std::getline(cin, authorInput);
 			obj.setAuthor(authorInput, i);
 			if (authorInput == "" || authorInput == "0")
 			{
@@ -117,7 +117,7 @@ BookType updateInfo(BookType obj) {
 		stringstream(stockString) >> stockInput;
 		obj.updateStock(stockInput);
 		break;
-		default: break;
+	default: break;
 	}
 
 	return(obj);
@@ -320,6 +320,7 @@ int main() {
 				std::cout << std::endl;
 				std::cout << "-----------------------" << std::endl;
 			}
+			i = 0, fun = 1;
 			break;
 		case 3:
 			std::cout << "Which Title are you searching for?" << std::endl;
