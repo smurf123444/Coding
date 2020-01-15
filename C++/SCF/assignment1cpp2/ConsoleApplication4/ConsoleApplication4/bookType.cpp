@@ -306,7 +306,7 @@ int main() {
 			break;
 		case 4:
 			cout << "Which ISBN are you searching for?" << endl;
-			cin >> ISBNSearch;
+			getline(cin, ISBNSearch);
 			while (i < 10) {
 				if (searchISBN(ISBNSearch, obj[i++]) == true)
 				{
@@ -314,7 +314,7 @@ int main() {
 					q = i;
 				}
 			}
-			if (found = true)
+			if (found == true)
 			{
 				cout << endl;
 				cout << "Found at book " << q << endl;
