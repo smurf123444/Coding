@@ -235,6 +235,7 @@ int main() {
 	string titleSearch;
 	string ISBNSearch;
 	int bookCount = 0;
+	int i = 0, q = 0, fun = 1;
 	cout << ">>>>>>>>>>>>>>>>>>>>>>>" << endl;
 	cout << "Welcome to Assignment 1 for CPP 2 SCF!" << endl;
 	while (!quit) {
@@ -251,25 +252,30 @@ int main() {
 		}
 		cout << endl;
 		cout << "Type Here then press [Enter]: ";
+		cout << endl;
 		getline(cin, selectionString);
 		stringstream(selectionString) >> selection;
-		int i = 0, q = 0;
+		
 	
-		string leave;
+		string leave= "";
 		bool found = false;
 		switch (selection) {
 		case 1:
 			while (bookCount < 10) {
-				cout << "Enter 0 to Continue Adding to the list of Books, or 1 for End of List" << endl;
-				getline(cin, leave);
-
+				fun = bookCount;
 				if (leave == "1")
 				{
 					break;
 				}
+
 				else {
+					cout << " BOOK #" << ++fun << endl;
+					cout << endl;
 					obj[bookCount] = setInfo(obj[bookCount]);
 				}
+				cout << "Enter 0 to Continue Adding to the list of Books, or 1 for End of List" << endl;
+				getline(cin, leave);
+
 				bookCount++;
 			}
 			break;
@@ -280,10 +286,31 @@ int main() {
 				obj[bookChoice - 1] = updateInfo(obj[bookChoice - 1]);
 			}
 			else {
+				cout << endl;
 				cout << "Book " << bookChoiceString << " does not exist yet. Try it in first..." << endl;
-				cout << " ----------------- " << endl;
-				break;
+				cout << "-----------------------" << endl;
 			}
+			while (i < bookCount) {
+			cout << "Book # : " << fun++ << endl;
+			cout << "-----------------------" << endl;
+			cout << "Title : " << obj[i].getTitle() << endl;
+			cout << "Author : ";
+			obj[i].getAuthor();
+			cout << endl;
+			cout << "Publisher : ";
+			cout << obj[i].getPublisher();
+			cout << endl;
+			cout << "ISBN # : ";
+			cout << obj[i].getISBN();
+			cout << endl;
+			cout << "Price : ";
+			cout << obj[i].getPrice();
+			cout << endl;
+			cout << "Stock : ";
+			cout << obj[i++].getStock();
+			cout << endl;
+			cout << "-----------------------" << endl;
+		}
 			break;
 		case 3:
 			cout << "Which Title are you searching for?" << endl;
@@ -328,8 +355,10 @@ int main() {
 			break;
 		default: break;
 		};
-		i = 0;
-		int fun = 1;
+		
+	}
+	i = 0;
+	fun = 1;
 		while (i < bookCount) {
 			cout << "Book # : " << fun++ << endl;
 			cout << "-----------------------" << endl;
@@ -351,6 +380,5 @@ int main() {
 			cout << endl;
 			cout << "-----------------------" << endl;
 		}
-	}
 	return (0);
 }
