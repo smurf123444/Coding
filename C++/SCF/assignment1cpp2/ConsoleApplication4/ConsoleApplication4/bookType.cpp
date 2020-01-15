@@ -1,5 +1,6 @@
 #include <iostream>
 #include "bookType.h"
+using namespace std;
 BookType setInfo(BookType obj) {
 	BookType input;
 	string titleInput;
@@ -13,15 +14,14 @@ BookType setInfo(BookType obj) {
 	int stockInput;
 	int i = 0;
 	int t = 0;
-	cout << "Set Title" << endl;
-
-	getline(cin, titleInput);
+	std::cout << "Set Title" << std::endl;
+	std::getline(cin, titleInput);
 	obj.setTitle(titleInput);
-	cout << "Set Author(s) " << endl;
+	std::cout << "Set Author(s) " << std::endl;
 	while (i < 4)
 	{
-		cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0] to skip)" << endl;
-		getline(cin, authorInput);
+		std::cout << "Type in one to four Authors Names then press [Enter]" << std::endl << "(type [0] to skip)" << std::endl;
+		std::getline(cin, authorInput);
 		obj.setAuthor(authorInput, i);
 		if (authorInput == "" || authorInput == "0")
 		{
@@ -34,20 +34,20 @@ BookType setInfo(BookType obj) {
 		t++;
 	}
 	obj.authorCount = t;
-	cout << "Set Publisher : " << endl;
-	getline(cin, publisherInput);
+	std::cout << "Set Publisher : " << std::endl;
+	std::getline(cin, publisherInput);
 	obj.setPublisher(publisherInput);
-	cout << "Set ISBN # : " << endl;
-	getline(cin, ISBNinput);
+	std::cout << "Set ISBN # : " << std::endl;
+	std::getline(cin, ISBNinput);
 	obj.setISBN(ISBNinput);
-	cout << "Set Price : " << endl;
-	getline(cin, priceString);
+	std::cout << "Set Price : " << std::endl;
+	std::getline(cin, priceString);
 	stringstream(priceString) >> priceInput;
 	obj.setPrice(priceInput);
-	cout << "Set Stock : " << endl;
+	std::cout << "Set Stock : " << std::endl;
 
 	//set up stringstream for an int...
-	getline(cin, stockString);
+	std::getline(cin, stockString);
 	stringstream(stockString) >> stockInput;
 	obj.setStock(stockInput);
 
@@ -60,29 +60,34 @@ BookType updateInfo(BookType obj) {
 	string publisherInput;
 	string ISBNinput;
 	double priceInput;
+	string priceString;
+	string stockString;
 	int stockInput;
-	int inputString;
+	int inputInt;
+	string inputString;
 	int i = 0;
 	int t = 0;
-	cout << "1. Update Title" << endl;
-	cout << "2. Update Author(s)" << endl;
-	cout << "3. Update Publisher" << endl;
-	cout << "4. Update ISBN" << endl;
-	cout << "5. Update Price" << endl;
-	cout << "6. Update Stock" << endl;
-	cout << "Type Here the press [Enter]";
-	cin >> inputString;
-	switch (inputString)
+	std::cout << "1. Update Title" << std::endl;
+	std::cout << "2. Update Author(s)" << std::endl;
+	std::cout << "3. Update Publisher" << std::endl;
+	std::cout << "4. Update ISBN" << std::endl;
+	std::cout << "5. Update Price" << std::endl;
+	std::cout << "6. Update Stock" << std::endl;
+	std::cout << "Type Here the press [Enter]" << std::endl;
+	std::getline(cin, inputString);
+	stringstream(inputString) >> inputInt;
+	switch (inputInt)
 	{
-	case 1: cout << "Update Title" << endl;
-		cin >> titleInput;
+	case 1: std::cout << "Update Title" << std::endl;
+		std::getline(cin, titleInput);
 		obj.setTitle(titleInput);
 		break;
-	case 2: 	cout << "Update Author(s) " << endl;
+	case 2: 	std::cout << "Update Author(s) " << std::endl;
 		while (i < 4)
 		{
-			cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0] to skip)" << endl;
-			cin >> authorInput;
+			std::cout << std::endl;
+			std::cout << "Type in one to four Authors Names then press [Enter]" << std::endl << "(type [0] to skip)" << std::endl;
+			std::getline(cin, authorInput); 
 			obj.setAuthor(authorInput, i);
 			if (authorInput == "" || authorInput == "0")
 			{
@@ -94,32 +99,35 @@ BookType updateInfo(BookType obj) {
 		}
 		obj.authorCount = t;
 		break;
-	case 3: cout << "Update Publisher : " << endl;
-		cin >> publisherInput;
+	case 3: std::cout << "Update Publisher : " << std::endl;
+		std::getline(cin, publisherInput);
 		obj.updatePublisher(publisherInput);
 		break;
-	case 4: cout << "Update ISBN # : " << endl;
-		cin >> ISBNinput;
+	case 4: std::cout << "Update ISBN # : " << std::endl;
+		std::getline(cin, ISBNinput);
 		obj.updateISBN(ISBNinput);
 		break;
-	case 5: cout << "Update Price : " << endl;
-		cin >> priceInput;
+	case 5: std::cout << "Update Price : " << std::endl;
+		std::getline(cin, priceString);
+		stringstream(priceString) >> priceInput;
 		obj.updatePrice(priceInput);
 		break;
-	case 6: cout << "Update Stock : " << endl;
-		cin >> stockInput;
+	case 6: std::cout << "Update Stock : " << std::endl;
+		std::getline(cin, stockString);
+		stringstream(stockString) >> stockInput;
 		obj.updateStock(stockInput);
 		break;
+		default: break;
 	}
 
 	return(obj);
 
 }
-/*		cout << "Set Author(s) " << endl;
+/*		std::cout << "Set Author(s) " << std::endl;
 
 		while (i < 4)
 		{
-			cout << "Type in one to four Authors Names then press [Enter]" << endl << "(type [0] to skip)" << endl;
+			std::cout << "Type in one to four Authors Names then press [Enter]" << std::endl << "(type [0] to skip)" << std::endl;
 			cin >> authorInput;
 			obj.setAuthor(authorInput, i);
 			if (authorInput == "" || authorInput == "0")
@@ -132,19 +140,19 @@ BookType updateInfo(BookType obj) {
 			t++;
 		}
 		obj.authorCount = t;
-		cout << "Set Publisher : ";
+		std::cout << "Set Publisher : ";
 		cin >> publisherInput;
 		if (publisherInput == "0")
 		{
-			cout << "Set ISBN # : ";
+			std::cout << "Set ISBN # : ";
 			cin >> ISBNinput;
 			if (ISBNinput == "0")
 			{
-				cout << "Set Price : ";
+				std::cout << "Set Price : ";
 				cin >> priceInput;
 				if (priceInput == 0)
 				{
-					cout << "Set Stock : ";
+					std::cout << "Set Stock : ";
 					cin >> stockInput;
 					if (stockInput == 0)
 					{
@@ -163,19 +171,19 @@ BookType updateInfo(BookType obj) {
 		else
 			obj.updatePublisher(publisherInput);
 	}
-/*	cout << "Set Publisher : ";
+/*	std::cout << "Set Publisher : ";
 	cin >> publisherInput;
 	if (publisherInput == "0")
 	{
-		cout << "Set ISBN # : ";
+		std::cout << "Set ISBN # : ";
 		cin >> ISBNinput;
 		if (ISBNinput == "0")
 		{
-			cout << "Set Price : ";
+			std::cout << "Set Price : ";
 			cin >> priceInput;
 			if (priceInput == 0)
 			{
-				cout << "Set Stock : ";
+				std::cout << "Set Stock : ";
 				cin >> stockInput;
 				if (stockInput == 0)
 				{
@@ -193,13 +201,13 @@ BookType updateInfo(BookType obj) {
 	}
 	else
 	obj.updatePublisher(publisherInput);
-/*	cout << "Set ISBN # : ";
+/*	std::cout << "Set ISBN # : ";
 	cin >> ISBNinput;
 	obj.updateISBN(ISBNinput);
-	cout << "Set Price : ";
+	std::cout << "Set Price : ";
 	cin >> priceInput;
 	obj.updatePrice(priceInput);
-	cout << "Set Stock : ";
+	std::cout << "Set Stock : ";
 	cin >> stockInput;
 	obj.updateStock(stockInput);*/
 bool searchTitle(string search, BookType obj) {
@@ -236,24 +244,24 @@ int main() {
 	string ISBNSearch;
 	int bookCount = 0;
 	int i = 0, q = 0, fun = 1;
-	cout << ">>>>>>>>>>>>>>>>>>>>>>>" << endl;
-	cout << "Welcome to Assignment 1 for CPP 2 SCF!" << endl;
+	std::cout << ">>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+	std::cout << "Welcome to Assignment 1 for CPP 2 SCF!" << std::endl;
 	while (!quit) {
-		cout << "Select one of the following options" << endl;
-		cout << "1. Enter Book Information" << endl;
-		cout << "2. Update Book Information" << endl;
-		cout << "3. Search Title" << endl;
-		cout << "4. Search ISBN" << endl;
-		cout << "5. Exit" << endl;
-		cout << endl;
+		std::cout << "Select one of the following options" << std::endl;
+		std::cout << "1. Enter Book Information" << std::endl;
+		std::cout << "2. Update Book Information" << std::endl;
+		std::cout << "3. Search Title" << std::endl;
+		std::cout << "4. Search ISBN" << std::endl;
+		std::cout << "5. Exit" << std::endl;
+		std::cout << std::endl;
 		if (obj[0].title.empty())
 		{
-			cout << "NO BOOKS HAVE BEEN ADDED YET." << endl;
+			std::cout << "NO BOOKS HAVE BEEN ADDED YET." << std::endl;
 		}
-		cout << endl;
-		cout << "Type Here then press [Enter]: ";
-		cout << endl;
-		getline(cin, selectionString);
+		std::cout << std::endl;
+		std::cout << "Type Here then press [Enter]: ";
+		std::cout << std::endl;
+		std::getline(cin, selectionString);
 		stringstream(selectionString) >> selection;
 
 
@@ -269,53 +277,53 @@ int main() {
 				}
 
 				else {
-					cout << endl;
-					cout << " BOOK #" << ++fun << endl;
-					cout << endl;
+					std::cout << std::endl;
+					std::cout << " BOOK #" << ++fun << std::endl;
+					std::cout << std::endl;
 					obj[bookCount] = setInfo(obj[bookCount]);
 				}
-				cout << "Enter 0 to Continue Adding to the list of Books, or 1 for End of List" << endl;
-				getline(cin, leave);
-
+				std::cout << "Type Anything to Continue Adding to the list of Books, or 1 to save & return to Menu" << std::endl;
+				std::cout << " Then click [Enter]" << std::endl;
+				std::getline(cin, leave);
 				bookCount++;
 			}
 			break;
-		case 2: cout << "Which Book would you like to update? 1-10" << endl;
-			getline(cin, bookChoiceString);
+		case 2: std::cout << "Which Book would you like to update? 1-10" << std::endl;
+			std::getline(cin, bookChoiceString);
 			stringstream(bookChoiceString) >> bookChoice;
 			if (bookChoice <= bookCount) {
 				obj[bookChoice - 1] = updateInfo(obj[bookChoice - 1]);
 			}
 			else {
-				cout << endl;
-				cout << "Book " << bookChoiceString << " does not exist yet. Try it in first..." << endl;
-				cout << "-----------------------" << endl;
+				std::cout << std::endl;
+				std::cout << "Book " << bookChoiceString << " does not exist yet. Try it in first..." << std::endl;
+				std::cout << "-----------------------" << std::endl;
 			}
 			while (i < bookCount) {
-				cout << "Book # : " << fun++ << endl;
-				cout << "-----------------------" << endl;
-				cout << "Title : " << obj[i].getTitle() << endl;
-				cout << "Author : ";
+				std::cout << "Book # : " << fun++ << std::endl;
+				std::cout << "-----------------------" << std::endl;
+				std::cout << "Title : " << obj[i].getTitle() << std::endl;
+				std::cout << "Author : ";
 				obj[i].getAuthor();
-				cout << endl;
-				cout << "Publisher : ";
-				cout << obj[i].getPublisher();
-				cout << endl;
-				cout << "ISBN # : ";
-				cout << obj[i].getISBN();
-				cout << endl;
-				cout << "Price : ";
-				cout << obj[i].getPrice();
-				cout << endl;
-				cout << "Stock : ";
-				cout << obj[i++].getStock();
-				cout << endl;
-				cout << "-----------------------" << endl;
+				std::cout << std::endl;
+				std::cout << "Publisher : ";
+				std::cout << obj[i].getPublisher();
+				std::cout << std::endl;
+				std::cout << "ISBN # : ";
+				std::cout << obj[i].getISBN();
+				std::cout << std::endl;
+				std::cout << "Price : ";
+				std::cout << obj[i].getPrice();
+				std::cout << std::endl;
+				std::cout << "Stock : ";
+				std::cout << obj[i++].getStock();
+				std::cout << std::endl;
+				std::cout << "-----------------------" << std::endl;
 			}
 			break;
 		case 3:
-			cout << "Which Title are you searching for?" << endl;
-			getline(cin, titleSearch);
+			std::cout << "Which Title are you searching for?" << std::endl;
+			std::getline(cin, titleSearch);
 
 			while (i < 10) {
 				if (searchTitle(titleSearch, obj[i++]) == true)
@@ -326,15 +334,15 @@ int main() {
 			}
 			if (found == true)
 			{
-				cout << endl;
-				cout << "Found at book " << q << endl;
-				cout << endl;
+				std::cout << std::endl;
+				std::cout << "Found at book " << q << std::endl;
+				std::cout << std::endl;
 			}
 			i = 0;
 			break;
 		case 4:
-			cout << "Which ISBN are you searching for?" << endl;
-			getline(cin, ISBNSearch);
+			std::cout << "Which ISBN are you searching for?" << std::endl;
+			std::getline(cin, ISBNSearch);
 			while (i < 10) {
 				if (searchISBN(ISBNSearch, obj[i++]) == true)
 				{
@@ -344,14 +352,14 @@ int main() {
 			}
 			if (found == true)
 			{
-				cout << endl;
-				cout << "Found at book " << q << endl;
-				cout << endl;
+				std::cout << std::endl;
+				std::cout << "Found at book " << q << std::endl;
+				std::cout << std::endl;
 			}
 			i = 0;
 			break;
 		case 5:
-			cout << "Exiting.." << endl;
+			std::cout << "Exiting.." << std::endl;
 			quit = true;
 			break;
 		default: break;
@@ -361,25 +369,25 @@ int main() {
 	i = 0;
 	fun = 1;
 	while (i < bookCount) {
-		cout << "Book # : " << fun++ << endl;
-		cout << "-----------------------" << endl;
-		cout << "Title : " << obj[i].getTitle() << endl;
-		cout << "Author : ";
+		std::cout << "Book # : " << fun++ << std::endl;
+		std::cout << "-----------------------" << std::endl;
+		std::cout << "Title : " << obj[i].getTitle() << std::endl;
+		std::cout << "Author : ";
 		obj[i].getAuthor();
-		cout << endl;
-		cout << "Publisher : ";
-		cout << obj[i].getPublisher();
-		cout << endl;
-		cout << "ISBN # : ";
-		cout << obj[i].getISBN();
-		cout << endl;
-		cout << "Price : ";
-		cout << obj[i].getPrice();
-		cout << endl;
-		cout << "Stock : ";
-		cout << obj[i++].getStock();
-		cout << endl;
-		cout << "-----------------------" << endl;
+		std::cout << std::endl;
+		std::cout << "Publisher : ";
+		std::cout << obj[i].getPublisher();
+		std::cout << std::endl;
+		std::cout << "ISBN # : ";
+		std::cout << obj[i].getISBN();
+		std::cout << std::endl;
+		std::cout << "Price : ";
+		std::cout << obj[i].getPrice();
+		std::cout << std::endl;
+		std::cout << "Stock : ";
+		std::cout << obj[i++].getStock();
+		std::cout << std::endl;
+		std::cout << "-----------------------" << std::endl;
 	}
 	return (0);
 }

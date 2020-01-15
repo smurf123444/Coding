@@ -21,15 +21,14 @@ copies in stock, and return the number of copies in stock. Add
 similar operations for the publisher, ISBN, book price, and authors.
 Add the appropriate constructors and a destructor (if one is needed).
 */
-using namespace std;
 class BookType {
 private:
 public:
-	string title;
-	string authors[4] = { "", "", "", "" };
+	std::string title;
+	std::string authors[4] = { "", "", "", "" };
 	int authorCount;
-	string publisher;
-	string ISBN;
+	std::string publisher;
+	std::string ISBN;
 	double price;
 	int stock;
 	BookType() {
@@ -40,7 +39,7 @@ public:
 		stock = 00;
 		authorCount = 0;
 	}
-	bool checkTitle(string input) {
+	bool checkTitle(std::string input) {
 		if (input == title)
 		{
 			return (true);
@@ -52,41 +51,41 @@ public:
 	}
 	void showTitle()
 	{
-		cout << title;
+		std::cout << title;
 	}
-	void updateTitle(string set)
+	void updateTitle(std::string set)
 	{
 		title = set;
 	}
-	void setTitle(string set)
+	void setTitle(std::string set)
 	{
 		title = set;
 	}
-	string getTitle()
+	std::string getTitle()
 	{
 		return (title);
 	}
-	void checkAuthor(string input, int select) {
+	void checkAuthor(std::string input, int select) {
 		if (input == authors[select])
 		{
-			cout << "Correct author" << endl;
+			std::cout << "Correct author" << std::endl;
 		}
 		else
 		{
-			cout << "Incorrect author" << endl;
+			std::cout << "Incorrect author" << std::endl;
 		}
 	}
 	void showAuthor()
 	{
 		int i = 0;
 		while (i < authorCount)
-			cout << authors[i++];
+			std::cout << authors[i++];
 	}
-	void updateAuthor(string set, int select)
+	void updateAuthor(std::string set, int select)
 	{
 		authors[select] = set;
 	}
-	void setAuthor(string set, int select)
+	void setAuthor(std::string set, int select)
 	{
 		int i = 0;
 		do
@@ -113,44 +112,44 @@ public:
 			}
 			else
 			{
-				cout << authors[i++];
+				std::cout << authors[i++];
 				if (i != authorCount - 1)
 				{
-					cout << ", ";
+					std::cout << ", ";
 				}
 			}
 		}
 	}
 	void showPublisher()
 	{
-		cout << publisher;
+		std::cout << publisher;
 	}
-	void checkPublisher(string input) {
+	void checkPublisher(std::string input) {
 		if (input == publisher)
 		{
-			cout << "Correct publisher" << endl;
+			std::cout << "Correct publisher" << std::endl;
 		}
 		else
 		{
-			cout << "Incorrect publisher" << endl;
+			std::cout << "Incorrect publisher" << std::endl;
 		}
 	}
-	void updatePublisher(string set)
+	void updatePublisher(std::string set)
 	{
 		publisher = set;
 	}
-	void setPublisher(string set)
+	void setPublisher(std::string set)
 	{
 		publisher = set;
 	}
-	string getPublisher()
+	std::string getPublisher()
 	{
 		return (publisher);
 	}
 	void showISBN() {
-		cout << ISBN;
+		std::cout << ISBN;
 	}
-	bool checkISBN(string input) {
+	bool checkISBN(std::string input) {
 		if (input == ISBN)
 		{
 			return (true);
@@ -160,20 +159,20 @@ public:
 			return (false);
 		}
 	}
-	void updateISBN(string set)
+	void updateISBN(std::string set)
 	{
 		ISBN = set;
 	}
-	void setISBN(string set)
+	void setISBN(std::string set)
 	{
 		ISBN = set;
 	}
-	string getISBN()
+	std::string getISBN()
 	{
 		return (ISBN);
 	}
 	void showPrice() {
-		cout << price;
+		std::cout << price;
 	}
 	void updatePrice(double set)
 	{
@@ -189,7 +188,7 @@ public:
 	}
 	void showStock()
 	{
-		cout << stock;
+		std::cout << stock;
 	}
 	void updateStock(int set)
 	{
