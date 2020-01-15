@@ -298,7 +298,7 @@ int main() {
 			}
 			if (found == true)
 			{
-				cout << "Found at book " << ++q << endl;
+				cout << "Found at book " << q << endl;
 			}
 			i = 0;
 			break;
