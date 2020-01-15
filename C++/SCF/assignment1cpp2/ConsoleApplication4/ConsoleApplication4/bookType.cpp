@@ -298,7 +298,9 @@ int main() {
 			}
 			if (found == true)
 			{
+				cout << endl;
 				cout << "Found at book " << q << endl;
+				cout << endl;
 			}
 			i = 0;
 			break;
@@ -306,8 +308,19 @@ int main() {
 			cout << "Which ISBN are you searching for?" << endl;
 			cin >> ISBNSearch;
 			while (i < 10) {
-				searchISBN(ISBNSearch, obj[i++]);
+				if (searchISBN(ISBNSearch, obj[i++]) == true)
+				{
+					found = true;
+					q = i;
+				}
 			}
+			if (found = true)
+			{
+				cout << endl;
+				cout << "Found at book " << q << endl;
+				cout << endl;
+			}
+			i = 0;
 			break;
 		case 5:
 			cout << "Exiting.." << endl;
