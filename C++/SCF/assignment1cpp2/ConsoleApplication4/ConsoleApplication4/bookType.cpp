@@ -234,6 +234,7 @@ int main() {
 	string bookChoiceString;
 	string titleSearch;
 	string ISBNSearch;
+	int bookCount = 0;
 	cout << ">>>>>>>>>>>>>>>>>>>>>>>" << endl;
 	cout << "Welcome to Assignment 1 for CPP 2 SCF!" << endl;
 	while (!quit) {
@@ -253,7 +254,7 @@ int main() {
 		getline(cin, selectionString);
 		stringstream(selectionString) >> selection;
 		int i = 0, q = 0;
-		int bookCount = 0;
+	
 		string leave;
 		bool found = false;
 		switch (selection) {
