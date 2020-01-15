@@ -255,9 +255,9 @@ int main() {
 		cout << endl;
 		getline(cin, selectionString);
 		stringstream(selectionString) >> selection;
-		
-	
-		string leave= "";
+
+
+		string leave = "";
 		bool found = false;
 		switch (selection) {
 		case 1:
@@ -269,6 +269,7 @@ int main() {
 				}
 
 				else {
+					cout << endl;
 					cout << " BOOK #" << ++fun << endl;
 					cout << endl;
 					obj[bookCount] = setInfo(obj[bookCount]);
@@ -291,26 +292,26 @@ int main() {
 				cout << "-----------------------" << endl;
 			}
 			while (i < bookCount) {
-			cout << "Book # : " << fun++ << endl;
-			cout << "-----------------------" << endl;
-			cout << "Title : " << obj[i].getTitle() << endl;
-			cout << "Author : ";
-			obj[i].getAuthor();
-			cout << endl;
-			cout << "Publisher : ";
-			cout << obj[i].getPublisher();
-			cout << endl;
-			cout << "ISBN # : ";
-			cout << obj[i].getISBN();
-			cout << endl;
-			cout << "Price : ";
-			cout << obj[i].getPrice();
-			cout << endl;
-			cout << "Stock : ";
-			cout << obj[i++].getStock();
-			cout << endl;
-			cout << "-----------------------" << endl;
-		}
+				cout << "Book # : " << fun++ << endl;
+				cout << "-----------------------" << endl;
+				cout << "Title : " << obj[i].getTitle() << endl;
+				cout << "Author : ";
+				obj[i].getAuthor();
+				cout << endl;
+				cout << "Publisher : ";
+				cout << obj[i].getPublisher();
+				cout << endl;
+				cout << "ISBN # : ";
+				cout << obj[i].getISBN();
+				cout << endl;
+				cout << "Price : ";
+				cout << obj[i].getPrice();
+				cout << endl;
+				cout << "Stock : ";
+				cout << obj[i++].getStock();
+				cout << endl;
+				cout << "-----------------------" << endl;
+			}
 			break;
 		case 3:
 			cout << "Which Title are you searching for?" << endl;
@@ -355,30 +356,30 @@ int main() {
 			break;
 		default: break;
 		};
-		
+
 	}
 	i = 0;
 	fun = 1;
-		while (i < bookCount) {
-			cout << "Book # : " << fun++ << endl;
-			cout << "-----------------------" << endl;
-			cout << "Title : " << obj[i].getTitle() << endl;
-			cout << "Author : ";
-			obj[i].getAuthor();
-			cout << endl;
-			cout << "Publisher : ";
-			cout << obj[i].getPublisher();
-			cout << endl;
-			cout << "ISBN # : ";
-			cout << obj[i].getISBN();
-			cout << endl;
-			cout << "Price : ";
-			cout << obj[i].getPrice();
-			cout << endl;
-			cout << "Stock : ";
-			cout << obj[i++].getStock();
-			cout << endl;
-			cout << "-----------------------" << endl;
-		}
+	while (i < bookCount) {
+		cout << "Book # : " << fun++ << endl;
+		cout << "-----------------------" << endl;
+		cout << "Title : " << obj[i].getTitle() << endl;
+		cout << "Author : ";
+		obj[i].getAuthor();
+		cout << endl;
+		cout << "Publisher : ";
+		cout << obj[i].getPublisher();
+		cout << endl;
+		cout << "ISBN # : ";
+		cout << obj[i].getISBN();
+		cout << endl;
+		cout << "Price : ";
+		cout << obj[i].getPrice();
+		cout << endl;
+		cout << "Stock : ";
+		cout << obj[i++].getStock();
+		cout << endl;
+		cout << "-----------------------" << endl;
+	}
 	return (0);
 }
