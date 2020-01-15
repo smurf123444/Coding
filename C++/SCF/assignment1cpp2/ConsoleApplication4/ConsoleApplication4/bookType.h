@@ -43,12 +43,10 @@ public:
 	bool checkTitle(string input) {
 		if (input == title)
 		{
-			cout << "Correct title" << endl;
 			return (true);
 		}
 		else
 		{
-			cout << "Incorrect title" << endl;
 			return (false);
 		}
 	}
@@ -93,17 +91,16 @@ public:
 		int i = 0;
 		do
 		{
-			
-			if(set[i] == ' '){
+
+			if (set[i] == ' ') {
 				i++;
 			}
-			else{
-			authors[select] = set;
-			i++;
+			else {
+				authors[select] = set;
+				i++;
 			}
-		}
-		while (i < set.length());
-		
+		} while (i < set.length());
+
 	}
 	void getAuthor()
 	{
@@ -156,12 +153,10 @@ public:
 	bool checkISBN(string input) {
 		if (input == ISBN)
 		{
-			cout << "Correct ISBN" << endl;
 			return (true);
 		}
 		else
 		{
-			cout << "Incorrect ISBN" << endl;
 			return (false);
 		}
 	}
