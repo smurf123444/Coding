@@ -25,7 +25,8 @@ class BookType {
 private:
 public:
 	std::string title;
-	std::string authors[4] = { "", "", "", "" };
+	int i;
+	std::string authors[4];
 	int authorCount;
 	std::string publisher;
 	std::string ISBN;
@@ -33,6 +34,10 @@ public:
 	int stock;
 	BookType() {
 		title = "";
+		i = 0;
+		while (i < 4) {
+		authors[i++] = "";
+		}
 		publisher = "";
 		ISBN = "";
 		price = 00.00;
