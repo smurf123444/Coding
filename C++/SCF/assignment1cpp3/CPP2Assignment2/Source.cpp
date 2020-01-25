@@ -1,8 +1,8 @@
 #include <iostream>
-#include "personType.h"
 #include "extPersonType.h"
-#include "dateType.h"
-#include "addressType.h"
+#include "personType.h"
+
+
 /*
 i. Load the data into the address book from a disk.
 iii. Search for a person by last name.
@@ -29,8 +29,10 @@ Make sure the user does not exceed the 10 max limit of addressBookType objects a
 */
 int main(){
 
-    extPersonType person[10];
-
-
+    extPersonType person;
+    cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
+    cout << "Welcome to SCF assignment 2" << endl; 
+    cout << endl;
+    person.setCity("Venice");
     return (0);
 }

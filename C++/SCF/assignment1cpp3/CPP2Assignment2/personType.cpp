@@ -34,4 +34,9 @@ personType::personType(string first, string last)
     firstName = first;
     lastName = last;
 }
+personType::personType()
+{
+    firstName = "";
+    lastName = "";
+}
 

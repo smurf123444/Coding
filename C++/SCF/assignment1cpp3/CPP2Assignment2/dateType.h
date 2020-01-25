@@ -26,7 +26,7 @@ public:
     void printDate() const;
       //Function to output the date in the form mm-dd-yyyy.
 
-    dateType(int month = 1, int day = 1, int year = 1900);
+    //dateType(int month = 1, int day = 1, int year = 1900);
       //Constructor to set the date
       //The member variables dMonth, dDay, and dYear are set 
       //according to the parameters.
@@ -34,6 +34,7 @@ public:
       //               If no values are specified, the default 
       //               values are used to initialize the member
       //               variables.
+      dateType();
 
 private:
     int dMonth; //variable to store the month

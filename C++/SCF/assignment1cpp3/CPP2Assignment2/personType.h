@@ -1,5 +1,6 @@
 //personType.h
- 
+ #ifndef _PERSONTYPE_H_
+ #define _PERSONTYPE_H_
 #include <string>
 
 using namespace std;
@@ -7,6 +8,7 @@ using namespace std;
 class personType
 {
 public:
+virtual ~personType(){};
     void print() const;
        //Function to output the first name and last name
        //in the form firstName lastName.
@@ -24,7 +26,7 @@ public:
       //Function to return the last name.
       //Postcondition: The value of lastName is returned.
 
-    personType(string first = "", string last = "");
+   personType(string first = "", string last = "");
       //Constructor
       //Sets firstName and lastName according to the parameters.
       //The default values of the parameters are null strings.
@@ -35,3 +37,4 @@ public:
     string lastName;  //variable to store the last name
 };
 
+#endif

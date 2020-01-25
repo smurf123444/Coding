@@ -1,6 +1,8 @@
 //personType.h
- 
+ #ifndef _EXTPERSONTYPE_H_
+ #define _EXTPERSONTYPE_H_
 #include <string>
+#include <iostream>
 #include "personType.h"
 #include "addressType.h"
 #include "dateType.h"
@@ -12,10 +14,10 @@ private:
 int association;
 int phoneNumber;
 public:
-extPersonType(){
-  association = 0;
-  phoneNumber = 0;
-}
+
+extPersonType();
+~extPersonType();
 
 };
 
+#endif
