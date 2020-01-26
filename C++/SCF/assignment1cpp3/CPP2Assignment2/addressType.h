@@ -5,7 +5,6 @@ class AddressType{
     std::string address, city, state, zip;
 
     AddressType();
-    ~AddressType();
     void setAddress(std::string input);
     void setCity(std::string input);
     void setState(std::string input);

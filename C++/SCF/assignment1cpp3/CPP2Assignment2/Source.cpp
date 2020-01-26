@@ -28,11 +28,11 @@ Provide a menu option to exit the program
 Make sure the user does not exceed the 10 max limit of addressBookType objects at any point during the program
 */
 int main(){
-
     extPersonType person;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     cout << "Welcome to SCF assignment 2" << endl; 
     cout << endl;
-    person.setCity("Venice");
+    person.setDate(12, 23, 43);
+    cout << person.getDay() << endl;
     return (0);
 }

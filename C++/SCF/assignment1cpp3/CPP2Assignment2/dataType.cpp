@@ -5,12 +5,7 @@
 
 using namespace std;
 
-void dateType::dateType()
-{
-    dMonth = 0;
-    dDay = 0;
-    dYear = 0;
-}
+
 void dateType::setDate(int month, int day, int year)
 {
     dMonth = month;

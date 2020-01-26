@@ -11,12 +11,13 @@ using namespace std;
 class extPersonType : public personType, public dateType, public AddressType
 {
 private:
-int association;
-int phoneNumber;
+    int association = 0;
+    int phoneNumber = 0;
 public:
 
-extPersonType();
-~extPersonType();
+    extPersonType() : personType(), dateType(), AddressType() {}
+
+   
 
 };
 

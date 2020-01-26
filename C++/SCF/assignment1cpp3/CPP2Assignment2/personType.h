@@ -31,7 +31,6 @@ virtual ~personType(){};
       //Sets firstName and lastName according to the parameters.
       //The default values of the parameters are null strings.
       //Postcondition: firstName = first; lastName = last  
-
  private:
     string firstName; //variable to store the first name
     string lastName;  //variable to store the last name
