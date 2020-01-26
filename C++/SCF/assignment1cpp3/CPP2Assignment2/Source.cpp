@@ -28,11 +28,54 @@ Provide a menu option to exit the program
 Make sure the user does not exceed the 10 max limit of addressBookType objects at any point during the program
 */
 int main(){
-    extPersonType person;
+    extPersonType person[10];
+    string personalFirstNameString = "", personalLastNameString = "";
+    bool quit = false;
+    int selection = 0;
+    int i = 0;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
-    cout << "Welcome to SCF assignment 2" << endl; 
+    cout << "Welcome to SCF assignment 2" << endl;
     cout << endl;
-    person.setDate(12, 23, 43);
-    cout << person.getDay() << endl;
+    while (!quit)
+    {
+        cout << "Please Select one of the Following.." << endl;
+        cout << "1. Enter Personal" << endl;
+        cout << "2. Enter Date of Birth" << endl;
+        cout << "3. Enter Address" << endl;
+        cin >> selection;
+        cout << endl;
+        if (i < 10)
+        {
+            switch (selection) {
+            case 1:
+                cout << "Enter Personal Information" << endl;
+                cout << endl;
+                cout << "First Name : ";
+                cin >> personalFirstNameString;
+                cout << endl;
+                cout << "Last Name : ";
+                cin >> personalLastNameString;
+                person[i].setName(personalFirstNameString, personalLastNameString);
+                //personal Informtaion
+                break;
+            case 2: // Date of Birth 
+                break;
+            case 3:
+                cout << "Enter Address :" << endl;
+                
+                break;
+            default:
+                cout << endl;
+                cout << "Incorrect Selection" << endl;
+                cout << endl;
+                quit = true;
+                break;
+            }
+        }
+    }
+     
+
+    cout << person[0].getFirstName() << endl;
+    cout << person[0].getLastName() << endl;
     return (0);
 }
