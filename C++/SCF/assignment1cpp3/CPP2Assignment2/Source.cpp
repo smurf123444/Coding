@@ -1,5 +1,5 @@
 #include <iostream>
-#include "extPersonType.h"
+#include "addressBookType.h"
 #include "personType.h"
 #include <sstream>
 
@@ -31,7 +31,7 @@ Provide a menu option to exit the program
 Make sure the user does not exceed the 10 max limit of addressBookType objects at any point during the program
 */
 int main(){
-    extPersonType person[10];
+    addressBookType person[10];
     string personalFirstNameString = "", personalLastNameString = "";
     string dayString = "", monthString = "", yearString = "";
     string addressString = "", cityString =  "", stateString = "", zipString = "";
@@ -46,8 +46,7 @@ int main(){
     {
         cout << "Please Select one of the Following.." << endl;
         cout << "1. Enter Personal" << endl;
-        cout << "2. Enter Date of Birth" << endl;
-        cout << "3. Enter Address" << endl;
+        cout << "More coming soon..." << endl;
         cin >> selection;
         cout << endl;
         if (i < 10)
