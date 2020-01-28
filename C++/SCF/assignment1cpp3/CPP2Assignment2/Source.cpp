@@ -323,7 +323,7 @@ int main(){
 
                 case 1:
                     cout << endl;
-                    cout << "Searching By Family..." << endl;
+                    cout << "Searching By Family..." << endl ;
                     while (i < 10)
                     {
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
