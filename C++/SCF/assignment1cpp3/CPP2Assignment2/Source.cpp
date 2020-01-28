@@ -76,6 +76,33 @@ bool searchClassificationMethod(int input, addressBookType obj)
     }
 
 }
+void displayObject(addressBookType obj)
+{
+    cout << "First Name : "<< obj.getFirstName() << endl;
+    cout << "Last Name : " << obj.getLastName() << endl;
+    cout << "DOB : " << obj.getDay() << "," << obj.getMonth() << "," << obj.getYear() << endl;
+    cout << "Phone Number :" << obj.getPhoneNumber() << endl;
+    obj.getAddress();
+    obj.getCity();
+    obj.getState();
+    if (obj.getClassification() == 1)
+    {
+        cout << "Classification : Family" << endl;
+    }
+    else if (obj.getClassification() == 2)
+    {
+        cout << "Classification : Friend" << endl;
+
+    }
+    else if (obj.getClassification() == 3)
+    {
+        cout << "Classification : Buisness" << endl;
+    }
+    else
+    {
+        cout << "Classification : Unknown..." << endl;
+    }
+}
 int main(){
     addressBookType person[10];
     string personalFirstNameString = "", personalLastNameString = "";
@@ -136,8 +163,8 @@ int main(){
                 getline(cin, monthString);
                 cout << endl;
                 cout << "Year : ";
-                cout << endl;
                 getline(cin, yearString);
+                cout << endl;
                 stringstream(dayString) >> day;
                 stringstream(monthString) >> month;
                 stringstream(yearString) >> year;
@@ -161,6 +188,7 @@ int main(){
                 cout << "1. Family" << endl;
                 cout << "2. Friend" << endl;
                 cout << "3. Buisness" << endl;
+                cout << "Type here the press [Enter] : ";
                 getline(cin, classificationString);
                 stringstream(classificationString) >> classificationInt;
                 stringstream(phoneString) >> phoneInt;
@@ -186,13 +214,21 @@ int main(){
                 while (i < 10)
                 {   
                     if (searchFirstMethod(firstNameSearch, person[i]) == true) {
-                        cout << "found name at object " << i++ << endl;
+                        cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
+                        cout << endl;
+                        cout << endl;
+                        displayObject(person[i]);
+                        cout << endl;
+                        cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                        cout << endl;    
+                        cout << endl;
+                        
                     }
                     else
                     {
-                        cout << endl;
+                      
                         i++;
-                        cout << endl;
+                       
                     }
                 }
                 i = 0;
@@ -210,15 +246,21 @@ int main(){
                 while (i < 10) {
                     if (searchLastMethod(lastNameSearch, person[i]) == true)
                     {
+                        cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                         cout << endl;
-                        cout << "found name at object " << i++ << endl;
                         cout << endl;
+                        displayObject(person[i]);
+                        cout << endl;
+                        cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                        cout << endl;
+                        cout << endl;
+
                     }
                     else
                     {
-                        cout << endl;
+                        
                         i++;
-                        cout << endl;
+                        
                     }
                 }
                 i = 0;
@@ -239,9 +281,15 @@ int main(){
                 {
                         if (searchDateMethod(month, person[i]) == true)
                     {
+                            cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                             cout << endl;
-                        cout << "Found month at object " << ++i << endl;
-                        cout << endl;
+                            cout << endl;
+                            displayObject(person[i]);
+                            cout << endl;
+                            cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                            cout << endl;
+                            cout << endl;
+
                     }
                     else
                     {
@@ -275,15 +323,21 @@ int main(){
 
                 case 1:
                     cout << endl;
-                    cout << "Searching By Family...";
+                    cout << "Searching By Family..." << endl;
                     while (i < 10)
                     {
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
                         {
+                            cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                             cout << endl;
-                            cout << "Found Family at object " << ++i << endl;
                             cout << endl;
-                        }
+                            displayObject(person[i]);
+                            cout << endl;
+                            cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                            cout << endl;
+                            cout << endl;
+
+                       }
                         else
                         {
 
@@ -293,14 +347,20 @@ int main(){
                     break;
                 case 2:
                     cout << endl;
-                    cout << "Searching all Friends...";
+                    cout << "Searching all Friends..." << endl;
                     while (i < 10)
                     {
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
                         {
+                            cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                             cout << endl;
-                            cout << "Found Friend at object " << ++i << endl;
                             cout << endl;
+                            displayObject(person[i]);
+                            cout << endl;
+                            cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                            cout << endl;
+                            cout << endl;
+
                         }
                         else
                         {
@@ -312,14 +372,20 @@ int main(){
                     break;
                 case 3:
                     cout << endl;
-                    cout << "Searching By Buisness...";
+                    cout << "Searching By Buisness..." << endl;
                     while (i < 10)
                     {
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
                         {
+                            cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                             cout << endl;
-                            cout << "Found Buisness at object " << ++i << endl;
                             cout << endl;
+                            displayObject(person[i]);
+                            cout << endl;
+                            cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                            cout << endl;
+                            cout << endl;
+
                         }
                         else
                         {
