@@ -30,78 +30,313 @@ in (vii), provide a menu option to enter the classification of a person (family,
 Provide a menu option to exit the program
 Make sure the user does not exceed the 10 max limit of addressBookType objects at any point during the program
 */
+
+bool searchFirstMethod(string input, addressBookType obj)
+{
+        if (input == obj.getFirstName())
+        {
+            return (true);
+        }
+        else
+        {
+            return (false);
+        }
+}
+bool searchLastMethod(string input, addressBookType obj)
+{
+    if (input == obj.getLastName())
+    {
+        return (true);
+    }
+    else
+    {
+        return (false);
+    }
+}
+bool searchDateMethod(int input, addressBookType obj)
+{
+
+    if (input == obj.getMonth())
+    {
+        return (true);
+    }
+    else
+    {
+        return (false);
+    }
+}
+bool searchClassificationMethod(int input, addressBookType obj)
+{
+    if (input == obj.getClassification())
+    {
+        return (true);
+    }
+    else {
+        return (false);
+    }
+
+}
 int main(){
     addressBookType person[10];
     string personalFirstNameString = "", personalLastNameString = "";
     string dayString = "", monthString = "", yearString = "";
     string addressString = "", cityString =  "", stateString = "", zipString = "";
-    int day = 0, month = 0, year = 0;
+    string firstNameSearch = "", lastNameSearch = "", classificationString = "", phoneString = "";
+    int day = 0, month = 0, year = 0, classificationInt = 0, phoneInt = 0;
     bool quit = false;
+    string selectionString;
     int selection = 0;
-    int i = 0;
+    int i = 0, bookCount = 0;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     cout << "Welcome to SCF assignment 2" << endl;
     cout << endl;
     while (!quit)
     {
-        cout << "Please Select one of the Following.." << endl;
-        cout << "1. Enter Personal" << endl;
-        cout << "More coming soon..." << endl;
-        cin >> selection;
         cout << endl;
-        if (i < 10)
+        cout << "Books Logged : " << bookCount << endl;
+        if (bookCount == 0) {
+            cout << endl;
+            cout << "1. Enter Personal" << endl;
+            cout << "6. Exit." << endl;
+            cout << endl;
+        } 
+        else {
+            cout << endl;
+            cout << "Please Select one of the Following.." << endl;
+            cout << "1. Enter Personal" << endl;
+            cout << "2. Search By First Name" << endl;
+            cout << "3. Search By Last Name" << endl;
+            cout << "4. Search By Month" << endl;
+            cout << "5. Search By Classification (Friend, Family or Buisness Associate" << endl;
+            cout << "6. Exit." << endl;
+        }
+        cout << "Enter Here : ";
+        getline(cin, selectionString);
+        stringstream(selectionString) >> selection;
+        cout << endl;
+        if (bookCount < 10)
         {
             switch (selection) {
             case 1:
                 cout << "Enter Personal Information" << endl;
                 cout << endl;
                 cout << "First Name : ";
-                cin >> personalFirstNameString;
+                getline(cin, personalFirstNameString);
                 cout << endl;
                 cout << "Last Name : ";
-                cin >> personalLastNameString;
-                person[i].setName(personalFirstNameString, personalLastNameString);
+                getline(cin, personalLastNameString);
+                person[bookCount].setName(personalFirstNameString, personalLastNameString);
                 cout << endl;
                 cout << "Enter Date Information" << endl;
                 cout << endl;
                 cout << "Day : ";
-                cin >> dayString;
+                getline(cin, dayString);
                 cout << endl;
                 cout << "Month : ";
-                cin >> monthString;
+                getline(cin, monthString);
+                cout << endl;
                 cout << "Year : ";
                 cout << endl;
-                cin >> yearString;
+                getline(cin, yearString);
                 stringstream(dayString) >> day;
                 stringstream(monthString) >> month;
                 stringstream(yearString) >> year;
-                person[i].setDate(month, day, year);
+                person[bookCount].setDate(month, day, year);
                 cout << "Address : ";
-                cin >> addressString;
+                getline(cin, addressString);
                 cout << endl;
                 cout << "City : ";
-                cin >> cityString;
+                getline(cin, cityString);
                 cout << endl;
                 cout << "State : ";
-                cin >> stateString;
+                getline(cin, stateString);
+                cout << endl;
                 cout << "Zip : ";
-                cin >> zipString;
-                person[i].setAddress(addressString);
-                person[i].setCity(cityString);
-                person[i].setState(stateString);
-                person[i].setZip(zipString);
+                getline(cin, zipString);
+                cout << endl;
+                cout << "Phone # : ";
+                getline(cin, phoneString);
+                cout << endl;
+                cout << "Relation?" << endl;
+                cout << "1. Family" << endl;
+                cout << "2. Friend" << endl;
+                cout << "3. Buisness" << endl;
+                getline(cin, classificationString);
+                stringstream(classificationString) >> classificationInt;
+                stringstream(phoneString) >> phoneInt;
+                person[bookCount].setPhoneNumber(phoneInt);
+                person[bookCount].setClassification(classificationInt);
+                person[bookCount].setAddress(addressString);
+                person[bookCount].setCity(cityString);
+                person[bookCount].setState(stateString);
+                person[bookCount].setZip(zipString);
                 //personal Informtaion
+                bookCount++;
+                break;
+            case 2: 
+                if (person[0].getFirstName() == "")
+                {
+                    cout << endl;
+                    cout << "No Enteries to access " << endl;
+                    cout << endl;
+                    break;
+                }
+                cout << "Search by First Name, Please enter a First Name" << endl;
+                getline(cin, firstNameSearch);
+                while (i < 10)
+                {   
+                    if (searchFirstMethod(firstNameSearch, person[i]) == true) {
+                        cout << "found name at object " << i++ << endl;
+                    }
+                    else
+                    {
+                        cout << endl;
+                        i++;
+                        cout << endl;
+                    }
+                }
+                i = 0;
+                break;
+            case 3: 
+                if (person[0].getFirstName() == "")
+                {
+                    cout << endl;
+                    cout << "No Enteries to access " << endl;
+                    cout << endl;
+                    break;
+                }
+                cout << "Search By Last Name, Please enter a Last Name" << endl;
+                getline(cin, lastNameSearch);
+                while (i < 10) {
+                    if (searchLastMethod(lastNameSearch, person[i]) == true)
+                    {
+                        cout << endl;
+                        cout << "found name at object " << i++ << endl;
+                        cout << endl;
+                    }
+                    else
+                    {
+                        cout << endl;
+                        i++;
+                        cout << endl;
+                    }
+                }
+                i = 0;
+                break;
+            case 4: 
+                if (person[0].getFirstName() == "")
+                {
+                    cout << endl;
+                    cout << "No Enteries to access " << endl;
+                    cout << endl;
+                    break;
+                }
+                monthString = "";
+                cout << "Search By Month, Please enter a Month" << endl;
+                getline(cin, monthString);
+                stringstream(monthString) >> month;
+                while (i < 10)
+                {
+                        if (searchDateMethod(month, person[i]) == true)
+                    {
+                            cout << endl;
+                        cout << "Found month at object " << ++i << endl;
+                        cout << endl;
+                    }
+                    else
+                    {
+                    
+                        i++;
+                    }
+                }
 
+                i = 0;
+                
+                //  provide a menu option to enter a month of the year and display the name, address and phone number of the entries with birthdays in that month
                 break;
-            case 2: // Search by First Name
-                break;
-            case 3: //  Search by Last Name
-                break;
-            case 4: //  provide a menu option to enter a month of the year and display the name, address and phone number of the entries with birthdays in that month
-                break;
-            case 5: // provide a menu option to enter the classification of a person (family, friend or business) and display the name, address and phone number of the entries with birthdays in that month
+            case 5:
+                if (person[0].getFirstName() == "")
+                {
+                    cout << endl;
+                    cout << "No Enteries to access " << endl;
+                    cout << endl;
+                    break;
+                }
+                i = 0;
+                cout << "Search By Classification, Please enter a Selection." << endl;
+                cout << "1. Seatch by Family" << endl;
+                cout << "2. Search by Friend" << endl;
+                cout << "3. Search by Buisness" << endl;
+                cout << endl;
+                cout << "Please Type Here then press [Enter] : ";
+                getline(cin, classificationString);
+                stringstream(classificationString) >> classificationInt;
+                switch (classificationInt) {
+
+                case 1:
+                    cout << endl;
+                    cout << "Searching By Family...";
+                    while (i < 10)
+                    {
+                        if (searchClassificationMethod(classificationInt, person[i]) == true)
+                        {
+                            cout << endl;
+                            cout << "Found Family at object " << ++i << endl;
+                            cout << endl;
+                        }
+                        else
+                        {
+
+                            i++;
+                        }
+                    }
+                    break;
+                case 2:
+                    cout << endl;
+                    cout << "Searching all Friends...";
+                    while (i < 10)
+                    {
+                        if (searchClassificationMethod(classificationInt, person[i]) == true)
+                        {
+                            cout << endl;
+                            cout << "Found Friend at object " << ++i << endl;
+                            cout << endl;
+                        }
+                        else
+                        {
+
+                            i++;
+                        }
+                    }
+                    // search by Friend
+                    break;
+                case 3:
+                    cout << endl;
+                    cout << "Searching By Buisness...";
+                    while (i < 10)
+                    {
+                        if (searchClassificationMethod(classificationInt, person[i]) == true)
+                        {
+                            cout << endl;
+                            cout << "Found Buisness at object " << ++i << endl;
+                            cout << endl;
+                        }
+                        else
+                        {
+
+                            i++;
+                        }
+                    }
+                    // search by Buisness
+                    break;
+                }
+                i = 0;
+                // provide a menu option to enter the classification of a person (family, friend or business) and display the name, address and phone number of the entries with birthdays in that month
                 break;
             case 6:
+                quit = true;
+                    cout << endl;
+                    cout << "Exiting..." << endl;
                 // Provide a menu option to exit the program
                 break;
             default:

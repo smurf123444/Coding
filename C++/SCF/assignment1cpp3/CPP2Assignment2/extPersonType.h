@@ -17,7 +17,10 @@ public:
 
     extPersonType() : personType(), dateType(), AddressType() {}
 
-   
+    void setClassification(int input);
+    void setPhoneNumber(int input);
+    int getPhoneNumber();
+    int getClassification();
 
 };
 
