@@ -34,6 +34,8 @@ public:
       //               If no values are specified, the default 
       //               values are used to initialize the member
       //               variables.
+    void setMonth(int month);
+    //Function to seperate objects by months.
 
 private:
     int dMonth; //variable to store the month

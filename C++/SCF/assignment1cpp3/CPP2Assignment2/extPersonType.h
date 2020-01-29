@@ -8,14 +8,14 @@
 #include "dateType.h"
 using namespace std;
 
-class extPersonType : public personType, public dateType, public AddressType
+class extPersonType : public personType
 {
 private:
     int association = 0;
     int phoneNumber = 0;
 public:
 
-    extPersonType() : personType(), dateType(), AddressType() {}
+    extPersonType() : personType() {}
 
     void setClassification(int input);
     void setPhoneNumber(int input);

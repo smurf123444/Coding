@@ -76,11 +76,11 @@ bool searchClassificationMethod(int input, addressBookType obj)
     }
 
 }
+
 void displayObject(addressBookType obj)
 {
     cout << "First Name : "<< obj.getFirstName() << endl;
     cout << "Last Name : " << obj.getLastName() << endl;
-    cout << "DOB : " << obj.getDay() << "," << obj.getMonth() << "," << obj.getYear() << endl;
     cout << "Phone Number :" << obj.getPhoneNumber() << endl;
     obj.getAddress();
     obj.getCity();
@@ -109,11 +109,11 @@ int main(){
     string dayString = "", monthString = "", yearString = "";
     string addressString = "", cityString =  "", stateString = "", zipString = "";
     string firstNameSearch = "", lastNameSearch = "", classificationString = "", phoneString = "";
-    int day = 0, month = 0, year = 0, classificationInt = 0, phoneInt = 0;
-    bool quit = false;
+    int day = 0, month = 0, year = 0, classificationInt = 0, phoneInt = 0, foundInt = 0;
+    bool quit = false, found = false;
     string selectionString;
     int selection = 0;
-    int i = 0, bookCount = 0;
+    int i = 0, bookCount = 0, t = 0;
     cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>" << endl;
     cout << "Welcome to SCF assignment 2" << endl;
     cout << endl;
@@ -126,7 +126,7 @@ int main(){
             cout << "1. Enter Personal" << endl;
             cout << "6. Exit." << endl;
             cout << endl;
-        } 
+        }
         else {
             cout << endl;
             cout << "Please Select one of the Following.." << endl;
@@ -201,7 +201,7 @@ int main(){
                 //personal Informtaion
                 bookCount++;
                 break;
-            case 2: 
+            case 2:
                 if (person[0].getFirstName() == "")
                 {
                     cout << endl;
@@ -212,28 +212,38 @@ int main(){
                 cout << "Search by First Name, Please enter a First Name" << endl;
                 getline(cin, firstNameSearch);
                 while (i < 10)
-                {   
+                {
                     if (searchFirstMethod(firstNameSearch, person[i]) == true) {
                         cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                         cout << endl;
                         cout << endl;
                         displayObject(person[i]);
                         cout << endl;
-                        cout << ">> Found Friend at Object " << ++i << " <<" << endl;
-                        cout << endl;    
+                        found = true;
+                        cout << ">> Found First Name at Item # " << ++i << " <<" << endl;
                         cout << endl;
-                        
+                        cout << endl;
+
                     }
                     else
                     {
-                      
+
                         i++;
-                       
+
                     }
+
                 }
+                if (i >= 9 && found != true)
+                {
+                    cout << endl;
+                    cout << ">>NONE FOUND<<" << endl;
+                    cout << endl;
+                }
+                found = false;
                 i = 0;
                 break;
-            case 3: 
+              
+            case 3:
                 if (person[0].getFirstName() == "")
                 {
                     cout << endl;
@@ -247,25 +257,34 @@ int main(){
                     if (searchLastMethod(lastNameSearch, person[i]) == true)
                     {
                         cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
+
                         cout << endl;
                         cout << endl;
                         displayObject(person[i]);
                         cout << endl;
-                        cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                        found = true;
+                        cout << ">> Found Last Name at Item # " << ++i << " <<" << endl;
                         cout << endl;
                         cout << endl;
 
                     }
                     else
                     {
-                        
+
                         i++;
-                        
+
                     }
                 }
+                if (i >= 9 && found != true)
+                {
+                    cout << endl;
+                    cout << ">>NONE FOUND<<" << endl;
+                    cout << endl;
+                }
+                found = false;
                 i = 0;
                 break;
-            case 4: 
+            case 4:
                 if (person[0].getFirstName() == "")
                 {
                     cout << endl;
@@ -279,27 +298,34 @@ int main(){
                 stringstream(monthString) >> month;
                 while (i < 10)
                 {
-                        if (searchDateMethod(month, person[i]) == true)
+                    if (searchDateMethod(month, person[i]) == true)
                     {
-                            cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
-                            cout << endl;
-                            cout << endl;
-                            displayObject(person[i]);
-                            cout << endl;
-                            cout << ">> Found Friend at Object " << ++i << " <<" << endl;
-                            cout << endl;
-                            cout << endl;
+                        cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
+                        cout << endl;
+                        cout << endl;
+                        found = true;
+                        displayObject(person[i]);
+                        cout << endl;
+                        cout << ">> Found Month at Object " << ++i << " <<" << endl;
+                        cout << endl;
+                        cout << endl;
 
                     }
                     else
                     {
-                    
+
                         i++;
                     }
                 }
-
+                if (i >= 9 && found != true)
+                {
+                    cout << endl;
+                    cout << ">>NONE FOUND<<" << endl;
+                    cout << endl;
+                }
+                found = false;
                 i = 0;
-                
+
                 //  provide a menu option to enter a month of the year and display the name, address and phone number of the entries with birthdays in that month
                 break;
             case 5:
@@ -323,101 +349,180 @@ int main(){
 
                 case 1:
                     cout << endl;
-                    cout << "Searching By Family..." << endl ;
+                    cout << "Searching By Family..." << endl;
                     while (i < 10)
                     {
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
                         {
                             cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                             cout << endl;
+                            foundInt = i;
+                            found = true;
+                            cout << ">> Found Family at Object " << ++i << " <<" << endl;
+                            i--;
                             cout << endl;
-                            displayObject(person[i]);
+                            displayObject(person[i++]);
                             cout << endl;
-                            cout << ">> Found Friend at Object " << ++i << " <<" << endl;
-                            cout << endl;
-                            cout << endl;
-
-                       }
+                        }
                         else
                         {
 
                             i++;
                         }
+
                     }
+                    if (i >= 9 && found != true)
+                    {
+                        cout << endl;
+                        cout << ">>NONE FOUND<<" << endl;
+                        cout << endl;
+                    }
+                    found = false;
+                    cout << endl;
+                    cout << endl;
+                    while (t < 10) {
+                        if (person[t].getMonth() == person[foundInt].getMonth())
+                        {
+                            cout << endl;
+                            cout << "Family with same Birth Month..." << endl;
+                            cout << endl;
+                            cout << "Person # " << ++t << endl;
+                            cout << endl;
+                            t--;
+                            displayObject(person[t++]);
+                        }
+                        else
+                        {
+                            i++;
+                            t++;
+                        }
+                    }
+                    i = 0;
+                    t = 0;
                     break;
                 case 2:
                     cout << endl;
-                    cout << "Searching all Friends..." << endl;
+                    cout << "Searching By Friend..." << endl;
                     while (i < 10)
                     {
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
                         {
                             cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                             cout << endl;
-                            cout << endl;
-                            displayObject(person[i]);
-                            cout << endl;
+                            foundInt = i;
+                            found = true;
                             cout << ">> Found Friend at Object " << ++i << " <<" << endl;
+                            i--;
                             cout << endl;
+                            displayObject(person[i++]);
                             cout << endl;
-
                         }
                         else
                         {
 
                             i++;
                         }
+
                     }
-                    // search by Friend
+                    if (i >= 9 && found != true)
+                    {
+                        cout << endl;
+                        cout << ">>NONE FOUND<<" << endl;
+                        cout << endl;
+                    }
+                    found = false;
+                    i = 0;
+                    cout << endl;
+                    cout << endl;
+                    while (t < 10) {
+                        if (person[t].getMonth() == person[foundInt].getMonth())
+                        {
+                            cout << endl;
+                            cout << "Friends with same Month..." << endl;
+                            cout << endl;
+                            cout << "Person # " << ++t << endl;
+                            cout << endl;
+                            t--;
+                            displayObject(person[t++]);
+
+                        }
+                        else
+                        {
+                            t++;
+                        }
+                    }
+                    i = 0;
+                    t = 0;
                     break;
                 case 3:
                     cout << endl;
-                    cout << "Searching By Buisness..." << endl;
+                    cout << "Searching By Business..." << endl;
                     while (i < 10)
                     {
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
                         {
                             cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
                             cout << endl;
+                            foundInt = i;
+                            found = true;
+                            cout << ">> Found Business Partner at Object " << ++i << " <<" << endl;
+                            i--;
                             cout << endl;
-                            displayObject(person[i]);
+                            displayObject(person[i++]);
                             cout << endl;
-                            cout << ">> Found Friend at Object " << ++i << " <<" << endl;
-                            cout << endl;
-                            cout << endl;
-
                         }
                         else
                         {
 
                             i++;
                         }
+
                     }
-                    // search by Buisness
+                    if (i >= 9 && found != true)
+                    {
+                        cout << endl;
+                        cout << ">>NONE FOUND<<" << endl;
+                        cout << endl;
+                    }
+                    found = false;
+                    i = 0;
+                    cout << endl;
+                    cout << endl;
+                    while (t < 10) {
+                        if (person[t].getMonth() == person[foundInt].getMonth())
+                        {
+                            cout << endl;
+                            cout << "Business Partners with same Month..." << endl;
+                            cout << endl;
+                            cout << "Person # " << ++t << endl;
+                            cout << endl;
+                            t--;
+                            displayObject(person[t++]);
+
+                        }
+                        else
+                        {
+                            t++;
+                        }
+                    }
+                    i = 0;
+                    t = 0;
                     break;
-                }
-                i = 0;
-                // provide a menu option to enter the classification of a person (family, friend or business) and display the name, address and phone number of the entries with birthdays in that month
-                break;
-            case 6:
-                quit = true;
+                case 6:
+                    quit = true;
                     cout << endl;
                     cout << "Exiting..." << endl;
-                // Provide a menu option to exit the program
-                break;
-            default:
-                cout << endl;
-                cout << "Incorrect Selection" << endl;
-                cout << endl;
-                quit = true;
-                break;
+                    // Provide a menu option to exit the program
+                    break;
+                default:
+                    cout << endl;
+                    cout << "Incorrect Selection" << endl;
+                    cout << endl;
+                    quit = true;
+                    break;
+                }
             }
         }
     }
-     
-    /*
-    cout << person[0].getFirstName() << endl;
-    cout << person[0].getLastName() << endl;
-    */
     return (0);
 }

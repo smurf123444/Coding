@@ -12,7 +12,10 @@ void dateType::setDate(int month, int day, int year)
     dDay = day;
     dYear = year;
 }
-
+void dateType::setMonth(int month)
+{
+    dMonth = month;
+}
 int dateType::getDay() const 
 {
     return dDay;
