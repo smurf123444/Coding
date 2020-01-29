@@ -253,7 +253,8 @@ int main(){
                 }
                 cout << "Search By Last Name, Please enter a Last Name" << endl;
                 getline(cin, lastNameSearch);
-                while (i < 10) {
+                while (i < 10) 
+                {
                     if (searchLastMethod(lastNameSearch, person[i]) == true)
                     {
                         cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
@@ -380,7 +381,8 @@ int main(){
                     found = false;
                     cout << endl;
                     cout << endl;
-                    while (t < 10) {
+                    while (t < 10)
+                    {
                         if (person[t].getMonth() == person[foundInt].getMonth())
                         {
                             cout << endl;
@@ -434,7 +436,9 @@ int main(){
                     i = 0;
                     cout << endl;
                     cout << endl;
-                    while (t < 10) {
+                    while (t < 10)
+
+                    {
                         if (person[t].getMonth() == person[foundInt].getMonth())
                         {
                             cout << endl;
@@ -457,8 +461,12 @@ int main(){
                 case 3:
                     cout << endl;
                     cout << "Searching By Business..." << endl;
+
+
                     while (i < 10)
                     {
+
+
                         if (searchClassificationMethod(classificationInt, person[i]) == true)
                         {
                             cout << ">>>>>...INFO HAS BEEN FOUND...<<<<<" << endl;
@@ -471,6 +479,8 @@ int main(){
                             displayObject(person[i++]);
                             cout << endl;
                         }
+
+
                         else
                         {
 
@@ -478,12 +488,16 @@ int main(){
                         }
 
                     }
+
+
                     if (i >= 9 && found != true)
                     {
                         cout << endl;
                         cout << ">>NONE FOUND<<" << endl;
                         cout << endl;
                     }
+
+
                     found = false;
                     i = 0;
                     cout << endl;
@@ -508,21 +522,26 @@ int main(){
                     i = 0;
                     t = 0;
                     break;
-                case 6:
-                    quit = true;
-                    cout << endl;
-                    cout << "Exiting..." << endl;
-                    // Provide a menu option to exit the program
-                    break;
                 default:
                     cout << endl;
-                    cout << "Incorrect Selection" << endl;
+                    cout << "Incorrect selection" << endl;
                     cout << endl;
-                    quit = true;
+                    break;
+                }
+            case 6:
+              quit = true;
+              cout << endl;
+              cout << "Exiting..." << endl;
+              // Provide a menu option to exit the program
+            break;
+            default:
+            cout << endl;
+            cout << "Incorrect Selection" << endl;
+            cout << endl;
                     break;
                 }
             }
         }
-    }
+    
     return (0);
 }
