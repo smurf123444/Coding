@@ -11,12 +11,20 @@ public:
     double perimeter() const;
     void print() const;
 
+
     rectangleType operator+(const rectangleType&) const;
       //Overload the operator +
 
       //Overload the operator *
     rectangleType operator*(const rectangleType&) const;
     bool operator==(const rectangleType&) const;
+    bool operator!=(const rectangleType&) const;
+    bool operator <(const rectangleType& d);
+    rectangleType operator++(int);
+    rectangleType operator--(int);
+    rectangleType operator--();
+    rectangleType operator++();
+    rectangleType operator-(const rectangleType& rectangle);
       //Overload the operator ==
 
       //Overload the operator !=
@@ -27,6 +35,7 @@ public:
 private:
     double length;
     double width;
+    int i;
 };
 
 #endif

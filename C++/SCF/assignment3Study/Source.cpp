@@ -5,7 +5,7 @@
 int main()
 {
 	rectangleType obj[4];
-
+	 
 	int i = 0;
 	int length = 0, width = 0;
 	std::string lengthString = "", widthString = "";
@@ -22,16 +22,41 @@ int main()
 		std::stringstream(widthString) >> width;
 		obj[i++].setDimension(length, width);
 	}
+	/*
 	while (i < 4)
 	{
 		std::cout << std::endl;
 		std::cout << "Set the rectangle objects with default constructor" << std::endl;
 		obj[i++].rectangleType::rectangleType();
 	}
-
-	obj[0].operator+(obj[2]);
-	obj[1].operator+(obj[2]);
-
+	
+	std::cout << "Before : " << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	++obj[0];
+	std::cout << "After : " << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	std::cout << "Before : " << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	--obj[0];
+	std::cout << "After : " << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	std::cout << "Before : " << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	obj[0] = obj[0] - obj[0];
+	std::cout << "After : " << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	if (obj[0] < obj[1])
+	{
+		std::cout << "Worked!" << std::endl;
+	}
+	//obj[1].operator+(obj[2]);
+	*/
 
 	return (0);
 

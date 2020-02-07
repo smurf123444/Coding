@@ -63,12 +63,22 @@ rectangleType rectangleType::operator+
 
     return tempRect;
 }
+rectangleType rectangleType::operator-
+(const rectangleType& rectangle)
+{
+    rectangleType tempRect;
+
+    tempRect.length = length - rectangle.length;
+    tempRect.width = width - rectangle.width;
+
+    return tempRect;
+}
 
 rectangleType rectangleType::operator*(const rectangleType& rectangle) const {
     rectangleType tempRect;
 
     tempRect.length = length * rectangle.length;
-    tempRect.width = width + rectangle.width;
+    tempRect.width = width * rectangle.width;
     return tempRect;
 }
 
@@ -80,5 +90,58 @@ bool rectangleType::operator==
             width == rectangle.width);
 }
 
+bool rectangleType::operator!=
+(const rectangleType& rectangle) const
+{
+    return (length != rectangle.length ||
+        width != rectangle.width);
+}
 
+rectangleType rectangleType::operator++
+(int)
+{
+    
+    rectangleType temp;
+    temp.length = this->length++;
+    temp.width = this->width++;
+    return temp;
+}
 
+bool rectangleType::operator <(const rectangleType& rectangle) {
+
+    if (length < rectangle.length) {
+        return true;
+    }
+    if (length == rectangle.length && width < rectangle.width) {
+        return true;
+    }
+
+    return false;
+}
+
+rectangleType rectangleType::operator--
+(int)
+{
+    rectangleType temp;
+    temp.length = this->length--;
+    temp.width = this->width--;
+    return temp;
+}
+
+rectangleType rectangleType::operator++
+()
+{
+    rectangleType temp;
+    temp.length = this->length++;
+    temp.width = this->width++;
+    return temp;
+}
+
+rectangleType rectangleType::operator--
+()
+{
+    rectangleType temp;
+    temp.length = this->length--;
+    temp.width = this->width--;
+    return temp;
+}
