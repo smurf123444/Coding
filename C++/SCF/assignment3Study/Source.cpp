@@ -22,14 +22,52 @@ int main()
 		std::stringstream(widthString) >> width;
 		obj[i++].setDimension(length, width);
 	}
-	/*
-	while (i < 4)
+	i = 0;
+	while (i < 2)
 	{
 		std::cout << std::endl;
-		std::cout << "Set the rectangle objects with default constructor" << std::endl;
-		obj[i++].rectangleType::rectangleType();
+		std::cout << "Length of Rectangle # " << ++i <<std::endl;
+		i--;
+		std::cout << obj[i].getLength() << std::endl;
+		std::cout << std::endl;
+		std::cout << "Width of Rectangle # " << ++i << std::endl;
+		i--;
+		std::cout << obj[i++].getWidth() << std::endl;
 	}
-	
+	obj[0]++;
+	std::cout << std::endl;
+	std::cout << "Increment of Length of Rectangle # " << 1 << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << std::endl;
+	std::cout << "Increment of Width of Rectangle # " << 1 << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	obj[1]--;
+	std::cout << std::endl;
+	std::cout << "Decrement of Length of Rectangle # " << 2 << std::endl;
+	std::cout << obj[1].getLength() << std::endl;
+	std::cout << std::endl;
+	std::cout << "Decrement of Width of Rectangle # " << 2 << std::endl;
+	std::cout << obj[1].getWidth() << std::endl;
+	obj[0] = obj[0] - obj[1];
+	std::cout << std::endl;
+	std::cout << "Subtraction of Length of Rectangle # 1 & " << 2 << std::endl;
+	std::cout << obj[0].getLength() << std::endl;
+	std::cout << std::endl;
+	std::cout << "Subtraction of Width of Rectangle # 1 & " << 2 << std::endl;
+	std::cout << obj[0].getWidth() << std::endl;
+	if (obj[0] != obj[1])
+	{
+		std::cout << "Rectangles do not equal." << std::endl;
+	}
+	if (obj[0] < obj[1])
+	{
+		std::cout << "Rectangle 1 is less then recctangle 2" << std::endl;
+	}
+	else
+	{
+		std::cout << "Rectangle 2 is less then recctangle 1" << std::endl;
+	}
+	/*
 	std::cout << "Before : " << std::endl;
 	std::cout << obj[0].getLength() << std::endl;
 	std::cout << obj[0].getWidth() << std::endl;
