@@ -191,8 +191,8 @@ int main(){
                 cout << "Type here the press [Enter] : ";
                 getline(cin, classificationString);
                 stringstream(classificationString) >> classificationInt;
-                stringstream(phoneString) >> phoneInt;
-                person[bookCount].setPhoneNumber(phoneInt);
+                
+                person[bookCount].setPhoneNumber(phoneString);
                 person[bookCount].setClassification(classificationInt);
                 person[bookCount].setAddress(addressString);
                 person[bookCount].setCity(cityString);

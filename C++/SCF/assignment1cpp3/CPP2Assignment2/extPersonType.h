@@ -12,14 +12,14 @@ class extPersonType : public personType
 {
 private:
     int association = 0;
-    int phoneNumber = 0;
+    string phoneNumber = "";
 public:
 
     extPersonType() : personType() {}
 
     void setClassification(int input);
-    void setPhoneNumber(int input);
-    int getPhoneNumber();
+    void setPhoneNumber(string input);
+    string getPhoneNumber();
     int getClassification();
 
 };
