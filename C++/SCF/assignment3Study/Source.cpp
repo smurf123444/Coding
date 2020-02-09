@@ -48,7 +48,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Decrement of Width of Rectangle # " << 2 << std::endl;
 	std::cout << obj[1].getWidth() << std::endl;
-	obj[0] = obj[0] - obj[1];
+	obj[2] = obj[0] - obj[1];
 	std::cout << std::endl;
 	std::cout << "Subtraction of Length of Rectangle # 1 & " << 2 << std::endl;
 	std::cout << obj[0].getLength() << std::endl;
@@ -63,9 +63,13 @@ int main()
 	{
 		std::cout << "Rectangle 1 is less then recctangle 2" << std::endl;
 	}
-	else
+	else if (obj[1] < obj[0])
 	{
 		std::cout << "Rectangle 2 is less then recctangle 1" << std::endl;
+	}
+	else
+	{
+		std::cout << "Rectangles are Equal" << std::endl;
 	}
 	/*
 	std::cout << "Before : " << std::endl;
