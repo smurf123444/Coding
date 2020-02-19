@@ -30,7 +30,7 @@ def test():
     #Initialization of PhraseKeeper in variable c1
     c1 = PhraseKeeper("Tezos Tacos Nachos")
     
-    # must add smartPy test scenario to the c1 class
+    # must add smartPy test scenario to the c1 PhaseKeeper class
     # initialization
     scenario += c1
     
