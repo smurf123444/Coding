@@ -14,7 +14,9 @@ int main(){
 
     SeqList tits;
     Employee obj("6278","Manning","Chris", "24","Male");
+    Employee tit;
     tits.Insert(obj);
-   cout << tits.GetData(1) << endl;
+   tit = tits.GetData(0);
+   tit.printEmployee();
     return (0);
 }

@@ -1,6 +1,6 @@
 #include <iostream> 
+#include "employeeClass.h"
 
-using namespace std;
 const int MaxListSize = 50; 
 // You will need to change the typedef in the following line
 // from the data type int to Employee
@@ -80,7 +80,7 @@ void SeqList::Insert(const DataType& item)
    // will an insertion exceed maximum list size allowed? 
    if (size+1 > MaxListSize) 
    { 
-      cout << "Maximum list size exceeded" << endl; 
+      std::cout << "Maximum list size exceeded" << std::endl; 
       exit(1); 
    } 
 
@@ -119,7 +119,7 @@ DataType SeqList::DeleteFront(void)
    // list is empty if size == 0 
    if (size == 0) 
    { 
-      cout << "Attempt to delete the front of an empty list!" << endl; 
+      std::cout << "Attempt to delete the front of an empty list!" << std::endl; 
       exit(1); 
    } 
 
@@ -136,7 +136,7 @@ DataType SeqList::GetData(int pos) const
    // terminate program if pos out of range 
    if (pos < 0 || pos >= size) 
    { 
-      cout << "pos is out of range!" << endl; 
+      std::cout << "pos is out of range!" << std::endl; 
       exit(1); 
    } 
    return listitem[pos]; 

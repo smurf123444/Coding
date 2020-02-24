@@ -2,7 +2,7 @@
 #include <string>
 class Employee{
     private:
-    std::string employeeNumberString = "", lastName = "", firstName = "", ageString = "", genderString = "";
+    std::string employeeNumberString, lastName, firstName, ageString, genderString;
     public:
     Employee(){
         employeeNumberString = "";
@@ -18,8 +18,8 @@ class Employee{
         ageString = age;
         genderString = gender;
     }
-    bool operator == (Employee obj) {
-		return (this->lastName == obj.lastName);
+    bool operator == (Employee obj) const{
+		return (lastName == obj.lastName);
 	}
     void printEmployee();
     void readEmployee(Employee);
