@@ -33,6 +33,11 @@ class Employee{
         std::cout << genderChar << std::endl;
         return(genderChar);
     }
+    std::string getLastName()
+    {
+        std::cout << lastName << std::endl;
+        return(lastName);
+    }
     void printEmployee();
     void readEmployee(Employee);
 };

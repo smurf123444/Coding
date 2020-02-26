@@ -22,17 +22,43 @@ void PrintByGender(const SeqList & L, char gender)
         i++;
     }
 }
+int inList(const SeqList& L, std::string lname, Employee& Emp)
+{
+    /*
+    if(lname == Emp.getLastName())
+    {
+        std::cout << "Name Found." << std::endl;
+    }
+    else if(lname != Emp.getLastName())
+    {
+        std::cout << "Name Not Found." << std::endl;
+    }
+    */
+     if(L.Find(Emp) == 1)
+    {
+        std::cout << "Name Found." << std::endl;
+    }
+    else if(L.Find(Emp) == 0)
+    {
+        std::cout << "Name Not Found." << std::endl;
+    }
+    return (L.Find(Emp));
+}
 int main(){
 
     SeqList list;
     Employee obj("6278","Manning","Chris", "24",'f');
+     Employee obj2("6278","Fanning","Chris", "24",'f');
     Employee copy;
     list.Insert(obj);
+    list.Insert(obj2);
     /*
     copy = list.GetData(0);
     copy.printEmployee();
     */
     PrintByGender(list, 'm');
-
+    inList(list, "Manning", obj);
+    inList(list, "Tanning", obj);
+    inList(list, "Fanning", obj);
     return (0);
 }
