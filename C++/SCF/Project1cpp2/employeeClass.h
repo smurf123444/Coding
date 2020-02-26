@@ -1,22 +1,24 @@
 #pragma once
 #include <string>
+#include <iostream>
 class Employee{
     private:
-    std::string employeeNumberString, lastName, firstName, ageString, genderString;
+    std::string employeeNumberString, lastName, firstName, ageString;
+    char genderChar;
     public:
     Employee(){
         employeeNumberString = "";
         lastName = "";
         firstName = "";
         ageString = "";
-        genderString = "";
+        genderChar = 'm';
     }
-    Employee(std::string num, std::string last, std::string first, std::string age, std::string gender){
+    Employee(std::string num, std::string last, std::string first, std::string age, char gender){
         employeeNumberString = num;
         lastName = last;
         firstName = first;
         ageString = age;
-        genderString = gender;
+        genderChar = gender;
     }
     bool operator == (Employee obj) const{
 		return (lastName == obj.lastName);
@@ -26,10 +28,10 @@ class Employee{
         std::cout << employeeNumberString << std::endl;
         return(employeeNumberString);
     }
-    std::string getGender()
+    char getGender()
     {
-        std::cout << genderString << std::endl;
-        return(genderString);
+        std::cout << genderChar << std::endl;
+        return(genderChar);
     }
     void printEmployee();
     void readEmployee(Employee);

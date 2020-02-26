@@ -8,7 +8,7 @@ void Employee::printEmployee(){
      std::cout << "Age : " << std::endl;
      std::cout << ageString << std::endl;
      std::cout << "Gender : " << std::endl;
-     std::cout << genderString << std::endl;
+     std::cout << genderChar << std::endl;
      std::cout << "Employee Number : " << std::endl;
      std::cout << employeeNumberString << std::endl;
  }
@@ -18,6 +18,6 @@ void Employee::readEmployee(Employee obj){
     firstName = obj.firstName;
     lastName = obj.lastName;
     ageString = obj.ageString;
-    genderString = obj.genderString;
+    genderChar = obj.genderChar;
 
 }
