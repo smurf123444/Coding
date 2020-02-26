@@ -1,22 +1,26 @@
 #include <iostream>
 #include "aseqlist.h"
 #include "employeeClass.h"
-/*
+
 void PrintByGender(const SeqList & L, char gender)
 {
     int i = 0;
+    Employee c;
     while (i < 6)
     {
-
+        c = L.GetData(i);
+        if(c.getEmployeeNumber() == )
     }
-}*/
+}
 int main(){
 
-    SeqList tits;
+    SeqList list;
     Employee obj("6278","Manning","Chris", "24","Male");
-    Employee tit;
-    tits.Insert(obj);
-   tit = tits.GetData(0);
-   tit.printEmployee();
+    Employee copy;
+    list.Insert(obj);
+    copy = list.GetData(0);
+    obj.printEmployee();
+    
+
     return (0);
 }

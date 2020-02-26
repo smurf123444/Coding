@@ -21,6 +21,16 @@ class Employee{
     bool operator == (Employee obj) const{
 		return (lastName == obj.lastName);
 	}
+    std::string getEmployeeNumber()
+    {
+        std::cout << employeeNumberString << std::endl;
+        return(employeeNumberString);
+    }
+    std::string getGender()
+    {
+        std::cout << genderString << std::endl;
+        return(genderString);
+    }
     void printEmployee();
     void readEmployee(Employee);
 };
