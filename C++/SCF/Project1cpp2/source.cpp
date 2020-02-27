@@ -28,12 +28,14 @@ int inList(const SeqList& L, std::string lname, Employee& Emp)
     if (Emp.getLastName() == lname && L.Find(Emp))
         {
             std::cout << "Name Found." << std::endl;
+            return (1);
         }
         else
         {
             std::cout << "Name Not Found." << std::endl;
+            return (0);
         }
-    return (L.Find(Emp));
+    return (0);
 }
 int main(){
 
@@ -41,14 +43,18 @@ int main(){
     Employee obj[6], temp;
     std::string employeeNumberString, lastName, firstName, ageString, genderString, selectionString;
     char genderChar;
+    std::string input;
     bool quit = false;
     int tog = 0;
     int i = 0;
-    std::cout << "Please Enter Menu Selection" << std::endl;
-    std::getline(std::cin, selectionString);
-    std::stringstream(selectionString) >> tog;
+    std::cout << "Welcome to project 1 cpp 2 for SCF!" << std::endl;
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+    std::cout << std::endl;
     while (!quit)
     {
+        std::cout << "Please Enter Menu Selection" << std::endl;
+        std::getline(std::cin, selectionString);
+        std::stringstream(selectionString) >> tog;
         switch (tog)
         {
         case 1:
@@ -90,7 +96,28 @@ int main(){
                 }//Enter Employee Info
             }
                 break;
-        case 2: //Delete Employee
+        case 2: 
+            i = 0;
+            std::cout << "Please Enter Last Name to be deleted.." << std::endl;
+            std::getline(std::cin, input);
+            if (i == 0)
+            {
+                std::cout << "Nothing in list to compare.." << std::endl;
+                std::cout << std::endl;
+                break;
+            }
+            else
+            {
+                if (inList(list, input, obj[i++]) == 1)
+                {
+                    std::cout << "Located Last name" << std::endl;
+                }
+                else
+                {
+                    std::cout << "Could Not Locate." << std::endl;
+                }
+            }
+            //Delete Employee
             break;
         case 3: //Print Employee by Gender
             break;
