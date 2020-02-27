@@ -1,7 +1,7 @@
 #include <iostream> 
 #include "employeeClass.h"
 
-const int MaxListSize = 50; 
+const int MaxListSize = 6; 
 // You will need to change the typedef in the following line
 // from the data type int to Employee
 typedef Employee DataType;
