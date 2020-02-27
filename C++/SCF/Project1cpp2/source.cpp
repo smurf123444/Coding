@@ -24,24 +24,14 @@ void PrintByGender(const SeqList & L, char gender)
 }
 int inList(const SeqList& L, std::string lname, Employee& Emp)
 {
-    /*
-    if(lname == Emp.getLastName())
-    {
-        std::cout << "Name Found." << std::endl;
-    }
-    else if(lname != Emp.getLastName())
-    {
-        std::cout << "Name Not Found." << std::endl;
-    }
-    */
-     if(L.Find(Emp) == 1)
-    {
-        std::cout << "Name Found." << std::endl;
-    }
-    else if(L.Find(Emp) == 0)
-    {
-        std::cout << "Name Not Found." << std::endl;
-    }
+    if (Emp.getLastName() == lname && L.Find(Emp))
+        {
+            std::cout << "Name Found." << std::endl;
+        }
+        else
+        {
+            std::cout << "Name Not Found." << std::endl;
+        }
     return (L.Find(Emp));
 }
 int main(){
@@ -59,6 +49,6 @@ int main(){
     PrintByGender(list, 'm');
     inList(list, "Manning", obj);
     inList(list, "Tanning", obj);
-    inList(list, "Fanning", obj);
+    inList(list, "Fanning", obj2);
     return (0);
 }
