@@ -47,14 +47,16 @@ int main(){
     bool quit = false;
     int tog = 0;
     int i = 0;
+    int listSize = 0;
     std::cout << "Welcome to project 1 cpp 2 for SCF!" << std::endl;
     std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
     std::cout << std::endl;
+    std::cout << "Please Enter Menu Selection" << std::endl;
+    std::getline(std::cin, selectionString);
+    std::stringstream(selectionString) >> tog;
     while (!quit)
     {
-        std::cout << "Please Enter Menu Selection" << std::endl;
-        std::getline(std::cin, selectionString);
-        std::stringstream(selectionString) >> tog;
+
         switch (tog)
         {
         case 1:
@@ -76,10 +78,15 @@ int main(){
                     std::getline(std::cin, genderString);
                     genderChar = genderString[0];
                     temp = obj[i].writeEmployee(employeeNumberString, lastName, firstName, ageString, genderChar);
-                    obj[i++] = temp;
+                    obj[i] = temp;
+                    list.Insert(obj[i++]);
                     std::cout << "Add More? 1 for [Exit] 0 for [Continue]" << std::endl;
                     std::getline(std::cin, selectionString);
-                    std::stringstream(selectionString) >> quit;
+                    if (selectionString == "1")
+                    {
+                        listSize = listSize + i;
+                        break;
+                    }
                 }
                 else if (!list.ListEmpty())
                 {
@@ -100,7 +107,7 @@ int main(){
             i = 0;
             std::cout << "Please Enter Last Name to be deleted.." << std::endl;
             std::getline(std::cin, input);
-            if (i == 0)
+            if (listSize == 0)
             {
                 std::cout << "Nothing in list to compare.." << std::endl;
                 std::cout << std::endl;
@@ -108,13 +115,16 @@ int main(){
             }
             else
             {
-                if (inList(list, input, obj[i++]) == 1)
+                while (i < listSize)
                 {
-                    std::cout << "Located Last name" << std::endl;
-                }
-                else
-                {
-                    std::cout << "Could Not Locate." << std::endl;
+                    if (inList(list, input, obj[i++]) == 1)
+                    {
+                        std::cout << "Located Last name" << std::endl;
+                    }
+                    else
+                    {
+                        std::cout << "Could Not Locate." << std::endl;
+                    }
                 }
             }
             //Delete Employee
@@ -131,6 +141,9 @@ int main(){
             break;
            
         }
+        std::cout << "Please Enter Menu Selection" << std::endl;
+        std::getline(std::cin, selectionString);
+        std::stringstream(selectionString) >> tog;
     }
     /*
     list.Insert(obj);
