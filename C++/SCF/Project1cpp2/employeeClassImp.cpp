@@ -21,3 +21,14 @@ void Employee::readEmployee(Employee obj){
     genderChar = obj.genderChar;
 
 }
+
+Employee Employee::writeEmployee(std::string employeeNum, std::string lastN, std::string firstN, std::string age, char gender)
+{
+    Employee cpy;
+    cpy.employeeNumberString = employeeNum;
+    cpy.firstName = firstN;
+    cpy.lastName = lastN;
+    cpy.ageString = age;
+    cpy.genderChar = gender;
+    return (cpy);
+}

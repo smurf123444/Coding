@@ -40,4 +40,5 @@ class Employee{
     }
     void printEmployee();
     void readEmployee(Employee);
+    Employee writeEmployee(std::string employeeNum, std::string lastN, std::string firstN, std::string age, char gender);
 };
