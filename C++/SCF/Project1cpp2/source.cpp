@@ -117,14 +117,18 @@ int main(){
             {
                 while (i < listSize)
                 {
-                    if (inList(list, input, obj[i++]) == 1)
+                    if (inList(list, input, obj[i]) == 1)
                     {
                         std::cout << "Located Last name" << std::endl;
+                        std::cout << "Deleting from list" << std::endl;
+                        list.Delete(obj[i++]);
                     }
                     else
                     {
                         std::cout << "Could Not Locate." << std::endl;
+                        i++;
                     }
+                    
                 }
             }
             //Delete Employee
