@@ -10,12 +10,12 @@ void PrintByGender(const SeqList & L, char gender)
     while (i < L.ListSize())
     {
         c = L.GetData(i);
-        if(c.getGender() == 'm')
+        if(c.getGender() == 'm' || c.getGender() == 'M')
         {
             std::cout << "Its a Male" << std::endl;
             c.printEmployee();
         }
-        else if (c.getGender() == 'f'){
+        else if (c.getGender() == 'f' || c.getGender() == 'F'){
             std::cout << "Its a Female" << std::endl;
             c.printEmployee();
         }
@@ -133,7 +133,14 @@ int main(){
             }
             //Delete Employee
             break;
-        case 3: //Print Employee by Gender
+        case 3:
+            genderString = "";
+            genderChar = 'n';
+            std::cout << "Enter Gender to print by. " << std::endl;
+            std::getline(std::cin, genderString);
+            genderChar = genderString[1];
+            PrintByGender(list, genderChar);
+            //Print Employee by Gender
             break;
         case 4: // Search for Employee
             break;
