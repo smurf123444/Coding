@@ -45,6 +45,7 @@ int main(){
     char genderChar;
     std::string input;
     bool quit = false;
+    bool quit2 = false;
     int tog = 0;
     int i = 0;
     int listSize = 0;
@@ -52,65 +53,59 @@ int main(){
     std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
     std::cout << std::endl;
     std::cout << "Please Enter Menu Selection" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Please Select a Menu Option Below..." << std::endl;
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+    std::cout << "1. Enter Employee Information (6 Items max)" << std::endl;
+    std::cout << "2. Delete Employee based on Last Name" << std::endl;
+    std::cout << "3. Enter Gender to be found and printed." << std::endl;
+    std::cout << "4. Enter Last Name to be found and printed." << std::endl;
+    std::cout << "5. Print ALL Employees" << std::endl;
+    std::cout << "6. Exit Program." << std::endl;
+    std::cout << "Type Here then press [Enter] : ";
     std::getline(std::cin, selectionString);
     std::stringstream(selectionString) >> tog;
     while (!quit)
     {
-        std::cout << std::endl;
-        std::cout << "Please Select a Menu Option Below..." << std::endl;
-        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-        std::cout << "1. Enter Employee Information (6 Items max)" << std::endl;
-        std::cout << "2. Delete Employee based on Last Name" << std::endl;
-        std::cout << "3. Enter Gender to be found and printed." << std::endl;
-        std::cout << "4. Enter Last Name to be found and printed." << std::endl;
-        std::cout << "5. Print ALL Employees" << std::endl;
-        std::cout << "6. Exit Program." << std::endl;
+        
         switch (tog)
         {
         case 1:
-            if (i < 6) {
-                if (list.ListEmpty())
-                {
+            
+            while (!quit2)
+            {
 
-                    std::cout << "Please Enter The Employee Information Below..." << std::endl;
-                    std::cout << "----------------------" << std::endl;
-                    std::cout << "Employee # : " << std::endl;
-                    std::getline(std::cin, employeeNumberString);
-                    std::cout << "Last Name : " << std::endl;
-                    std::getline(std::cin, lastName);
-                    std::cout << "First Name : " << std::endl;
-                    std::getline(std::cin, firstName);
-                    std::cout << "Age : " << std::endl;
-                    std::getline(std::cin, ageString);
-                    std::cout << "Gender : " << std::endl;
-                    std::getline(std::cin, genderString);
-                    genderChar = genderString[0];
-                    temp = obj[i].writeEmployee(employeeNumberString, lastName, firstName, ageString, genderChar);
-                    obj[i] = temp;
-                    list.Insert(obj[i++]);
-                    std::cout << "Add More? 1 for [Exit] 0 for [Continue]" << std::endl;
-                    std::getline(std::cin, selectionString);
-                    if (selectionString == "1")
-                    {
-                        listSize = listSize + i;
-                        break;
-                    }
-                }
-                else if (!list.ListEmpty())
+                std::cout << "Please Enter The Employee Information Below..." << std::endl;
+                std::cout << "----------------------" << std::endl;
+                std::cout << "Employee # : " << std::endl;
+                std::getline(std::cin, employeeNumberString);
+                std::cout << "Last Name : " << std::endl;
+                std::getline(std::cin, lastName);
+                std::cout << "First Name : " << std::endl;
+                std::getline(std::cin, firstName);
+                std::cout << "Age : " << std::endl;
+                std::getline(std::cin, ageString);
+                std::cout << "Gender : " << std::endl;
+                std::getline(std::cin, genderString);
+                genderChar = genderString[0];
+                temp = obj[i].writeEmployee(employeeNumberString, lastName, firstName, ageString, genderChar);
+                obj[i] = temp;
+                list.Insert(obj[i++]);
+                std::cout << "Add More? 1 for [Exit] 0 for [Continue]" << std::endl;
+                std::getline(std::cin, selectionString);
+
+                if (selectionString == "1")
                 {
-                    if (list.ListSize() > 6)
-                    {
-                        std::cout << "List too big.. breaking." << std::endl;
-                        break;
-                    }
+                    listSize = listSize + i;
+                    break;
                 }
                 else
                 {
-                    std::cout << "Error" << std::endl;
-                    break;
-                }//Enter Employee Info
+                    listSize = listSize + i;
+                }
             }
-                break;
+            break;
         case 2: 
             i = 0;
             std::cout << "Please Enter Last Name to be deleted.." << std::endl;
@@ -207,7 +202,17 @@ int main(){
            
         }
         std::cout << std::endl;
+        std::cout << "Please Select a Menu Option Below..." << std::endl;
+        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+        std::cout << "1. Enter Employee Information (6 Items max)" << std::endl;
+        std::cout << "2. Delete Employee based on Last Name" << std::endl;
+        std::cout << "3. Enter Gender to be found and printed." << std::endl;
+        std::cout << "4. Enter Last Name to be found and printed." << std::endl;
+        std::cout << "5. Print ALL Employees" << std::endl;
+        std::cout << "6. Exit Program." << std::endl;
+        std::cout << std::endl;
         std::cout << "Please Enter Menu Selection" << std::endl;
+        std::cout << "Type Here then press [Enter] : ";
         std::getline(std::cin, selectionString);
         std::stringstream(selectionString) >> tog;
     }
