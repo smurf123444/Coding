@@ -40,7 +40,7 @@ int inList(const SeqList& L, std::string lname, Employee& Emp)
 int main(){
 
     SeqList list;
-    Employee obj[6], temp;
+    Employee obj[6], temp, temp2;
     std::string employeeNumberString, lastName, firstName, ageString, genderString, selectionString;
     char genderChar;
     std::string input;
@@ -56,7 +56,15 @@ int main(){
     std::stringstream(selectionString) >> tog;
     while (!quit)
     {
-
+        std::cout << std::endl;
+        std::cout << "Please Select a Menu Option Below..." << std::endl;
+        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+        std::cout << "1. Enter Employee Information (6 Items max)" << std::endl;
+        std::cout << "2. Delete Employee based on Last Name" << std::endl;
+        std::cout << "3. Enter Gender to be found and printed." << std::endl;
+        std::cout << "4. Enter Last Name to be found and printed." << std::endl;
+        std::cout << "5. Print ALL Employees" << std::endl;
+        std::cout << "6. Exit Program." << std::endl;
         switch (tog)
         {
         case 1:
@@ -142,16 +150,63 @@ int main(){
             PrintByGender(list, genderChar);
             //Print Employee by Gender
             break;
-        case 4: // Search for Employee
+        case 4: 
+            i = 0;
+            std::cout << "Please Enter Last Name to be Searched.." << std::endl;
+            std::getline(std::cin, input);
+            if (listSize == 0)
+            {
+                std::cout << "Nothing in list to compare.." << std::endl;
+                std::cout << std::endl;
+                break;
+            }
+            else
+            {
+                while (i < listSize)
+                {
+                    if (inList(list, input, obj[i]) == 1)
+                    {
+                        std::cout << "Located Last name" << std::endl;
+                        std::cout << "Displaying all." << std::endl;
+                        obj[i].readEmployee(obj[i]);
+                        obj[i++].printEmployee();
+                    }
+                    else
+                    {
+                        std::cout << "Could Not Locate." << std::endl;
+                        i++;
+                    }
+
+                }
+            }
+            // Search for Employee
             break;
-        case 5: // Print all Employees
+        case 5:
+            i = 0;
+            if (list.ListEmpty())
+            {
+                std::cout << "List Empty" << std::endl;
+                break;
+            }
+            while (i < list.ListSize())
+            {
+                std::cout << "Displaying all of the objects within the List" << std::endl;
+                temp2 = list.GetData(i++);
+                temp2.printEmployee();
+            }
+            // Print all Employees
             break;
-        case 6: // Exit
+        case 6: 
+            std::cout << "Exiting" << std::endl;
+            quit = true;
+            return 1;
+            // Exit
             break;
         default:
             break;
            
         }
+        std::cout << std::endl;
         std::cout << "Please Enter Menu Selection" << std::endl;
         std::getline(std::cin, selectionString);
         std::stringstream(selectionString) >> tog;
