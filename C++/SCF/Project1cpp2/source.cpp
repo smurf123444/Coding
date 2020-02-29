@@ -9,30 +9,34 @@ void PrintByGender(const SeqList & L, char gender)
     Employee c;
     while (i < L.ListSize())
     {
-        c = L.GetData(i);
-        if(c.getGender() == 'm' || c.getGender() == 'M')
+        c = L.GetData(i++);
+        if(c.getGender() == 'm' || c.getGender() == 'M' && toupper(c.getGender()) == gender)
         {
-            std::cout << "Its a Male" << std::endl;
+            std::cout << std::endl;
+            std::cout << "Found Male" << std::endl;
+            std::cout << std::endl;
             c.printEmployee();
         }
-        else if (c.getGender() == 'f' || c.getGender() == 'F'){
-            std::cout << "Its a Female" << std::endl;
+        else if (c.getGender() == 'f' || c.getGender() == 'F' && toupper(c.getGender()) == gender){
+            std::cout << std::endl;
+            std::cout << "Found Female" << std::endl;
+            std::cout << std::endl;
             c.printEmployee();
         }
         
-        i++;
+     
     }
 }
 int inList(const SeqList& L, std::string lname, Employee& Emp)
 {
     if (Emp.getLastName() == lname && L.Find(Emp))
         {
-            std::cout << "Name Found." << std::endl;
+            
             return (1);
         }
         else
         {
-            std::cout << "Name Not Found." << std::endl;
+            
             return (0);
         }
     return (0);
@@ -45,6 +49,7 @@ int main(){
     char genderChar;
     std::string input;
     bool quit = false;
+    bool quit2 = false;
     int tog = 0;
     int i = 0;
     int listSize = 0;
@@ -52,65 +57,65 @@ int main(){
     std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
     std::cout << std::endl;
     std::cout << "Please Enter Menu Selection" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Please Select a Menu Option Below..." << std::endl;
+    std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+    std::cout << "1. Enter Employee Information (6 Items max)" << std::endl;
+    std::cout << "2. Delete Employee based on Last Name" << std::endl;
+    std::cout << "3. Enter Gender to be found and printed." << std::endl;
+    std::cout << "4. Enter Last Name to be found and printed." << std::endl;
+    std::cout << "5. Print ALL Employees" << std::endl;
+    std::cout << "6. Exit Program." << std::endl;
+    std::cout << "Type Here then press [Enter] : ";
     std::getline(std::cin, selectionString);
     std::stringstream(selectionString) >> tog;
     while (!quit)
     {
-        std::cout << std::endl;
-        std::cout << "Please Select a Menu Option Below..." << std::endl;
-        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
-        std::cout << "1. Enter Employee Information (6 Items max)" << std::endl;
-        std::cout << "2. Delete Employee based on Last Name" << std::endl;
-        std::cout << "3. Enter Gender to be found and printed." << std::endl;
-        std::cout << "4. Enter Last Name to be found and printed." << std::endl;
-        std::cout << "5. Print ALL Employees" << std::endl;
-        std::cout << "6. Exit Program." << std::endl;
+        
         switch (tog)
         {
         case 1:
-            if (i < 6) {
-                if (list.ListEmpty())
-                {
+            
+            while (!quit2)
+            {
+               
+                std::cout << "Please Enter The Employee Information Below..." << std::endl;
+                std::cout << "----------------------" << std::endl;
+                std::cout << "Employee # : " << std::endl;
+                std::getline(std::cin, employeeNumberString);
+                std::cout << "Last Name : " << std::endl;
+                std::getline(std::cin, lastName);
+                std::cout << "First Name : " << std::endl;
+                std::getline(std::cin, firstName);
+                std::cout << "Age : " << std::endl;
+                std::getline(std::cin, ageString);
+                std::cout << "Gender : " << std::endl;
+                std::getline(std::cin, genderString);
+                genderChar = genderString[0];
+                temp = obj[i].writeEmployee(employeeNumberString, lastName, firstName, ageString, genderChar);
+                obj[i] = temp;
+                list.Insert(obj[i++]);
+                std::cout << "Add More? 1 for [Exit] 0 for [Continue]" << std::endl;
+                std::getline(std::cin, selectionString);
 
-                    std::cout << "Please Enter The Employee Information Below..." << std::endl;
-                    std::cout << "----------------------" << std::endl;
-                    std::cout << "Employee # : " << std::endl;
-                    std::getline(std::cin, employeeNumberString);
-                    std::cout << "Last Name : " << std::endl;
-                    std::getline(std::cin, lastName);
-                    std::cout << "First Name : " << std::endl;
-                    std::getline(std::cin, firstName);
-                    std::cout << "Age : " << std::endl;
-                    std::getline(std::cin, ageString);
-                    std::cout << "Gender : " << std::endl;
-                    std::getline(std::cin, genderString);
-                    genderChar = genderString[0];
-                    temp = obj[i].writeEmployee(employeeNumberString, lastName, firstName, ageString, genderChar);
-                    obj[i] = temp;
-                    list.Insert(obj[i++]);
-                    std::cout << "Add More? 1 for [Exit] 0 for [Continue]" << std::endl;
-                    std::getline(std::cin, selectionString);
-                    if (selectionString == "1")
-                    {
-                        listSize = listSize + i;
-                        break;
-                    }
-                }
-                else if (!list.ListEmpty())
+                if (selectionString == "1" || i == 6)
                 {
-                    if (list.ListSize() > 6)
+                    if (i == 6)
                     {
-                        std::cout << "List too big.. breaking." << std::endl;
-                        break;
+                        std::cout << std::endl;
+                        std::cout << "Reached the last one, Delete one to add more!" << std::endl;
+                        std::cout << std::endl;
                     }
+                        listSize = listSize + i;
+                    break;
                 }
                 else
                 {
-                    std::cout << "Error" << std::endl;
-                    break;
-                }//Enter Employee Info
+                    listSize = listSize + i;
+                }
             }
-                break;
+            break;
         case 2: 
             i = 0;
             std::cout << "Please Enter Last Name to be deleted.." << std::endl;
@@ -146,7 +151,7 @@ int main(){
             genderChar = 'n';
             std::cout << "Enter Gender to print by. " << std::endl;
             std::getline(std::cin, genderString);
-            genderChar = genderString[1];
+            genderChar = genderString[0];
             PrintByGender(list, genderChar);
             //Print Employee by Gender
             break;
@@ -169,7 +174,14 @@ int main(){
                         std::cout << "Located Last name" << std::endl;
                         std::cout << "Displaying all." << std::endl;
                         obj[i].readEmployee(obj[i]);
+
                         obj[i++].printEmployee();
+                        std::cout << std::endl;
+                    }
+                    else if (i == list.ListSize())
+                    {
+                        std::cout << "End of List" << std::endl;
+                        break;
                     }
                     else
                     {
@@ -207,7 +219,17 @@ int main(){
            
         }
         std::cout << std::endl;
+        std::cout << "Please Select a Menu Option Below..." << std::endl;
+        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
+        std::cout << "1. Enter Employee Information (6 Items max)" << std::endl;
+        std::cout << "2. Delete Employee based on Last Name" << std::endl;
+        std::cout << "3. Enter Gender to be found and printed." << std::endl;
+        std::cout << "4. Enter Last Name to be found and printed." << std::endl;
+        std::cout << "5. Print ALL Employees" << std::endl;
+        std::cout << "6. Exit Program." << std::endl;
+        std::cout << std::endl;
         std::cout << "Please Enter Menu Selection" << std::endl;
+        std::cout << "Type Here then press [Enter] : ";
         std::getline(std::cin, selectionString);
         std::stringstream(selectionString) >> tog;
     }

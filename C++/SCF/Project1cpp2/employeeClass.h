@@ -30,7 +30,7 @@ class Employee{
     }
     char getGender()
     {
-       std::cout << genderChar << std::endl;
+       //std::cout << genderChar << std::endl;
         return(genderChar);
     }
     std::string getLastName()
