@@ -99,9 +99,9 @@ int main(){
                 std::cout << "Add More? 1 for [Exit] 0 for [Continue]" << std::endl;
                 std::getline(std::cin, selectionString);
 
-                if (selectionString == "1" || i == 6)
+                if (selectionString == "1" || i >= 6)
                 {
-                    if (i == 6)
+                    if (i >= 6)
                     {
                         std::cout << std::endl;
                         std::cout << "Reached the last one, Delete one to add more!" << std::endl;
@@ -202,7 +202,11 @@ int main(){
             }
             while (i < list.ListSize())
             {
-                std::cout << "Displaying all of the objects within the List" << std::endl;
+                if (i == 0)
+                {
+                    std::cout << "Displaying all items!" << std::endl;
+                }
+                std::cout << std::endl;
                 temp2 = list.GetData(i++);
                 temp2.printEmployee();
             }
