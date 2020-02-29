@@ -1,6 +1,5 @@
 #include <iostream>
 #include "aseqlist.h"
-#include "employeeClass.h"
 #include "stdio.h"
 #include <sstream>
 void PrintByGender(const SeqList & L, char gender)

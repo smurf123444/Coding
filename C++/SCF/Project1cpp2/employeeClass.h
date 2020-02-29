@@ -1,4 +1,5 @@
-#pragma once
+#ifndef EMPLOYEECLASS_H_
+#define EMPLOYEECLASS_H_
 #include <string>
 #include <iostream>
 class Employee{
@@ -42,3 +43,5 @@ class Employee{
     void readEmployee(Employee);
     Employee writeEmployee(std::string employeeNum, std::string lastN, std::string firstN, std::string age, char gender);
 };
+
+#endif // !
