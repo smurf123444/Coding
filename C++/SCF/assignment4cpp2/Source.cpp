@@ -60,7 +60,7 @@ Provide the ability to delete the kth element of the list
 			case 52 : 
 			input = "";
 			cout << "Type an Index number you would like to delete" << endl;
-			ggetline(cin, input);
+			getline(cin, input);
 			stringstream(input) >> inputInt;
 			cout << "Deleting element" << input << " in the list."<< endl;
 
