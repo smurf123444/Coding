@@ -220,7 +220,7 @@ bool linkedListType<Type>::findKthElement(int kth)
     current = first;    //set current so that it points to 
           int i = 0;
           int l = kth;//the first node
-          
+          --l;
     while (current != nullptr) //while more data to print
     {
         if(l == i)
@@ -242,7 +242,7 @@ int linkedListType<Type>::deleteKthElement(int kth)
     current = first;    //set current so that it points to 
           int i = 0;
           int l = kth;//the first node
-          
+          --l;
     while (current != nullptr) //while more data to print
     {
         if(l == i)
