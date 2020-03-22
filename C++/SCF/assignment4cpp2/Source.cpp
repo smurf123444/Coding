@@ -1,6 +1,7 @@
 #include <iostream>
 #include "orderedLinkedList.h"
 #include <string>
+#include <stdlib.h>
 #include <sstream>
 int main()
 {
@@ -29,37 +30,41 @@ Provide the ability to delete the kth element of the list
 		cout << endl;
 		cout << "Type Here : ";
 		getline(cin, input);
-		inputInt = input[0];
-		switch(inputInt)
+		switch(input[0])
 		{
-			case 1 : 
+			case 49 : 
 			input = "";
 			cout << "Type in a number you would like to add to the top of the list." << endl;
 			getline(cin, input);
-			obj.insert(input[0]);
-			cout << "Added " << input[0] << " to the list."<< endl;
+			stringstream(input) >> inputInt;
+			obj.insert(inputInt);
+			cout << "Added " << inputInt << " to the list."<< endl;
 			break;
-			case 2 : 
+			case 50 : 
 			input = "";
 			cout << "Printing List." << endl;
+			cout << endl;
 			obj.print();
+			cout << endl;
 			break;
-			case 3 : 
+			case 51 : 
 			input = "";
 			cout << "Type an Index you would like to find in the list" << endl;
 			getline(cin, input);
-			cout << "Finding element" << input[0] << " in the list..."<< endl;
+			stringstream(input) >> inputInt;
+			cout << "Finding element" << inputInt << " in the list..."<< endl;
 
-			obj.findKthElement(input[0]);
+			obj.findKthElement(inputInt);
 			
 			break;
-			case 4 : 
+			case 52 : 
 			input = "";
 			cout << "Type an Index number you would like to delete" << endl;
-			getline(cin, input);
-			cout << "Deleting element" << input[0] << " in the list."<< endl;
+			ggetline(cin, input);
+			stringstream(input) >> inputInt;
+			cout << "Deleting element" << input << " in the list."<< endl;
 
-			obj.deleteKthElement(input[0]);
+			obj.deleteKthElement(inputInt);
 
 			break;
 			default :
