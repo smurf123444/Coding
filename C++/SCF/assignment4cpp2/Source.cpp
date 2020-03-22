@@ -10,6 +10,8 @@ int main()
 	obj.insert(4);
 	obj.insert(1);
 	obj.findKthElement(2);
+	obj.deleteKthElement(2);
+	obj.findKthElement(2);
 
 	return (0);
 

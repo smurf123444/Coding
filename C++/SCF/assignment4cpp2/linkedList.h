@@ -172,7 +172,7 @@ public:
 
     int findKthElement(int k);
 
-    void deleteKthElement(Type& k);
+    int deleteKthElement(int k);
 
     linkedListIterator<Type> begin();
       //Function to return an iterator at the begining of the 
@@ -227,6 +227,28 @@ int linkedListType<Type>::findKthElement(int kth)
         {
             cout << current->info << " ";
             
+            return 1;
+        } 
+        current = current->link;
+         i++;
+    }
+	 //if the list has any nodes, delete them
+}
+template <class Type>
+int linkedListType<Type>::deleteKthElement(int kth)
+{
+    nodeType<Type> *current; //pointer to traverse the list
+
+    current = first;    //set current so that it points to 
+          int i = 0;
+          int l = kth;//the first node
+          
+    while (current != nullptr) //while more data to print
+    {
+        if(l == i)
+        {
+            cout << current->info << " ";
+            deleteNode(current->info);
             return 1;
         } 
         current = current->link;
