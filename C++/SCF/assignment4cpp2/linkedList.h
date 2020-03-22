@@ -170,7 +170,7 @@ public:
       //               points to the last node of the updated 
       //               list, and count is decremented by 1.
 
-    void findKthElement(int k);
+    int findKthElement(int k);
 
     void deleteKthElement(Type& k);
 
@@ -213,19 +213,23 @@ private:
 };
 
 template <class Type>
-void linkedListType<Type>::findKthElement(int kth)
+int linkedListType<Type>::findKthElement(int kth)
 {
     nodeType<Type> *current; //pointer to traverse the list
 
     current = first;    //set current so that it points to 
-          int i = 0;              //the first node
+          int i = 0;
+          int l = kth;//the first node
+          
     while (current != nullptr) //while more data to print
     {
-        if(kth == i)
+        if(l == i)
         {
             cout << current->info << " ";
-            current = current->link;
+            
+            return 1;
         } 
+        current = current->link;
          i++;
     }
 	 //if the list has any nodes, delete them
