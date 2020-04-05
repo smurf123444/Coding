@@ -79,7 +79,7 @@ public:
 
     ~linkedQueueType(); 
       //Destructor
-
+    int arr[10];
 private:
     nodeType<Type> *queueFront; //pointer to the front of 
                                 //the queue
@@ -87,6 +87,7 @@ private:
                                    //the queue
     nodeType<Type>* temp;
      int count;
+  
 };
 
     //Default constructor
@@ -170,23 +171,24 @@ template <class Type>
 Type* linkedQueueType<Type>::printQueue()
 {
     int i = 0;
-    Type* ar = {};
+    int r = 0;
     Type input = 0;
         temp = queueFront;
         if ((queueFront == NULL) && (queueRear == NULL)) {
             cout << "Queue is empty" << endl;
-            return ar;
+            return arr;
         }
         cout << "Queue elements are: ";
         while (temp != NULL) {
             cout << temp->info << " ";
-            ar[i] = temp->info;
+            r = temp->info;
+            arr[i] = r;
             temp = temp->link;
             i++;
          
         }
         cout << endl;
-        return (ar);
+        return (arr);
 } //end front 
 
 template <class Type>
@@ -228,12 +230,12 @@ void linkedQueueType<Type>::Delete(const Type& queueElement)
     else
         if (temp->link != NULL) {
             temp = temp->link;
-            cout << "Element deleted from queue is : " << queueFront->info << endl;
+            
             free(queueFront);
             queueFront = temp;
         }
         else {
-            cout << "Element deleted from queue is : " << queueFront->info << endl;
+            
             free(queueFront);
             queueFront = NULL;
             queueRear = NULL;
@@ -249,12 +251,15 @@ linkedQueueType<Type>::~linkedQueueType()
 template <class Type>
 const linkedQueueType<Type>& linkedQueueType<Type>::operator= (linkedQueueType<Type>& otherQueue)
 {
-    if (count >= 0) {
+    /*if (count >= 0) {
       otherQueue.queueFront = queueFront;
         otherQueue.queueRear = queueRear;
-    }
+    }*/
+    std::swap(otherQueue.front(), front);
+    std::swap(otherQueue.back(), back);
+    return *this;
     //Write the definition of to overload the assignment operator} //end assignment operator
-    return(otherQueue);
+    //return(otherQueue);
 }
 template <class Type>
 const bool& linkedQueueType<Type>::operator== (const linkedQueueType<Type>& otherQueue)
