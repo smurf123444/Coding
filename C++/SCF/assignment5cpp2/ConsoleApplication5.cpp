@@ -29,6 +29,7 @@ int main() {
 	std::cout << "3. Return the number of nodes in one of the two Linked Queues" << endl;
 	std::cout << "4. Print the contents one of the two Linked Queues" << endl;
 	std::cout << "5. Determine if the two queues are equal" << endl;
+	std::cout << "6. EXIT" << endl;
 	while (!quit)
 	{
 		std::cout << "Type Here then press [Enter] : ";
@@ -148,6 +149,10 @@ int main() {
 				std::cout << "Titysss!!" << endl;
 			}
 			// Determine if the two queues are equal
+			break;
+		case 6:
+			quit = true;
+			
 			break;
 		default:
 			break;

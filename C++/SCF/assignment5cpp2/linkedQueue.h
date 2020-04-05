@@ -268,9 +268,10 @@ const linkedQueueType<Type>& linkedQueueType<Type>::operator= (linkedQueueType<T
 template <class Type>
 const bool& linkedQueueType<Type>::operator== (const linkedQueueType<Type>& otherQueue)
 {
-    if (count == otherQueue.count)
+    if (count == otherQueue.count && queueFront->info == otherQueue.queueFront->info && queueRear->info == otherQueue.queueRear->info)
     {
-        cout << "It has the same amount of items" << endl;
+        cout << endl;
+        cout << "...It has the same amount of items..." << endl;
     }
     else {
         return (0);
