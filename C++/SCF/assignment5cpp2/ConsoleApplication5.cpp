@@ -73,12 +73,10 @@ int main() {
 				i = 0;
 				while (i < obj.countFunc())
 				{
-		
 					if (arr[i] == item)
 					{
-
 						std::cout << "ITEM FOUND" << endl;
-						obj.Delete(item);
+						obj.Delete(obj, item);
 						i++;
 					}
 					else {
@@ -88,7 +86,6 @@ int main() {
 					}
 					
 				}
-		
 				std::cout << "Item : " << item << " deleted from Queue #1" << endl;
 			}
 			if (caseString == "2")
@@ -150,9 +147,6 @@ int main() {
 			{
 				std::cout << "Titysss!!" << endl;
 			}
-
-
-
 			// Determine if the two queues are equal
 			break;
 		default:

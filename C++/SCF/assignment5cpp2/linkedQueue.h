@@ -64,7 +64,7 @@ public:
       //Precondition: The queue exists and is not full.
       //Postcondition: The queue is changed and queueElement
       //               is added to the queue.
-    void Delete(const Type& queueElement);
+    int Delete(linkedQueueType<Type> obj, int val);
     void deleteQueue();
       //Function  to remove the first element of the queue.
       //Precondition: The queue exists and is not empty.
@@ -219,27 +219,31 @@ void linkedQueueType<Type>::deleteQueue()
         cout << "Cannot remove from an empty queue" << endl;
 }//end deleteQueue
 template <class Type>
-void linkedQueueType<Type>::Delete(const Type& queueElement)
+int linkedQueueType<Type>::Delete(linkedQueueType<Type> obj, int val)
 {
     
-    nodeType<Type> *temp = queueFront;
-    if (queueFront == NULL) {
-        cout << "Underflow" << endl;
-        return;
+    int i = 0;
+    int retval = -1;
+
+    nodeType<Type>* current = queueFront;
+    nodeType<Type>* temp_node = NULL;
+
+    while (current->link->link != NULL)
+    {
+        if (current->link->info != val)
+        {
+            current = current->link;
+        }
+        else
+        {
+            temp_node = current->link;
+            retval = temp_node->info;
+            current->link = temp_node->link;
+            free(temp_node);
+        }
+
     }
-    else
-        if (temp->link != NULL) {
-            temp = temp->link;
-            
-            free(queueFront);
-            queueFront = temp;
-        }
-        else {
-            
-            free(queueFront);
-            queueFront = NULL;
-            queueRear = NULL;
-        }
+    return retval;
 }
     //Destructor
 template <class Type>
