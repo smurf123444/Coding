@@ -22,10 +22,8 @@ template <class Type>
 class linkedQueueType: public queueADT<Type>
 {
 public:
-    const linkedQueueType<Type>& operator=
-                    (linkedQueueType<Type>&); 
       //Overload the assignment operator.
-    const bool&  operator==
+    const bool  operator==
         (const linkedQueueType<Type>&);
 
     bool isEmptyQueue() const;
@@ -253,31 +251,21 @@ linkedQueueType<Type>::~linkedQueueType()
 } //end destructor
 
 template <class Type>
-const linkedQueueType<Type>& linkedQueueType<Type>::operator= (linkedQueueType<Type>& otherQueue)
+const bool linkedQueueType<Type>::operator== (const linkedQueueType<Type>& otherQueue)
 {
-    /*if (count >= 0) {
-      otherQueue.queueFront = queueFront;
-        otherQueue.queueRear = queueRear;
-    }*/
-    std::swap(otherQueue.front(), front);
-    std::swap(otherQueue.back(), back);
-    return *this;
-    //Write the definition of to overload the assignment operator} //end assignment operator
-    //return(otherQueue);
-}
-template <class Type>
-const bool& linkedQueueType<Type>::operator== (const linkedQueueType<Type>& otherQueue)
-{
+    bool answer = false;
     if (count == otherQueue.count && queueFront->info == otherQueue.queueFront->info && queueRear->info == otherQueue.queueRear->info)
     {
         cout << endl;
         cout << "...It has the same amount of items..." << endl;
+        answer = true;
+        return(&answer);
     }
     else {
-        return (0);
+        cout << "NOT EQUAL" << endl;
     }
     //Write the definition of to overload the assignment operator
-
+    return (answer);
 } //end assignment operator
 	//copy constructor
 template <class Type>

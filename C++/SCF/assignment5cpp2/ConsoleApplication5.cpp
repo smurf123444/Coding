@@ -1,6 +1,12 @@
-// ConsoleApplication5.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+	Assignment 6
+	C++ 2 Christopher Manning
+	Tues. 7 - 8:50
 
+	Program designed to compare and obj with another,
+	ability to fill and delete items of objects
+	and print out the contents and number of items of each list.
+*/
 #include <iostream>
 #include <sstream>
 #include "linkedQueue.h"
@@ -12,15 +18,8 @@ int main() {
 	string inputString = "", caseString = "", itemString;
 	int input = 0, item = 0, i = 0;
 	int* arr = 0;
-/*	obj.addQueue(55);
-	obj.addQueue(11);
-	obj.addQueue(66);
-	obj.addQueue(45);
-	obj2.addQueue(24);
-	obj2.addQueue(34);
-	obj2.addQueue(12);
-	obj2.addQueue(44);
-	obj2.printQueue();*/
+
+
 
 	std::cout << "Welcome to PRogramming assignment #5 " << endl;
 	std::cout << "Please make a selection: " << endl;
@@ -38,7 +37,7 @@ int main() {
 
 		switch (input) {
 		case 1:
-			std::cout << "Add an Element to Which List?" << endl;
+			std::cout << "Add an Element to Which List? 1 for list 1 and 2 for list 2 then press [Enter]" << endl;
 			std::getline(cin, caseString);
 			if (caseString == "1")
 			{
@@ -63,7 +62,7 @@ int main() {
 			itemString = "";
 			item = 0;
 			i = 0;
-			std::cout << "Delete an Element to Which List?" << endl;
+			std::cout << "Delete an Element to Which List? 1 for list 1 and 2 for list 2 then press [Enter]" << endl;
 			std::getline(cin, caseString);
 			if (caseString == "1")
 			{
