@@ -22,11 +22,12 @@ int main()
     stringstream(inputString) >> input;
     while (!quit)
     {
-        
-        
+
+
         switch (input)
         {
         case 1:
+            input = 0;
             std::cout << std::endl;
             std::cout << "Employee Number : ";
             std::getline(cin, employeeNumString);
@@ -44,34 +45,48 @@ int main()
             std::getline(cin, genderString);
             std::cout << std::endl;
             gender = genderString[0];
-            while ((gender != 'm' || gender != 'M') || (gender != 'f' || gender != 'F'))
+            while ((gender != 'm' && gender != 'M') && (gender != 'f' && gender != 'F'))
             {
                 std::cout << "Type in a proper Gender" << std::endl;
                 std::getline(cin, genderString);
                 std::cout << std::endl;
                 gender = genderString[0];
             }
-            test.writeEmployee(employeeNumString, employeeFirstName, employeeLastName, ageString, gender); 
+          test = test.writeEmployee(employeeNumString, employeeFirstName, employeeLastName, ageString, gender);
             obj1.insert(test);
+            std::cout << "Employee Has been Added to the binary tree!" << std::endl;
             break; // Add Employee object elements to the Binary Search Tree
         case 2:
+            input = 0;
             obj1.deleteNode(test);
-            
             break; // Delete Employee object elements from the Binary Search Tree
         case 3:
-            obj1.treeNodeCount();
-            
+            input = 0;
+            std::cout << std::endl;
+            std::cout << obj1.treeNodeCount() << std::endl;
+            std::cout << std::endl;
             break; // Return the number of nodes in the Binary Search Tree
-        case 4: 
+        case 4:
+            input = 0;
             obj1.preorderTraversal();
             break; // Print the objects in the tree using the preorder traversal
-        case 5: 
+        case 5:
+            input = 0;
             quit = true;
             break; // EXIT
 
-        default : 
+        default:
             break;
         }
+        std::cout << std::endl;
+        std::cout << "1. Add Employee object elements to binary search tree" << std::endl;
+        std::cout << "2. Delete Employee object elements from the Binary Search Tree" << std::endl;
+        std::cout << "3. Return the number of nodes in the Binary Search Tree" << std::endl;
+        std::cout << "4. Print the objects in the tree using the preorder traversal" << std::endl;
+        std::cout << "5. Exit" << std::endl;
+        std::cout << "Please Type a number then press [Enter] : ";
+        std::getline(cin, inputString);
+        stringstream(inputString) >> input;
     }
     return (0);
 }

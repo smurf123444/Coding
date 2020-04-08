@@ -238,9 +238,10 @@ template <class elemType>
 void binaryTreeType<elemType>::preorder
                               (nodeType<elemType> *p) const
 {
+    std::string output = "";
     if (p != NULL)
     {
-        cout << p->info << " ";
+        cout << p->info << " " << std::endl;
         preorder(p->lLink);
         preorder(p->rLink);
     }
