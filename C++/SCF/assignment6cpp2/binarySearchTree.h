@@ -18,7 +18,7 @@ public:
       //               the binary search tree; otherwise, 
       //               returns false.
 
-    void insert(const elemType& insertItem);
+    bool insert(const elemType& insertItem);
       //Function to insert insertItem in the binary search tree.
       //Postcondition: If there is no node in the binary search
       //               tree that has the same info as 
@@ -72,7 +72,7 @@ bool bSearchTreeType<elemType>::search
 }//end search
 
 template <class elemType>
-void bSearchTreeType<elemType>::insert
+bool bSearchTreeType<elemType>::insert
                  (const elemType& insertItem)
 {
     nodeType<elemType> *current; //pointer to traverse the tree
@@ -99,7 +99,7 @@ void bSearchTreeType<elemType>::insert
                 cout << "The item to be inserted is already ";
                 cout << "in the tree -- duplicates are not "
                      << "allowed." << endl;
-                return;
+                return false;
             }
             else if (current->info > insertItem)
                 current = current->lLink;
@@ -112,6 +112,7 @@ void bSearchTreeType<elemType>::insert
         else
             trailCurrent->rLink = newNode;
     }
+    return (true);
 }//end insert
 
 template <class elemType>

@@ -70,7 +70,7 @@ public:
       //               the binary tree; otherwise, returns 
       //               false.
 
-    virtual void insert(const elemType& insertItem) = 0;
+    virtual bool insert(const elemType& insertItem) = 0;
       //Function to insert insertItem in the binary tree.
       //Postcondition: If there is no node in the binary tree
       //               that has the same info as insertItem, a

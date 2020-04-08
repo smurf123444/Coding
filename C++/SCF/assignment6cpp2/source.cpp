@@ -53,8 +53,13 @@ int main()
                 gender = genderString[0];
             }
           test = test.writeEmployee(employeeNumString, employeeFirstName, employeeLastName, ageString, gender);
-            obj1.insert(test);
-            std::cout << "Employee Has been Added to the binary tree!" << std::endl;
+          if (!obj1.insert(test)) {
+              std::cout << "ERROR!" << std::endl;
+          }
+          else
+          {
+              std::cout << "Employee has been added to the Binary Tree" << std::endl;
+          }
             break; // Add Employee object elements to the Binary Search Tree
         case 2:
             input = 0;

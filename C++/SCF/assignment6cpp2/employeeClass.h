@@ -27,6 +27,7 @@ public:
         return (employeeNumber == obj.employeeNumber);
     }
     friend std::ostream& operator<<(std::ostream& os, const Employee& employee) {
+        std::cout << std::endl;
         os << "Employee Number : " << employee.employeeNumber << " First Name : " << employee.firstName << " Last Name : " << employee.lastName;
         return os;
     }
