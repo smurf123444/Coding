@@ -17,13 +17,13 @@ int main()
     std::cout << "3. Return the number of nodes in the Binary Search Tree" << std::endl;
     std::cout << "4. Print the objects in the tree using the preorder traversal" << std::endl;
     std::cout << "5. Exit" << std::endl;
-    std::cout << "Please Type a number then press [Enter] : ";
-    std::getline(cin, inputString);
+ 
     stringstream(inputString) >> input;
     while (!quit)
     {
-
-
+        std::cout << "Please Type a number then press [Enter] : ";
+        std::getline(cin, inputString);
+        stringstream(inputString) >> input;
         switch (input)
         {
         case 1:
@@ -76,22 +76,19 @@ int main()
             obj1.preorderTraversal();
             break; // Print the objects in the tree using the preorder traversal
         case 5:
-            input = 0;
             quit = true;
             break; // EXIT
 
         default:
+            std::cout << std::endl;
+            std::cout << "1. Add Employee object elements to binary search tree" << std::endl;
+            std::cout << "2. Delete Employee object elements from the Binary Search Tree" << std::endl;
+            std::cout << "3. Return the number of nodes in the Binary Search Tree" << std::endl;
+            std::cout << "4. Print the objects in the tree using the preorder traversal" << std::endl;
+            std::cout << "5. Exit" << std::endl;
             break;
         }
-        std::cout << std::endl;
-        std::cout << "1. Add Employee object elements to binary search tree" << std::endl;
-        std::cout << "2. Delete Employee object elements from the Binary Search Tree" << std::endl;
-        std::cout << "3. Return the number of nodes in the Binary Search Tree" << std::endl;
-        std::cout << "4. Print the objects in the tree using the preorder traversal" << std::endl;
-        std::cout << "5. Exit" << std::endl;
-        std::cout << "Please Type a number then press [Enter] : ";
-        std::getline(cin, inputString);
-        stringstream(inputString) >> input;
+
     }
     return (0);
 }
