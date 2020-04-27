@@ -53,10 +53,15 @@ void PayRoll::RunPayroll(const bSearchTreeType<PayRoll>& L, int department)
 }
 
 //You will need to create a method to search through the Binary Search Tree for a Payroll object with the employee number entered by the user.
-void PayRoll::SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string employeeNum) {
+bool PayRoll::SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string employeeNum) {
 	PayRoll obj;
+ 	bool test = false;
 	obj.setEmployeeNum(employeeNum);
-	L.search(obj);
+	if (L.search(obj))
+	{
+		test = true;
+	}
+	return (test);
 }
 //You can leverage the methods provided in the Binary Search Tree or create your own search method(2 pts)
 

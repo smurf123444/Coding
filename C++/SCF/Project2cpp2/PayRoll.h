@@ -37,7 +37,7 @@ public:
 	//You may add additional methods to the Payroll class as needed
 	void PrintByDepartment(const bSearchTreeType<PayRoll>& L, int department);
 	void RunPayroll(const bSearchTreeType<PayRoll>& L, int department);
-	void SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string employeeNum);
+	bool SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string employeeNum);
 	//You will need to overload the “ > ”(greater than) and “<”(less than) operators for the Payroll class (this operator is used by the insert and deletenode methods in the Binary Search Tree class).
 		//Overload the “>” operator so that an Payroll object is determined to be “greater than” if its Employee Number is a higher numerical number.
 	bool operator >(const PayRoll &empl)
@@ -60,8 +60,8 @@ public:
 
 		//You will need to overload the “ = = ”(equivalence) operator for the Payroll class (this operator is used by the search, insert and deletenode methods in the Binary Search Tree class).
 		//Overload the operator so that a Payroll object is determined to be “equivalent” if the employee number in the objects are the same. (4 pts)
-	bool operator == (PayRoll obj) const {
-		if (employeeNum == obj.getEmployeeNum())
+	bool operator == (PayRoll obj) {
+		if (getEmployeeNum() == obj.employeeNum)
 		{
 			return (true);
 		}
@@ -69,6 +69,14 @@ public:
 		{
 			return (false);
 		}
+	}
+	void operator = (PayRoll obj) {
+		setEmployeeNum(std::to_string(obj.employeeNum));
+		setFirst(obj.firstName);
+		setLast(obj.lastName);
+		setDepartment(std::to_string(obj.departmentNum));
+		setPayRate(std::to_string(obj.payRateNum));
+		setHoursWorked(std::to_string(obj.hoursWorkedNum));
 	}
 
 	friend std::ostream& operator<<(std::ostream& os, PayRoll& employee) {
@@ -95,6 +103,20 @@ public:
 	//Base Methods:
 		//2 constructors
 	PayRoll() {
+		employeeNum = 0;
+		employeeNumString = "";
+		lastName = "";
+		firstName = "";
+		departmentNum = 0;
+		departmentString = "";
+		payRateNum = 0;
+		payRateString = "";
+		hoursWorkedNum = 0;
+		hoursWorkedString = "";
+		payAmountNum = 0;
+		payAmountString = "";
+	}
+	void reset() {
 		employeeNum = 0;
 		employeeNumString = "";
 		lastName = "";

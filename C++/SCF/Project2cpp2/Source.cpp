@@ -5,8 +5,8 @@
 #include "PayRoll.h"
 int main() {
 	bSearchTreeType<PayRoll> obj;
-	PayRoll pay("12345", "Manning", "Chris", "4341", "23.43", "12.12", "0");
-	PayRoll pay2("12335", "T", "B", "4344", "25.33", "11.52", "0");
+	PayRoll pay;
+	PayRoll payTemp;
 	//std::string empNum, std::string last, std::string first,
 	//std::string department, std::string payRate, std::string hours, std::string payAmount
 	//obj.insert(pay);
@@ -16,21 +16,60 @@ int main() {
 
 //	8)	Write a main program that will use the Binary Search Treeand Payroll classes as follows.
 	std::string empNumString, lastString, firstString,
-		departmentString, payRateString, hoursString, payAmountString;
-	int empNumInt, departmentInt, input;
+		departmentString, payRateString, hoursString, payAmountString, inputString;
+	int empNumInt, departmentInt, input = 0;
 	double payRateDouble, payAmountDouble;
-	bool quit = false;
+	bool quit = false;	
 	while (!quit)
 	{
+		input = 0;
+		cout << "Please Enter an Input" << endl;
+		cout << "input #: ";
+		std::getline(cin, inputString);
+		stringstream(inputString) >> input;
 		switch (input)
 		{
 		case 1:
+			cout << "Please Enter all data elements for an Employee PayRoll" << endl;
+			cout << "Employee #: ";
+			std::getline(cin, empNumString);
+			pay.setEmployeeNum(empNumString);
+			cout << "last Name : ";
+			std::getline(cin, lastString);
+			pay.setLast(lastString);
+			cout << "First Name: ";
+			std::getline(cin, firstString);
+			pay.setFirst(firstString);
+			cout << "Department #: ";
+			std::getline(cin, departmentString);
+			pay.setDepartment(departmentString);
+			cout << "Pay Rate: ";
+			std::getline(cin, payRateString);
+			pay.setPayRate(payRateString);
+			cout << "Hours Worked: ";
+			std::getline(cin, hoursString);
+			pay.setHoursWorked(hoursString);
+			obj.insert(pay);
+//			obj.preorderTraversal();
+			//pay.reset();
 			//		1)	Insert a Payroll object into the tree(4 pts)
 //		o	Prompt the user to enter all data elements for an employee Payroll object into the program
 //			Note - the pay amount should not be entered by the user – this will be calculated through the Payroll Process menu choice
 //		o	The Payroll object will be added to the tree
 			break;
 		case 2:
+			cout << "Enter Employee Num to delete from tree : ";
+			std::getline(cin, inputString);
+			pay.setEmployeeNum(inputString);
+			if (pay.SearchEmployeeNum(obj, inputString))
+			{
+				obj.deleteNode(pay);
+				pay.reset();
+			}
+			else
+			{
+				cout << "Not Found" << endl;
+			}
 			//		2)	Delete a Payroll object from the tree(4 pts)
 //		o	The user will enter the employee number of the employee to delete
 //		o	Print the employee information for the user
@@ -70,9 +109,12 @@ int main() {
 //		•	Ensure the program appropriately handles logic for each menu item when the Binary Search Tree is empty(2 pts)
 			break;
 		default:
+			cout << "Please Enter an Input" << endl;
+			cout << "input #: ";
+			std::getline(cin, inputString);
+			stringstream(inputString) >> input;
 			break;
 		}
-		cout << "1. Enter Employee Number"
 	}
 //	•	Create a menu that will prompt the user with the following options
 
