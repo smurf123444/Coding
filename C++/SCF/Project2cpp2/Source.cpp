@@ -20,11 +20,18 @@ int main() {
 	int empNumInt, departmentInt, input = 0;
 	double payRateDouble, payAmountDouble;
 	bool quit = false;	
+	cout << "Welcome to CPP 2 Project 2 SCF" << endl;
+	cout << "1. Enter Employee Info" << endl;
+	cout << "2. Delete Employee (By Employee #)" << endl;
+	cout << "3. Find Employee (By Employee #)" << endl;
+	cout << "4. Update Payroll (By Employee #)" << endl;
+	cout << "5. Run PayRoll (By Dept. #)" << endl;
+	cout << "6. Print Entire PayRoll of Binary Tree" << endl;
+	cout << "7. Print PayRoll (By Dept. #)" << endl;
 	while (!quit)
 	{
 		input = 0;
-		cout << "Please Enter an Input" << endl;
-		cout << "input #: ";
+		cout << "Please Enter an Input then press [Enter] : ";
 		std::getline(cin, inputString);
 		stringstream(inputString) >> input;
 		switch (input)
@@ -76,19 +83,51 @@ int main() {
 //		o	Let the user confirm they want to delete the Payroll object
 			break;
 		case 3:
+			cout << "Enter Employee Num to Search from tree : ";
+			std::getline(cin, inputString);
+			pay.setEmployeeNum(inputString);
+			pay.SearchEmployeeNum(obj, inputString);
+			pay.reset();
 			//		3)	Search for employee Payroll data(4 pts)
 //		o	User will input the employee number of the employee
 //		o	If found, the employee name, employee numberand associated payroll information will be printed
 //		o	If not found, an appropriate message should be displayed
 			break;
 		case 4:
-
+			cout << "Update PayRoll Data, enter employee to alter : " << endl;
+			std::getline(cin, inputString);
+			pay.setEmployeeNum(inputString);
+			if (pay.SearchEmployeeNum(obj, inputString) == true)
+			{
+				payTemp = obj.searchOutput(pay);
+				cout << "New Pay Rate : " << endl;
+				std::getline(cin, payRateString);
+				payTemp.setPayRate(payRateString);
+				cout << "New Hours Worked : " << endl;
+				std::getline(cin, hoursString);
+				payTemp.setHoursWorked(hoursString);
+			//	payTemp.setEmployeeNum(std::to_string(pay.getEmployeeNum()));
+			//	payTemp.setDepartment(std::to_string(pay.getDepartment()));
+			//	payTemp.setFirst(pay.getFirst());
+			//	payTemp.setLast(pay.getLast());
+			//	payTemp.setPayRate(std::to_string(pay.getPayRate()));
+			//	payTemp.setHoursWorked(std::to_string(pay.getHoursWorked()));
+				obj.deleteNode(pay);
+				obj.insert(payTemp);
+			}
+			pay.reset();
+			payTemp.reset();
 			//		4)	Update Payroll data(4 pts)
 			//		o	Provide the user the ability to update the pay rate or hours worked for an employee’s Payroll object
 			//		o	Provide the ability to search by employee number
 			//		o	Store the updates the user enters for the Payroll object
 			break;
 		case 5:
+			inputString = "";
+			cout << "Run PayRoll of Specific Dept. : " << endl;
+			std::getline(cin, inputString);
+			stringstream(inputString) >> departmentInt;
+			pay.RunPayroll(obj, departmentInt);
 			//		5)	Run Payroll(4 pts)
 //		o	Confirm if the user wants to run payroll for a specific department
 //		o	Process the pay amount for each Payroll object in the department
@@ -109,8 +148,14 @@ int main() {
 //		•	Ensure the program appropriately handles logic for each menu item when the Binary Search Tree is empty(2 pts)
 			break;
 		default:
-			cout << "Please Enter an Input" << endl;
-			cout << "input #: ";
+			cout << "1. Enter Employee Info" << endl;
+			cout << "2. Delete Employee (By Employee #)" << endl;
+			cout << "3. Find Employee (By Employee #)" << endl;
+			cout << "4. Update Payroll (By Employee #)" << endl;
+			cout << "5. Run PayRoll (By Dept. #)" << endl;
+			cout << "6. Print Entire PayRoll of Binary Tree" << endl;
+			cout << "7. Print PayRoll (By Dept. #)" << endl;
+			cout << "Please Enter an Input then press [Enter]: ";
 			std::getline(cin, inputString);
 			stringstream(inputString) >> input;
 			break;

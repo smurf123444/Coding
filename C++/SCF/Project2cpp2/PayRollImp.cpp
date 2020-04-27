@@ -27,29 +27,12 @@ void PayRoll::RunPayroll(const bSearchTreeType<PayRoll>& L, int department)
 
 	//The function should use the method included in the Payroll object to calculateand store the Pay Amount for each object.
 	//A message should be provided to the user to confirm the successful completion of the payroll processingand how many payroll records were processed
-	int i = 0;
+
 	PayRoll obj;
 	obj.departmentNum = department;
 	//The function should print out the name, employee number, pay rateand hours worked of each employee found to match the given department
-	while (i < L.treeHeight())
-	{
-		if (L.searchDept(obj))
-		{
-			std::cout << "DEPARTMENT NUMBER LOCATED... CALCULATING PAY AMOUNT" << std::endl;
-			this->getFirst();
-			this->getLast();
-			this->getEmployeeNum();
-			this->getPayRate();
-			this->getHoursWorked();
-			this->payAmount();
-			this->getPayAmount();
-			i++;
-		}
-		else {
-			obj.payAmount();
-			i++;
-		}
-	}
+	L.searchDept(obj);
+
 }
 
 //You will need to create a method to search through the Binary Search Tree for a Payroll object with the employee number entered by the user.
