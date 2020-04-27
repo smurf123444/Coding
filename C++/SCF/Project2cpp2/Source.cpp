@@ -133,11 +133,18 @@ int main() {
 //		o	Process the pay amount for each Payroll object in the department
 			break;
 		case 6:
+			cout << obj.treeHeight() << endl;
+			obj.preorderTraversal();
 			//		6)	Print the entire Payroll List(4 pts)
 //		o	Print out the number of Payroll objects that are in the current tree
 //		o	Print out all the employeeand payroll information for each payroll object in the tree
 			break;
 		case 7:
+			inputString = "";
+			cout << "Print Dept. : " << endl;
+			std::getline(cin, inputString);
+			stringstream(inputString) >> departmentInt;
+			pay.PrintByDepartment(obj, departmentInt);
 			//		7)	Print a department Payroll List(4 pts)
 //		o	Print out the number of Payroll objects that are in the department specified by the user
 //		o	Print out all the employeeand payroll information for each payroll object in the department

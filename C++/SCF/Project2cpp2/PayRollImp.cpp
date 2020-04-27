@@ -27,7 +27,7 @@ void PayRoll::RunPayroll(const bSearchTreeType<PayRoll>& L, int department)
 
 	//The function should use the method included in the Payroll object to calculateand store the Pay Amount for each object.
 	//A message should be provided to the user to confirm the successful completion of the payroll processingand how many payroll records were processed
-
+	int i = 0;
 	PayRoll obj;
 	obj.departmentNum = department;
 	//The function should print out the name, employee number, pay rateand hours worked of each employee found to match the given department
