@@ -1,7 +1,7 @@
 #include "PayRoll.h"
 #include "binarySearchTree.h"
 double PayRoll::payAmount() {
-	this->setPayAmount(this->getPayRate() * this->getHoursWorked());
+	setPayAmount(getPayRate() * getHoursWorked());
 	return (payAmountNum);
 }
 
@@ -18,20 +18,6 @@ void PayRoll::PrintByDepartment(const bSearchTreeType<PayRoll>& L, int departmen
 	L.searchDept(obj);
 	//The function should print out the name, employee number, pay rateand hours worked of each employee found to match the given department
 
-	
-
-
-	//	if (){
-	//		std::cout << "Found object" << std::endl;
-	//		getFirst();
-	//		getLast();
-	//		getEmployeeNum();
-		//	getPayRate();
-	//		getHoursWorked();
-	//		payAmount();
-	//		getPayAmount();
-	//		i++;
-	//	}
 
 }
 //	Create a function RunPayroll in the main program which will traverse a Binary Search Tree objectand calculate the Pay Amount of the Payroll objects in the Binary Search Tree for a given department.
@@ -47,7 +33,7 @@ void PayRoll::RunPayroll(const bSearchTreeType<PayRoll>& L, int department)
 	//The function should print out the name, employee number, pay rateand hours worked of each employee found to match the given department
 	while (i < L.treeHeight())
 	{
-		if (L.search(obj))
+		if (L.searchDept(obj))
 		{
 			std::cout << "DEPARTMENT NUMBER LOCATED... CALCULATING PAY AMOUNT" << std::endl;
 			this->getFirst();
@@ -68,25 +54,9 @@ void PayRoll::RunPayroll(const bSearchTreeType<PayRoll>& L, int department)
 
 //You will need to create a method to search through the Binary Search Tree for a Payroll object with the employee number entered by the user.
 void PayRoll::SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string employeeNum) {
-	int i = 0;
 	PayRoll obj;
 	obj.setEmployeeNum(employeeNum);
-	while (i < L.treeHeight())
-	{
-		if (L.search(obj))
-		{
-			std::cout << "EMPLOYEE NUMBER LOCATED" << std::endl;
-			//If a match is found, the name, employee numberand department number is printed.
-			obj.getFirst();
-			obj.getLast();
-			obj.getEmployeeNum();
-			obj.getDepartment();
-			i++;
-		}
-		else {
-			i++;
-		}
-	}
+	L.search(obj);
 }
 //You can leverage the methods provided in the Binary Search Tree or create your own search method(2 pts)
 

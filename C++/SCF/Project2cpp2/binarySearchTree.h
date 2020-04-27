@@ -61,7 +61,11 @@ bool bSearchTreeType<elemType>::search
 
        while (current != NULL && !found)
         {
-            if (current->info == searchItem)
+            if (current->info == searchItem) {
+                cout << current->info << endl;
+                //   found = true;
+            }
+            if (current == NULL)
                 found = true;
             else if (current->info > searchItem)
                 current = current->lLink;

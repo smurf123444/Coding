@@ -5,6 +5,8 @@
 #include <string>
 
 class PayRoll {
+	//A method to calculate the pay amount. This should be calculated by multiplying
+	//the hours worked by the pay rate
 
 	//Create a declaration for a class named Payroll. The Payroll class should include the
 		//following: (6 pts)
@@ -31,6 +33,11 @@ class PayRoll {
 	std::string payAmountString;
 
 public:
+	double payAmount();
+	//You may add additional methods to the Payroll class as needed
+	void PrintByDepartment(const bSearchTreeType<PayRoll>& L, int department);
+	void RunPayroll(const bSearchTreeType<PayRoll>& L, int department);
+	void SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string employeeNum);
 	//You will need to overload the “ > ”(greater than) and “<”(less than) operators for the Payroll class (this operator is used by the insert and deletenode methods in the Binary Search Tree class).
 		//Overload the “>” operator so that an Payroll object is determined to be “greater than” if its Employee Number is a higher numerical number.
 	bool operator >(const PayRoll &empl)
@@ -64,11 +71,11 @@ public:
 		}
 	}
 
-	friend std::ostream& operator<<(std::ostream& os, const PayRoll& employee) {
+	friend std::ostream& operator<<(std::ostream& os, PayRoll& employee) {
 		std::cout << std::endl;
 		// std::string empNum, std::string last, std::string first,
 			//std::string department, std::string payRate, std::string hours, std::string payAmountra
-		os << " Employee #: "<< employee.employeeNumString << " Last: " << employee.lastName << " First: " << employee.firstName << " Department: " <<employee.departmentString << " Pay Rate: " << employee.payAmountString << " Hours:" << employee.hoursWorkedString << " Pay Amount: " << employee.payAmountString;
+		os << " Employee #: " << employee.employeeNumString << " Last: " << employee.lastName << " First: " << employee.firstName << " Department: " << employee.departmentString << " Pay Rate: " << employee.payRateString << " Hours:" << employee.hoursWorkedString << " Pay Amount: " << employee.payAmount();
 		return os;
 	}
 
@@ -120,7 +127,7 @@ public:
 
 	//Appropriate methods to store and retrieve each of the data members
 	int getEmployeeNum() {
-		std::cout << employeeNumString << std::endl;
+	//	std::cout << employeeNumString << std::endl;
 		return (employeeNum);
 	}
 	std::string getLast() {
@@ -137,11 +144,11 @@ public:
 		return (departmentNum);
 	}
 	double getPayRate() {
-		std::cout << payRateString << std::endl;
+	//	std::cout << payRateString << std::endl;
 		return (payRateNum);
 	}
 	double getHoursWorked() {
-		std::cout << hoursWorkedString << std::endl;
+	//	std::cout << hoursWorkedString << std::endl;
 		return (hoursWorkedNum);
 	}
 	double getPayAmount() {
@@ -199,11 +206,5 @@ public:
 		payAmountString = payAmount;
 		std::stringstream(payAmountString) >> payAmountNum;
 	}
-	//A method to calculate the pay amount. This should be calculated by multiplying
-		//the hours worked by the pay rate
-	double payAmount();
-	//You may add additional methods to the Payroll class as needed
-	void PrintByDepartment(const bSearchTreeType<PayRoll>& L, int department);
-	void RunPayroll(const bSearchTreeType<PayRoll>& L, int department);
-	void SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string employeeNum);
+
 };
