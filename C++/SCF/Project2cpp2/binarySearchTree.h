@@ -11,7 +11,7 @@ template <class elemType>
 class bSearchTreeType: public binaryTreeType<elemType>
 {
 public:
-    bool searchDept(const elemType& searchItem) const;
+    int searchDept(const elemType& searchItem) const;
     elemType searchOutput(const elemType& searchItem) const;
     bool search(const elemType& searchItem) const;
       //Function to determine if searchItem is in the binary 
@@ -106,12 +106,12 @@ elemType bSearchTreeType<elemType>::searchOutput
 }//end search
 
 template <class elemType>
-bool bSearchTreeType<elemType>::searchDept
+int bSearchTreeType<elemType>::searchDept
 (const elemType& searchItem) const
 {
     nodeType<elemType>* current;
     bool found = false;
-
+    int i = 0;
     if (this->root == NULL)
         std::cout << "Cannot search an empty tree." << std::endl;
     else
@@ -122,6 +122,7 @@ bool bSearchTreeType<elemType>::searchDept
         {
             if (current->info /= searchItem) {
                 cout << current->info << endl;
+                i++;
              //   found = true;
             }
             if (current == NULL)
@@ -133,7 +134,7 @@ bool bSearchTreeType<elemType>::searchDept
         }//end while
     }//end else
 
-    return found;
+    return i;
 }//end search
 
 template <class elemType>

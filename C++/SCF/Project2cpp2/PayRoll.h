@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <sstream>
+#include <iomanip>
 #include "binarySearchTree.h"
 #include <string>
 
@@ -47,7 +48,7 @@ public:
 			return true;
 		}
 		return false;
-	}
+ 	}
 	bool operator <(const PayRoll& empl)
 	{
 		std::stringstream(employeeNumString) >> employeeNum;
@@ -81,9 +82,11 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, PayRoll& employee) {
 		std::cout << std::endl;
+		std::cout << std::fixed;
+		std::cout << std::setprecision(2);
 		// std::string empNum, std::string last, std::string first,
 			//std::string department, std::string payRate, std::string hours, std::string payAmountra
-		os << " Employee #: " << employee.employeeNumString << " Last: " << employee.lastName << " First: " << employee.firstName << " Department: " << employee.departmentString << " Pay Rate: " << employee.payRateString << " Hours:" << employee.hoursWorkedString << " Pay Amount: " << employee.payAmount();
+		os << " Employee #: " << employee.employeeNumString << ", Last: " << employee.lastName << ", First: " << employee.firstName << ", Department: " << employee.departmentString << ", Pay Rate: " << employee.payRateNum << ", Hours:" << employee.hoursWorkedNum << ", Pay Amount: " << employee.payAmount();
 		return os;
 	}
 

@@ -15,7 +15,10 @@ void PayRoll::PrintByDepartment(const bSearchTreeType<PayRoll>& L, int departmen
 	std::string temp;
 	obj.departmentNum = department;
 //	L.preorderTraversal();
-	L.searchDept(obj);
+	i = L.searchDept(obj);
+	cout << endl;
+	cout << "Total Employees by this Dept. : " << i << endl;
+	cout << endl;
 	//The function should print out the name, employee number, pay rateand hours worked of each employee found to match the given department
 
 
@@ -43,6 +46,12 @@ bool PayRoll::SearchEmployeeNum(const bSearchTreeType<PayRoll>& L, std::string e
 	if (L.search(obj))
 	{
 		test = true;
+	}
+	else
+	{
+		cout << endl;
+		cout << "Payroll Record Not Found" << endl;
+		cout << endl;
 	}
 	return (test);
 }

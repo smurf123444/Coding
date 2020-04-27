@@ -1,18 +1,13 @@
 ﻿#include <iostream>
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include "binarySearchTree.h"
 #include "PayRoll.h"
 int main() {
 	bSearchTreeType<PayRoll> obj;
 	PayRoll pay;
 	PayRoll payTemp;
-	//std::string empNum, std::string last, std::string first,
-	//std::string department, std::string payRate, std::string hours, std::string payAmount
-	//obj.insert(pay);
-//	obj.insert(pay2);
-//	pay.PrintByDepartment(obj, 4344);
-//	pay.SearchEmployeeNum(obj, "12345");
 
 //	8)	Write a main program that will use the Binary Search Treeand Payroll classes as follows.
 	std::string empNumString, lastString, firstString,
@@ -20,6 +15,8 @@ int main() {
 	int empNumInt, departmentInt, input = 0;
 	double payRateDouble, payAmountDouble;
 	bool quit = false;	
+	std::cout << std::fixed;
+	std::cout << std::setprecision(2);
 	cout << "Welcome to CPP 2 Project 2 SCF" << endl;
 	cout << "1. Enter Employee Info" << endl;
 	cout << "2. Delete Employee (By Employee #)" << endl;
@@ -70,8 +67,20 @@ int main() {
 			pay.setEmployeeNum(inputString);
 			if (pay.SearchEmployeeNum(obj, inputString))
 			{
-				obj.deleteNode(pay);
-				pay.reset();
+				inputString = "";
+				cout << "Are you sure you want to delete? [Y for yes, anything else for No then press Enter]" << endl;
+				std::getline(cin, inputString);
+				if (inputString == "Y" || inputString == "y")
+				{
+					cout << "Deleting..." << endl;
+					obj.deleteNode(pay);
+					pay.reset();
+				}
+				else
+				{
+					cout << "Canceling..." << endl;
+					break;
+				}
 			}
 			else
 			{
@@ -86,7 +95,12 @@ int main() {
 			cout << "Enter Employee Num to Search from tree : ";
 			std::getline(cin, inputString);
 			pay.setEmployeeNum(inputString);
-			pay.SearchEmployeeNum(obj, inputString);
+			cout << endl;
+			if (pay.SearchEmployeeNum(obj, inputString))
+			{
+				cout << "Employee Found!" << endl;
+			}
+			cout << endl;
 			pay.reset();
 			//		3)	Search for employee Payroll data(4 pts)
 //		o	User will input the employee number of the employee
@@ -106,12 +120,6 @@ int main() {
 				cout << "New Hours Worked : " << endl;
 				std::getline(cin, hoursString);
 				payTemp.setHoursWorked(hoursString);
-			//	payTemp.setEmployeeNum(std::to_string(pay.getEmployeeNum()));
-			//	payTemp.setDepartment(std::to_string(pay.getDepartment()));
-			//	payTemp.setFirst(pay.getFirst());
-			//	payTemp.setLast(pay.getLast());
-			//	payTemp.setPayRate(std::to_string(pay.getPayRate()));
-			//	payTemp.setHoursWorked(std::to_string(pay.getHoursWorked()));
 				obj.deleteNode(pay);
 				obj.insert(payTemp);
 			}
@@ -127,13 +135,31 @@ int main() {
 			cout << "Run PayRoll of Specific Dept. : " << endl;
 			std::getline(cin, inputString);
 			stringstream(inputString) >> departmentInt;
-			pay.RunPayroll(obj, departmentInt);
+			inputString = "";
+			cout << "Are you sure you want to Search by this Dept. #? [Y for yes, anything else for No then press Enter]" << endl;
+			std::getline(cin, inputString);
+			if (inputString == "Y" || inputString == "y")
+			{
+				cout << endl;
+				cout << "Running PayRoll..." << endl;
+				cout << endl;
+				pay.RunPayroll(obj, departmentInt);
+				pay.reset();
+			}
+			else
+			{
+				cout << "Canceling..." << endl;
+				break;
+			}
+			cout << endl;
 			//		5)	Run Payroll(4 pts)
 //		o	Confirm if the user wants to run payroll for a specific department
 //		o	Process the pay amount for each Payroll object in the department
 			break;
 		case 6:
-			cout << obj.treeHeight() << endl;
+			cout << endl;
+			cout <<"Amount of Objects in Tree : " <<obj.treeHeight() << endl;
+			cout << "Objects : " << endl;
 			obj.preorderTraversal();
 			//		6)	Print the entire Payroll List(4 pts)
 //		o	Print out the number of Payroll objects that are in the current tree
@@ -145,6 +171,7 @@ int main() {
 			std::getline(cin, inputString);
 			stringstream(inputString) >> departmentInt;
 			pay.PrintByDepartment(obj, departmentInt);
+
 			//		7)	Print a department Payroll List(4 pts)
 //		o	Print out the number of Payroll objects that are in the department specified by the user
 //		o	Print out all the employeeand payroll information for each payroll object in the department
@@ -169,13 +196,5 @@ int main() {
 		}
 	}
 //	•	Create a menu that will prompt the user with the following options
-
-
-
-
-
-
-
-
 	return (0);
 }
