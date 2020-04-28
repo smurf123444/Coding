@@ -82,6 +82,7 @@ elemType bSearchTreeType<elemType>::searchOutput
 (const elemType& searchItem) const
 {
     nodeType<elemType>* current;
+    elemType temp("123456","","","","","","");
     bool found = false;
 
     if (this->root == NULL)
@@ -89,7 +90,7 @@ elemType bSearchTreeType<elemType>::searchOutput
     else
     {
         current = this->root;
-
+        temp = current->info;
         while (current != NULL && !found)
         {
             if (current->info == searchItem) {
@@ -103,6 +104,8 @@ elemType bSearchTreeType<elemType>::searchOutput
                 current = current->rLink;
         }//end while
     }//end else
+   
+    return (temp);
 }//end search
 
 template <class elemType>
