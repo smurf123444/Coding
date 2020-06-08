@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+    <head>
+        <title>JavaJam Coffee House</title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+<link href="javajam.css" rel="stylesheet">  
+<div id="wrapper">
+<header>
+    <h1>JavaJam's Coffee House</h1>
+</header>
+    <nav>
+        <ul>
+            <li>
+            <a href="index.html">Home</a>
+        </li> 
+        <li>
+            <a href="Menu.html">Menu</a>
+        </li> 
+        <li>
+            <a href="music.html">Music</a>
+        </li> 
+        <li>
+            <a href="jobs.html">Jobs</a>
+        </li>
+        <li>
+            <a href="gear.html">Gear</a>
+        </li>
+        </ul>
+    </nav>
+    <main>
+ <style>
+     td, th { padding: 10px; }
+     tr:nth-of-type(odd) { background-color: #D2B48E; }
+ </style>
+        <div id="herojobs"></div>
+            <h2>Jobs at JavaJam</h2>
+            <p>Want to work at JavaJam? Fill out the form below to start your application. <br/>Required fields are marked with an asterisk (*).</p>
+			<form method="post" action="http://webdevbasics.net/scripts/javajam.php">
+			<label for="myName">*Name:</label>
+			<input type="text" name="myName" id="myName">
+			<label for="myEmail">*Email:</label>
+			<input type="email" name="myEmail" id="myEmail">
+			<label for="myExperience">*Experience:</label>
+			<textarea name="myExperience" id="myExperience" rows="2" cols="20"></textarea>
+			<input type="submit">
+			</form>
+        </div>
+    </main>
+    <footer>
+        <p style="font-size: small;font-style: italic;">
+            Copyright © 2018 JavaJam Coffee House
+            <br/>
+            Place your name in an e-mail link on the line under the copyright.</p>
+    </footer>
+</div>
+</body>
+
+
+
+</html>
