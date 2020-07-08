@@ -1,5 +1,6 @@
 #pragma once
 #include <stdio.h>
+#include "Events/Event.h"
 namespace Hazel {
 
 	class __declspec(dllexport) Application
