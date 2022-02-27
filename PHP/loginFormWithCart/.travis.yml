@@ -1,0 +1,10 @@
+language: php
+dist: bionic
+
+sudo: true
+
+php:
+  - 7.2
+    
+install:
+  - composer install

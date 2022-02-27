@@ -1,0 +1,19 @@
+{
+    "name": "chris/login-form-with-cart",
+    "type": "project",
+    "require": {
+        "bitwasp/bitcoin": "^1.0",
+        "bitcoin-php/bitcoin-ecdsa": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chris\\LoginFormWithCart\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Coder",
+            "email": "smurf123444@gmail.com"
+        }
+    ]
+}

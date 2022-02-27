@@ -1,0 +1,23 @@
+<!--           <?php
+
+$fp = fopen("/dev/urandom", "r") or die;
+$available_chars = "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz";
+do
+{
+    $minikey = 'S';
+    for ($i = 0; $i < 29; $i++)
+    {
+        while (($c = ord(fgetc($fp))) >= strlen($available_chars))
+            ;
+        $minikey.= substr($available_chars, $c, 1);
+    }
+    $check = hash('sha256', $minikey.'?')."\n";
+} while (substr($check, 0, 2) != '00');
+fclose($fp);
+
+$priv = hash('sha256', $minikey);
+
+print "Minikey: $minikey\n";
+
+print "Privkey: $priv\n";
+?>  -->
